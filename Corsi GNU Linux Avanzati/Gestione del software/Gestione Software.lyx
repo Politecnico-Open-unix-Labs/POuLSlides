@@ -1,0 +1,1438 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass beamer
+\begin_preamble
+\usetheme{Madrid}
+% \usecolortheme{crane}
+% Decommentate se la volete GIALLA
+% http://www.hartwork.org/beamer-theme-matrix/ per esempi di temi e colori
+
+
+% set fonts for nicer pdf view
+\IfFileExists{lmodern.sty}{\usepackage{lmodern}}{}
+
+\setbeamercovered{transparent}
+% or whatever (possibly just delete it)
+
+\titlegraphic{\includegraphics[height=2cm]{poul-logo.pdf}}
+% Ricordate che dovete sempre avere il logo in pdf nella cartella dove avete il documento
+\end_preamble
+\use_default_options false
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman times
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_amsmath 2
+\use_esint 0
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Andate in Documento -> Impostazioni -> Preambolo di LaTeX per dare un occhio
+ ad alcune opzioni
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Title screen
+\end_layout
+
+\begin_layout Title
+Gestione del software
+\begin_inset Argument
+status open
+
+\begin_layout Plain Layout
+Gestione Software
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+opzionale, è quello che viene scritto in basso al centro
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subtitle
+Installazione e gestione repository
+\end_layout
+
+\begin_layout Author
+Andrea Gussoni
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+href{mailto:andrealinux1@gmail.com}{
+\backslash
+nolinkurl{andrealinux1@gmail.com}}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Argument
+status open
+
+\begin_layout Plain Layout
+Andrea Gussoni
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Lo so è un pò brutto, ma non ho trovato di meglio per far vedere autore
+ e mail con link mailto funzionante nella prima pagina.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Date
+Corsi Gnu/Linux Avanzati 2014
+\begin_inset Argument
+status open
+
+\begin_layout Plain Layout
+Corsi Linux Avanzati 2014
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+opzionale, è quello che viene scritto in basso a destra
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+If you wish to uncover everything in a step-wise fashion, uncomment the
+ following command:
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+beamerdefaultoverlayspecification{<+->}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Structuring a talk is a difficult task and the following structure may not
+ be suitable.
+ Here are some rules that apply for this solution: 
+\end_layout
+
+\begin_layout Itemize
+Exactly two or three sections (other than the summary).
+ 
+\end_layout
+
+\begin_layout Itemize
+At *most* three subsections per section.
+ 
+\end_layout
+
+\begin_layout Itemize
+Talk about 30s to 2min per frame.
+ So there should be between about 15 and 30 frames, all told.
+\end_layout
+
+\begin_layout Itemize
+A conference audience is likely to know very little of what you are going
+ to talk about.
+ So *simplify*! 
+\end_layout
+
+\begin_layout Itemize
+In a 20min talk, getting the main ideas across is hard enough.
+ Leave out details, even if it means being less precise than you think necessary.
+ 
+\end_layout
+
+\begin_layout Itemize
+If you omit details that are vital to the proof/implementation, just say
+ so once.
+ Everybody will be happy with that.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Introduzione
+\end_layout
+
+\begin_layout BeginFrame
+Introduzione
+\end_layout
+
+\begin_layout FrameSubtitle
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+A title should summarize the slide in an understandable fashion for anyone
+ how does not follow everything on the slide itself.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Breve introduzione agli argomenti del talk
+\end_layout
+
+\begin_layout Itemize
+Domande preliminari?
+\end_layout
+
+\begin_layout BeginFrame
+La Compilazione
+\end_layout
+
+\begin_layout Itemize
+Pro: ottimizzazione, personalizzazione, possibile eventuale controllo sui
+ sorgenti
+\end_layout
+
+\begin_layout Itemize
+Contro: dispendiosa in termini di tempo e risorse, 
+\begin_inset Quotes eld
+\end_inset
+
+frammentazione
+\begin_inset Quotes erd
+\end_inset
+
+ del software nel pc, non risolve automaticamente le dipendenze
+\end_layout
+
+\begin_layout Itemize
+Come risolvere?
+\end_layout
+
+\begin_layout Section
+Pacchetti
+\end_layout
+
+\begin_layout BeginFrame
+I Pacchetti Precompilati
+\end_layout
+
+\begin_layout Itemize
+I principali e più utilizzati formati
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+.deb (formato di Debian)
+\end_layout
+
+\begin_layout Itemize
+.rpm (formato di Red Hat)
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Altri formati
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+.tgz (formato di Slackware)
+\end_layout
+
+\begin_layout Itemize
+.pkg.tar.xz (formato di Arch Linux)
+\end_layout
+
+\end_deeper
+\begin_layout BeginFrame
+Principali Operazioni
+\end_layout
+
+\begin_layout Itemize
+Installazione di un pacchetto
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\emph on
+dpkg -i pacchetto.deb
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+rpm -i pacchetto.rpm
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Rimozione di un pacchetto
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\emph on
+dpkg -r pacchetto.deb
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+rpm -r pacchetto.rpm
+\end_layout
+
+\end_deeper
+\begin_layout Section
+Package Manager
+\end_layout
+
+\begin_layout BeginFrame
+Ancora non basta
+\end_layout
+
+\begin_layout Itemize
+Ora l'installazione non richiede la compilazione
+\end_layout
+
+\begin_layout Itemize
+Possiamo facilmente gestire i programmi installati, rimuovendo all'atto
+ della disinstallazione tutta la 
+\begin_inset Quotes eld
+\end_inset
+
+sporcizia
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Però:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Abbiamo bisogno dei binari per la nostra architettura
+\end_layout
+
+\begin_layout Itemize
+Le dipendenze vanno ancora soddisfatte manualmente
+\end_layout
+
+\begin_layout Itemize
+All'uscita di una nuova versione di un programma dobbiamo scaricare di nuovo
+ il pacchetto e procedere al suo aggiornamento manualmente
+\end_layout
+
+\end_deeper
+\begin_layout BeginFrame
+I Package Manager
+\end_layout
+
+\begin_layout Itemize
+Apt per gestire il formato 
+\begin_inset Quotes eld
+\end_inset
+
+.deb
+\begin_inset Quotes erd
+\end_inset
+
+, Yum per gestire il formato 
+\begin_inset Quotes eld
+\end_inset
+
+.rpm
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Cos'è e come funziona un repository
+\end_layout
+
+\begin_layout Itemize
+Le principali distribuzioni offrono i propri repository ufficiali
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Ubuntu ~47000 pacchetti deb
+\end_layout
+
+\begin_layout Itemize
+Debian ~37000 pacchetti deb
+\end_layout
+
+\begin_layout Itemize
+Fedora ~22000 pachheti rpm
+\end_layout
+
+\begin_layout Itemize
+OpenSuse ~40000 pacchetti rpm
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Si possono anche aggiungere dei repository 
+\begin_inset Quotes eld
+\end_inset
+
+fidati
+\begin_inset Quotes erd
+\end_inset
+
+ aggiuntivi al proprio sistema
+\end_layout
+
+\begin_layout BeginFrame
+Adesso Ci Siamo
+\end_layout
+
+\begin_layout Itemize
+Unico 
+\begin_inset Quotes eld
+\end_inset
+
+posto
+\begin_inset Quotes erd
+\end_inset
+
+ dove cercare il software che ci serve
+\end_layout
+
+\begin_layout Itemize
+Dipendenze automaticamente risolte
+\end_layout
+
+\begin_layout Itemize
+Gestione centralizzata e automatica degli aggiornamenti
+\end_layout
+
+\begin_layout Itemize
+Software compilato per la nostra architettura e verificato dai mantainer
+ della nostra distribuzione
+\end_layout
+
+\begin_layout Subsection
+Apt
+\end_layout
+
+\begin_layout BeginFrame
+Apt
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Quotes eld
+\end_inset
+
+Advanced Packaging Tool
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Usato dalle principali distribuzioni Debian Based (Ubuntu, Linux Mint)
+\end_layout
+
+\begin_layout Itemize
+Esiste anche 
+\begin_inset Quotes eld
+\end_inset
+
+Aptitude
+\begin_inset Quotes erd
+\end_inset
+
+ per i nostalgici dell'interfaccia grafica
+\end_layout
+
+\begin_layout BeginFrame
+Comandi
+\end_layout
+
+\begin_layout Itemize
+Prima di tutto dobbiamo aggiornare il database dei pacchetti
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\emph on
+apt-get update
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Installazione
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\emph on
+apt-get install pacchetto
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Rimozione
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\emph on
+apt-get remove pacchetto
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Ricerca di un pacchetto nel database
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\emph on
+apt-cache search pacchetto
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Informazioni aggiuntive sul paccheto 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\emph on
+apt-cache show
+\emph default
+ 
+\emph on
+pacchetto
+\end_layout
+
+\end_deeper
+\begin_layout BeginFrame
+Comandi
+\end_layout
+
+\begin_layout Itemize
+Aggiornamento dei pacchetti
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\emph on
+apt-get upgrade
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+apt-get dist-upgrade
+\end_layout
+
+\begin_layout Itemize
+il primo comando esegue solo l'aggiornamento alle nuove versioni dei pacchetti
+ disponibili senza però aggiornare i pacchetti che richiedono installare
+ o rimuovere altri pacchetti, mentre dist-upgrade aggiorna anche questi
+ ultimi
+\end_layout
+
+\end_deeper
+\begin_layout BeginFrame
+Comandi
+\end_layout
+
+\begin_layout Itemize
+Altri comandi utili:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\emph on
+apt-get autoremove
+\emph default
+ -- elimina tutti i pacchetti non necessari al corretto funzionamento del
+ sistema
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+apt-get clean
+\emph default
+ -- pulisce la cache (utile per liberare un po di spazio in /var)
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+apt-get purge
+\emph default
+ -- rimuove un pacchetto andando però ad eliminare anche i file di configurazion
+e ad esso collegato
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+apt-get 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+-
+\backslash
+/-
+\end_layout
+
+\end_inset
+
+no-install-recommends -- 
+\emph default
+installa un pacchetto evitando però di installare i pacchetti consigliati,
+ ad esempio la documentazione eccetera...
+\end_layout
+
+\end_deeper
+\begin_layout BeginFrame
+Comandi
+\end_layout
+
+\begin_layout Itemize
+Altri comandi utili basati su dpkg:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\emph on
+dpkg -l pacchetto --
+\emph default
+ simile ad 
+\emph on
+apt-cache search 
+\emph default
+ma in più mostra se il pacchetto è installato o no
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+dpkg -L pacchetto
+\emph default
+ -- elenca i file installati nel sistema da un dato pacchetto
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+dpkg -S 
+\emph default
+nomefile -- cerca il file e dice a quale pacchetto appartiene
+\end_layout
+
+\end_deeper
+\begin_layout BeginFrame
+Approfondimenti -- /var/cache/apt
+\end_layout
+
+\begin_layout Itemize
+Apt tiene una repository locale dei pacchetti che vengono installati in
+ /var/cache/apt, e nel caso abbiate una /var su partizione separata questa
+ si può riempire facilmente, potete ovviare a questo con il comando citato
+ precedentemente.
+ Questa cache però in condizioni normali può essere utile per velocizzare
+ le operazioni di installazione e rimozione di grandi pacchetti
+\end_layout
+
+\begin_layout BeginFrame
+Approfondimenti -- unattended-upgrades
+\end_layout
+
+\begin_layout Itemize
+Esiste la possibilità di far eseguire automaticamente gli aggiornamenti
+ di sicurezza al momento della loro pubblicazione nei repository
+\end_layout
+
+\begin_layout Itemize
+Molto utile per le macchine server, perchè abbiamo le vulnerabilità fixate
+ senza il bisogno di un nostro intervento manuale
+\end_layout
+
+\begin_layout Itemize
+Maggiori informazioni 
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+https://wiki.debian.org/UnattendedUpgrades
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout BeginFrame
+Apt-File
+\end_layout
+
+\begin_layout Itemize
+Utilizzo:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\emph on
+apt-file update -- 
+\emph default
+aggiorna il database del programma
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+apt-file search nomefile --
+\emph default
+ restituisce il pacchetto a cui appartiene il file passato come argomento
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+apt-file list nomepacchetto -- 
+\emph default
+elenca tutti i file che appartengono ad un certo pacchetto
+\end_layout
+
+\end_deeper
+\begin_layout BeginFrame
+I Repository
+\end_layout
+
+\begin_layout Itemize
+il file /etc/apt/sources.list
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename /home/andrea/Pictures/Screenshot from 2014-03-14 21:52:02.png
+	width 100page%
+	height 100page%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout BeginFrame
+I Repository
+\end_layout
+
+\begin_layout Itemize
+Demo
+\end_layout
+
+\begin_layout BeginFrame
+I Repository
+\end_layout
+
+\begin_layout Itemize
+Possiamo aggiungere altri repository
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+se il repository si trova su launchpad basta usare: 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\emph on
+add-apt-repository ppa:utente/nome-ppa
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+altrimenti dobbiamo aggiungere 
+\begin_inset Quotes eld
+\end_inset
+
+a mano
+\begin_inset Quotes erd
+\end_inset
+
+ al file sources.list l'indirizzo del repository, ricordandoci di aggiungere
+ anche la chiave per verificare la firma dei pacchetti 
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+http://wiki.ubuntu-it.org/Repository/RigaDiComando
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+ricordarsi sempre di aggiornare il database dei pacchetti dopo aver aggiunto
+ un repository, altrimenti il package manager non 
+\begin_inset Quotes eld
+\end_inset
+
+vedrà
+\begin_inset Quotes erd
+\end_inset
+
+ la nuova risorsa
+\end_layout
+
+\end_deeper
+\begin_layout Subsection
+Yum
+\end_layout
+
+\begin_layout BeginFrame
+Yum
+\end_layout
+
+\begin_layout Itemize
+Yellowdog Updater, Modified
+\end_layout
+
+\begin_layout Itemize
+Package manager standard di molte distribuzione rpm-based (RHEL, CentOS,
+ Fedora, OpenSuse)
+\end_layout
+
+\begin_layout Itemize
+A differenza di Apt non richiede ogni volta l'aggiornamento esplicito del
+ database dei pacchetti
+\end_layout
+
+\begin_layout BeginFrame
+Comandi
+\end_layout
+
+\begin_layout Itemize
+Installazione
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\emph on
+yum install pacchetto
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Rimozione (rimuove anche i file di configurazione, come 
+\emph on
+apt-get purge
+\emph default
+)
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\emph on
+yum remove pacchetto
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Ricerca nel database
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\emph on
+yum search pacchetto
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Informazioni aggiuntive
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\emph on
+yum info pacchetto
+\end_layout
+
+\end_deeper
+\begin_layout BeginFrame
+Comandi
+\end_layout
+
+\begin_layout Itemize
+Aggiornamento dei pacchetti
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\emph on
+yum update
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+yum distro-sync
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Altri comandi utili
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\emph on
+yum clean packages : 
+\emph default
+Pulizia della cache
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+yum autoremove : 
+\emph default
+Rimozione dei pacchetti non più necessari
+\end_layout
+
+\end_deeper
+\begin_layout BeginFrame
+I Repository
+\end_layout
+
+\begin_layout Itemize
+In questo caso i file che contengono le informazioni sui repository si trovano
+ in 
+\emph on
+/etc/yum.repos.d 
+\emph default
+ed hanno estensione 
+\begin_inset Quotes eld
+\end_inset
+
+.repo
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Un esempio : un file chiamato 
+\begin_inset Quotes eld
+\end_inset
+
+example.repo
+\begin_inset Quotes erd
+\end_inset
+
+ contiene al suo interno
+\end_layout
+
+\begin_layout ExampleBlock
+.[examplerepo]
+\end_layout
+
+\begin_layout ExampleBlock
+name=Example Repository 
+\end_layout
+
+\begin_layout ExampleBlock
+baseurl=http://mirror.cisp.com/CentOS/6/os/i386/ 
+\end_layout
+
+\begin_layout ExampleBlock
+enabled=1 
+\end_layout
+
+\begin_layout ExampleBlock
+gpgcheck=1 
+\end_layout
+
+\begin_layout ExampleBlock
+gpgkey=http://mirror.cisp.com/CentOS/6/os/i386/RPM-GPG-KEY-CentOS-6
+\end_layout
+
+\begin_layout Section
+Alien
+\end_layout
+
+\begin_layout BeginFrame
+Alien
+\end_layout
+
+\begin_layout Itemize
+Esiste eventualmente anche la possibilità di convertire da formato 
+\begin_inset Quotes erd
+\end_inset
+
+deb
+\begin_inset Quotes erd
+\end_inset
+
+ a formato 
+\begin_inset Quotes eld
+\end_inset
+
+rpm
+\begin_inset Quotes erd
+\end_inset
+
+ e viceversa i pacchetti tramite Alien, la sintassi è :
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\emph on
+alien 
+\emph default
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+-
+\backslash
+/-
+\end_layout
+
+\end_inset
+
+
+\emph on
+to-deb pacchetto.rpm (
+\emph default
+da rpm a deb
+\emph on
+)
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+alien 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+-
+\backslash
+/-
+\end_layout
+
+\end_inset
+
+to-rpm pacchetto.deb (viceversa)
+\end_layout
+
+\end_deeper
+\begin_layout Section
+Compilazione
+\end_layout
+
+\begin_layout BeginFrame
+Tutto Qui? Ni
+\end_layout
+
+\begin_layout Itemize
+I package manager e i comandi che abbiamo visto in precedenza sono assolutamente
+ sufficienti per la normale amministrazione di un server, poichè tutti i
+ pacchetti di maggiore utilità sono inclusi nei repository, ed i manutentori
+ di tutte le distro che abbiamo citato sono affidabili per quanto riguarda
+ gli aggiornamenti di sicurezza
+\end_layout
+
+\begin_layout Itemize
+Ovviamente esistono gli equivalenti per le distro che non abbiamo visto
+ in dettaglio, dato che non hanno una innata orientazione server, anche
+ se in fondo nessuno vi vieta di usare la vostra distribuzione preferita
+ per il vostro server, in fondo il bello di Gnu/Linux è proprio questo
+\end_layout
+
+\begin_layout Itemize
+Nel caso foste interessati vi invito a cercare nelle documentazione della
+ vostra distribuzione, e come 
+\begin_inset Quotes eld
+\end_inset
+
+cheatsheet
+\begin_inset Quotes erd
+\end_inset
+
+ vi consiglio la 
+\begin_inset Quotes eld
+\end_inset
+
+Stele Di Rosetta
+\begin_inset Quotes erd
+\end_inset
+
+ che trovate sulla wiki di Arch 
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+https://wiki.archlinux.org/index.php/Pacman_Rosetta
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout BeginFrame
+La Via Più Ripida
+\end_layout
+
+\begin_layout Itemize
+Esiste anche la possibilità di compilare il software direttamente dai sorgenti
+ (Gentoo usa questa filosofia per l'intera distribuzione)
+\end_layout
+
+\begin_layout Itemize
+Solitamente è l'ultima via che viene considerata, perchè come detto in precedenz
+a compilare da sorgenti significa non avere nessun controllo o aiuto da
+ parte del sistema, e quindi dover sistemare eventuali dipendenze e incompatibil
+ità a mano, oltre a dover poi rimuovere tutti i file che vengono installati
+ se non dovessimo più avere bisogno del software
+\end_layout
+
+\begin_layout Itemize
+In alcuni casi (software particolarmente nuovi o di nicchia) la compilazione
+ da sorgenti può essere l'unica soluzione, cercherò quindi di darvi qualche
+ indicazione di massima per indirizzarvi sulla strada giusta
+\end_layout
+
+\begin_layout BeginFrame
+I Grandi Classici
+\end_layout
+
+\begin_layout Itemize
+La compilazione da sorgenti spesso viene ridotta ai seguenti comandi
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\emph on
+./configure
+\end_layout
+
+\begin_layout Itemize
+make
+\end_layout
+
+\begin_layout Itemize
+make install
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Spesso non è esattamente così, per ogni software che si va a compilare e
+ altamente consigliata la lettura del file README all'interno dell'archivio,
+ che può illuminare sulla procedura da seguire, e spesso chiarisce anche
+ le dipendenze necessarie
+\end_layout
+
+\begin_layout Itemize
+Infatti generalmente il primo passo della procedura è volto proprio a verificare
+ requisiti e dipendenze, ed in caso di errore sarete voi a dover interpretare
+ l'output del programma per capire dove e perchè si è fermato, procedendo
+ quindi a risolvere il problema
+\end_layout
+
+\begin_layout BeginFrame
+Checkinstall
+\end_layout
+
+\begin_layout Itemize
+Permette di installare da sorgenti tenendo traccia però dell'installazione
+ in modo da rimuovere facilmente in futuro
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+checkinstall 
+\emph default
+al posto di 
+\emph on
+make install 
+\end_layout
+
+\begin_layout Itemize
+più informazioni a 
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+http://wiki.ubuntu-it.org/Programmazione/Checkinstall
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Appendice
+\end_layout
+
+\begin_layout BeginFrame
+Domande?
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Standard
+Demo!
+\end_layout
+
+\begin_layout BeginFrame
+Fonti
+\end_layout
+
+\begin_layout Itemize
+Unix and Linux System Administration Handbook (Fourth Edition)
+\end_layout
+
+\begin_layout Itemize
+Ubuntu-Wiki
+\end_layout
+
+\begin_layout Itemize
+Debian-Wiki
+\end_layout
+
+\begin_layout Itemize
+Fedora Project-Wiki
+\end_layout
+
+\begin_layout Subsection*
+Licenza
+\end_layout
+
+\begin_layout BeginFrame
+License
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\size largest
+Grazie per l'attenzione!
+\begin_inset Newline newline
+\end_inset
+
+
+\size default
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Se volete cambiare licenza cambiate l'immagine e la scritta sotto
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename cc-by-sa.png
+	height 0.9cm
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\size footnotesize
+Queste slides sono licenziate Creative Commons Attribution-ShareAlike 3.0
+ Unported
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\family typewriter
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://www.poul.org
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout EndFrame
+
+\end_layout
+
+\end_body
+\end_document
