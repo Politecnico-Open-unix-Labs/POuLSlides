@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg id="svg2668" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" height="625" width="646" version="1.0" xmlns:cc="http://creativecommons.org/ns#" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:dc="http://purl.org/dc/elements/1.1/" font-size="14px" text-rendering="auto" color-rendering="auto" fill-opacity="1" font-style="normal" font-variant="normal" font-family="DejaVu Sans,Helvetica,Sans">
+ <metadata id="metadata3503">
+  <rdf:RDF>
+   <cc:Work rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:title/>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs id="defs2670">
+  <linearGradient id="linearGradient6281" y2="-68.8" gradientUnits="userSpaceOnUse" x2="-252" y1="628" x1="415">
+   <stop id="stop6277" stop-color="#ACF" offset="0"/>
+   <stop id="stop6279" stop-color="#ACF" stop-opacity="0" offset="1"/>
+  </linearGradient>
+ </defs>
+ <g id="layer1" transform="translate(-58.0399, -150.167)">
+  <g id="g4960" transform="translate(233.073, 98.7642)">
+   <rect id="rect6033" stroke-linejoin="miter" stroke-dasharray="none" height="622" width="643" stroke="#000" stroke-miterlimit="4" y="52.8" x="-174" stroke-width="2.86" fill="url(#linearGradient6281)"/>
+   <rect id="rect5180" stroke-linejoin="miter" stroke-dasharray="none" fill-rule="evenodd" height="235" width="553" stroke="#000" stroke-linecap="butt" stroke-miterlimit="4" y="79" x="-148" stroke-width="3.68" fill="#5f8dd3"/>
+   <g id="g5378" transform="translate(-5, 18.75)">
+    <rect id="rect4978" stroke-linejoin="miter" stroke-dasharray="none" fill-rule="evenodd" height="180" width="166" stroke="#000" stroke-linecap="butt" stroke-miterlimit="4" y="104" x="-131" stroke-width="3" fill="#80b3ff"/>
+    <text id="text4980" xml:space="preserve" line-height="100%" y="123.1068" x="-120.01389" fill="#000000"><tspan id="tspan4982" style="writing-mode:lr-tb;text-anchor:start;text-align:start;" line-height="100%" y="123.1068" x="-120.01389">PV</tspan><tspan id="tspan4984" style="writing-mode:lr-tb;text-anchor:start;text-align:start;" line-height="100%" y="137.1068" x="-120.01389">hdisk1</tspan></text>
+    <g id="g5202" transform="translate(0, 1.5115)">
+     <g id="g4988" transform="translate(-0.691496, -2)">
+      <g id="g5277" transform="translate(-2)">
+       <g id="g5251" transform="translate(0.654252)">
+        <rect id="rect4962" stroke-linejoin="miter" stroke-dasharray="none" fill-rule="evenodd" height="36.5" width="66.5" stroke="#000" stroke-linecap="butt" stroke-miterlimit="4" y="148" x="-120" stroke-width="2" fill="#afc6e9"/>
+        <text id="text4964" style="text-anchor:middle;text-align:center;" xml:space="preserve" line-height="100%" y="163.77846" x="-87.064545" fill="#000000"><tspan id="tspan4966" style="writing-mode:lr-tb;text-anchor:middle;text-align:center;" line-height="100%" y="163.77846" x="-87.064545">PP</tspan><tspan id="tspan4968" style="writing-mode:lr-tb;text-anchor:middle;text-align:center;" line-height="100%" y="177.77846" x="-87.064545">32 MB</tspan></text>
+       </g>
+       <g id="g5257" transform="translate(0.654252, 43.2672)">
+        <rect id="rect5259" stroke-linejoin="miter" stroke-dasharray="none" fill-rule="evenodd" height="36.5" width="66.5" stroke="#000" stroke-linecap="butt" stroke-miterlimit="4" y="148" x="-120" stroke-width="2" fill="#afc6e9"/>
+        <text id="text5261" style="text-anchor:middle;text-align:center;" xml:space="preserve" line-height="100%" y="163.77846" x="-87.064545" fill="#000000"><tspan id="tspan5263" style="writing-mode:lr-tb;text-anchor:middle;text-align:center;" line-height="100%" y="163.77846" x="-87.064545">PP</tspan><tspan id="tspan5265" style="writing-mode:lr-tb;text-anchor:middle;text-align:center;" line-height="100%" y="177.77846" x="-87.064545">32 MB</tspan></text>
+       </g>
+       <g id="g5267" transform="translate(0.654252, 86.5345)">
+        <rect id="rect5269" stroke-linejoin="miter" stroke-dasharray="none" fill-rule="evenodd" height="36.5" width="66.5" stroke="#000" stroke-linecap="butt" stroke-miterlimit="4" y="148" x="-120" stroke-width="2" fill="#afc6e9"/>
+        <text id="text5271" style="text-anchor:middle;text-align:center;" xml:space="preserve" line-height="100%" y="163.77846" x="-87.064545" fill="#000000"><tspan id="tspan5273" style="writing-mode:lr-tb;text-anchor:middle;text-align:center;" line-height="100%" y="163.77846" x="-87.064545">PP</tspan><tspan id="tspan5275" style="writing-mode:lr-tb;text-anchor:middle;text-align:center;" line-height="100%" y="177.77846" x="-87.064545">32 MB</tspan></text>
+       </g>
+      </g>
+      <g id="g5294" transform="translate(-2, 0.133627)">
+       <g id="g5296" transform="translate(0.654252)">
+        <rect id="rect5298" stroke-linejoin="miter" stroke-dasharray="none" fill-rule="evenodd" height="36.5" width="66.5" stroke="#000" stroke-linecap="butt" stroke-miterlimit="4" y="148" x="-120" stroke-width="2" fill="#afc6e9"/>
+        <text id="text5300" style="text-anchor:middle;text-align:center;" xml:space="preserve" line-height="100%" y="163.77846" x="-87.064545" fill="#000000"><tspan id="tspan5302" style="writing-mode:lr-tb;text-anchor:middle;text-align:center;" line-height="100%" y="163.77846" x="-87.064545">PP</tspan><tspan id="tspan5304" style="writing-mode:lr-tb;text-anchor:middle;text-align:center;" line-height="100%" y="177.77846" x="-87.064545">32 MB</tspan></text>
+       </g>
+       <g id="g5306" transform="translate(0.654252, 43.2672)">
+        <rect id="rect5308" stroke-linejoin="miter" stroke-dasharray="none" fill-rule="evenodd" height="36.5" width="66.5" stroke="#000" stroke-linecap="butt" stroke-miterlimit="4" y="148" x="-120" stroke-width="2" fill="#afc6e9"/>
+        <text id="text5310" style="text-anchor:middle;text-align:center;" xml:space="preserve" line-height="100%" y="163.77846" x="-87.064545" fill="#000000"><tspan id="tspan5312" style="writing-mode:lr-tb;text-anchor:middle;text-align:center;" line-height="100%" y="163.77846" x="-87.064545">PP</tspan><tspan id="tspan5314" style="writing-mode:lr-tb;text-anchor:middle;text-align:center;" line-height="100%" y="177.77846" x="-87.064545">32 MB</tspan></text>
+       </g>
+       <g id="g5316" transform="translate(0.654252, 86.5345)">
+        <rect id="rect5318" stroke-linejoin="miter" stroke-dasharray="none" fill-rule="evenodd" height="36.5" width="66.5" stroke="#000" stroke-linecap="butt" stroke-miterlimit="4" y="148" x="-120" stroke-width="2" fill="#afc6e9"/>
+        <text id="text5320" style="text-anchor:middle;text-align:center;" xml:space="preserve" line-height="100%" y="163.77846" x="-87.064545" fill="#000000"><tspan id="tspan5322" style="writing-mode:lr-tb;text-anchor:middle;text-align:center;" line-height="100%" y="163.77846" x="-87.064545">PP</tspan><tspan id="tspan5324" style="writing-mode:lr-tb;text-anchor:middle;text-align:center;" line-height="100%" y="177.77846" x="-87.064545">32 MB</tspan></text>
+       </g>
+      </g>
+      <g id="g5326" transform="translate(75.6543, 0.133627)">
+       <g id="g5328" transform="translate(0.654252)">
+        <rect id="rect5330" stroke-linejoin="miter" stroke-dasharray="none" fill-rule="evenodd" height="36.5" width="66.5" stroke="#000" stroke-linecap="butt" stroke-miterlimit="4" y="148" x="-120" stroke-width="2" fill="#afc6e9"/>
+        <text id="text5332" style="text-anchor:middle;text-align:center;" xml:space="preserve" line-height="100%" y="163.77846" x="-87.064545" fill="#000000"><tspan id="tspan5334" style="writing-mode:lr-tb;text-anchor:middle;text-align:center;" line-height="100%" y="163.77846" x="-87.064545">PP</tspan><tspan id="tspan5336" style="writing-mode:lr-tb;text-anchor:middle;text-align:center;" line-height="100%" y="177.77846" x="-87.064545">32 MB</tspan></text>
+       </g>
+       <g id="g5338" transform="translate(0.654252, 43.2672)">
+        <rect id="rect5340" stroke-linejoin="miter" stroke-dasharray="none" fill-rule="evenodd" height="36.5" width="66.5" stroke="#000" stroke-linecap="butt" stroke-miterlimit="4" y="148" x="-120" stroke-width="2" fill="#afc6e9"/>
+        <text id="text5342" style="text-anchor:middle;text-align:center;" xml:space="preserve" line-height="100%" y="163.77846" x="-87.064545" fill="#000000"><tspan id="tspan5344" style="writing-mode:lr-tb;text-anchor:middle;text-align:center;" line-height="100%" y="163.77846" x="-87.064545">PP</tspan><tspan id="tspan5346" style="writing-mode:lr-tb;text-anchor:middle;text-align:center;" line-height="100%" y="177.77846" x="-87.064545">32 MB</tspan></text>
+       </g>
+       <g id="g5348" transform="translate(0.654252, 86.5345)">
+        <rect id="rect5350" stroke-linejoin="miter" stroke-dasharray="none" fill-rule="evenodd" height="36.5" width="66.5" stroke="#000" stroke-linecap="butt" stroke-miterlimit="4" y="148" x="-120" stroke-width="2" fill="#afc6e9"/>
+        <text id="text5352" style="text-anchor:middle;text-align:center;" xml:space="preserve" line-height="100%" y="163.77846" x="-87.064545" fill="#000000"><tspan id="tspan5354" style="writing-mode:lr-tb;text-anchor:middle;text-align:center;" line-height="100%" y="163.77846" x="-87.064545">PP</tspan><tspan id="tspan5356" style="writing-mode:lr-tb;text-anchor:middle;text-align:center;" line-height="100%" y="177.77846" x="-87.064545">32 MB</tspan></text>
+       </g>
+      </g>
+     </g>
+    </g>
+   </g>
+   <g id="g5434" transform="translate(173.827, 18.75)">
+    <rect id="rect5436" stroke-linejoin="miter" stroke-dasharray="none" fill-rule="evenodd" height="180" width="166" stroke="#000" stroke-linecap="butt" stroke-miterlimit="4" y="104" x="-131" stroke-width="3" fill="#80b3ff"/>
+    <text id="text5438" xml:space="preserve" line-height="100%" y="123.1068" x="-120.01389" fill="#000000"><tspan id="tspan5440" style="writing-mode:lr-tb;text-anchor:start;text-align:start;" line-height="100%" y="123.1068" x="-120.01389">PV</tspan><tspan id="tspan5442" style="writing-mode:lr-tb;text-anchor:start;text-align:start;" line-height="100%" y="137.1068" x="-120.01389">hdisk2</tspan></text>
+    <g id="g5444" transform="translate(0, 1.5115)">
+     <g id="g5446" transform="translate(-0.691496, -2)">
+      <g id="g5448" transform="translate(-2)">
+       <g id="g5450" transform="translate(0.654252)">
+        <rect id="rect5452" stroke-linejoin="miter" stroke-dasharray="none" fill-rule="evenodd" height="36.5" width="66.5" stroke="#000" stroke-linecap="butt" stroke-miterlimit="4" y="148" x="-120" stroke-width="2" fill="#afc6e9"/>
+        <text id="text5454" style="text-anchor:middle;text-align:center;" xml:space="preserve" line-height="100%" y="163.77846" x="-87.064545" fill="#000000"><tspan id="tspan5456" style="writing-mode:lr-tb;text-anchor:middle;text-align:center;" line-height="100%" y="163.77846" x="-87.064545">PP</tspan><tspan id="tspan5458" style="writing-mode:lr-tb;text-anchor:middle;text-align:center;" line-height="100%" y="177.77846" x="-87.064545">32 MB</tspan></text>
+       </g>
+       <g id="g5460" transform="translate(0.654252, 43.2672)">
+        <rect id="rect5462" stroke-linejoin="miter" stroke-dasharray="none" fill-rule="evenodd" height="36.5" width="66.5" stroke="#000" stroke-linecap="butt" stroke-miterlimit="4" y="148" x="-120" stroke-width="2" fill="#afc6e9"/>
+        <text id="text5464" style="text-anchor:middle;text-align:center;" xml:space="preserve" line-height="100%" y="163.77846" x="-87.064545" fill="#000000"><tspan id="tspan5466" style="writing-mode:lr-tb;text-anchor:middle;text-align:center;" line-height="100%" y="163.77846" x="-87.064545">PP</tspan><tspan id="tspan5468" style="writing-mode:lr-tb;text-anchor:middle;text-align:center;" line-height="100%" y="177.77846" x="-87.064545">32 MB</tspan></text>
+       </g>
+       <g id="g5470" transform="translate(0.654252, 86.5345)">
+        <rect id="rect5472" stroke-linejoin="miter" stroke-dasharray="none" fill-rule="evenodd" height="36.5" width="66.5" stroke="#000" stroke-linecap="butt" stroke-miterlimit="4" y="148" x="-120" stroke-width="2" fill="#afc6e9"/>
+        <text id="text5474" style="text-anchor:middle;text-align:center;" xml:space="preserve" line-height="100%" y="163.77846" x="-87.064545" fill="#000000"><tspan id="tspan5476" style="writing-mode:lr-tb;text-anchor:middle;text-align:center;" line-height="100%" y="163.77846" x="-87.064545">PP</tspan><tspan id="tspan5478" style="writing-mode:lr-tb;text-anchor:middle;text-align:center;" line-height="100%" y="177.77846" x="-87.064545">32 MB</tspan></text>
+       </g>
+      </g>
+      <g id="g5480" transform="translate(-2, 0.133627)">
+       <g id="g5482" transform="translate(0.654252)">
+        <rect id="rect5484" stroke-linejoin="miter" stroke-dasharray="none" fill-rule="evenodd" height="36.5" width="66.5" stroke="#000" stroke-linecap="butt" stroke-miterlimit="4" y="148" x="-120" stroke-width="2" fill="#afc6e9"/>
+        <text id="text5486" style="text-anchor:middle;text-align:center;" xml:space="preserve" line-height="100%" y="163.77846" x="-87.064545" fill="#000000"><tspan id="tspan5488" style="writing-mode:lr-tb;text-anchor:middle;text-align:center;" line-height="100%" y="163.77846" x="-87.064545">PP</tspan><tspan id="tspan5490" style="writing-mode:lr-tb;text-anchor:middle;text-align:center;" line-height="100%" y="177.77846" x="-87.064545">32 MB</tspan></text>
+       </g>
+       <g id="g5492" transform="translate(0.654252, 43.2672)">
+        <rect id="rect5494" stroke-linejoin="miter" stroke-dasharray="none" fill-rule="evenodd" height="36.5" width="66.5" stroke="#000" stroke-linecap="butt" stroke-miterlimit="4" y="148" x="-120" stroke-width="2" fill="#afc6e9"/>
+        <text id="text5496" style="text-anchor:middle;text-align:center;" xml:space="preserve" line-height="100%" y="163.77846" x="-87.064545" fill="#000000"><tspan id="tspan5498" style="writing-mode:lr-tb;text-anchor:middle;text-align:center;" line-height="100%" y="163.77846" x="-87.064545">PP</tspan><tspan id="tspan5500" style="writing-mode:lr-tb;text-anchor:middle;text-align:center;" line-height="100%" y="177.77846" x="-87.064545">32 MB</tspan></text>
+       </g>
+       <g id="g5502" transform="translate(0.654252, 86.5345)">
+        <rect id="rect5504" stroke-linejoin="miter" stroke-dasharray="none" fill-rule="evenodd" height="36.5" width="66.5" stroke="#000" stroke-linecap="butt" stroke-miterlimit="4" y="148" x="-120" stroke-width="2" fill="#afc6e9"/>
+        <text id="text5506" style="text-anchor:middle;text-align:center;" xml:space="preserve" line-height="100%" y="163.77846" x="-87.064545" fill="#000000"><tspan id="tspan5508" style="writing-mode:lr-tb;text-anchor:middle;text-align:center;" line-height="100%" y="163.77846" x="-87.064545">PP</tspan><tspan id="tspan5510" style="writing-mode:lr-tb;text-anchor:middle;text-align:center;" line-height="100%" y="177.77846" x="-87.064545">32 MB</tspan></text>
+       </g>
+      </g>
+      <g id="g5512" transform="translate(75.6543, 0.133627)">
+       <g id="g5514" transform="translate(0.654252)">
+        <rect id="rect5516" stroke-linejoin="miter" stroke-dasharray="none" fill-rule="evenodd" height="36.5" width="66.5" stroke="#000" stroke-linecap="butt" stroke-miterlimit="4" y="148" x="-120" stroke-width="2" fill="#afc6e9"/>
+        <text id="text5518" style="text-anchor:middle;text-align:center;" xml:space="preserve" line-height="100%" y="163.77846" x="-87.064545" fill="#000000"><tspan id="tspan5520" style="writing-mode:lr-tb;text-anchor:middle;text-align:center;" line-height="100%" y="163.77846" x="-87.064545">PP</tspan><tspan id="tspan5522" style="writing-mode:lr-tb;text-anchor:middle;text-align:center;" line-height="100%" y="177.77846" x="-87.064545">32 MB</tspan></text>
+       </g>
+       <g id="g5524" transform="translate(0.654252, 43.2672)">
+        <rect id="rect5526" stroke-linejoin="miter" stroke-dasharray="none" fill-rule="evenodd" height="36.5" width="66.5" stroke="#000" stroke-linecap="butt" stroke-miterlimit="4" y="148" x="-120" stroke-width="2" fill="#afc6e9"/>
+        <text id="text5528" style="text-anchor:middle;text-align:center;" xml:space="preserve" line-height="100%" y="163.77846" x="-87.064545" fill="#000000"><tspan id="tspan5530" style="writing-mode:lr-tb;text-anchor:middle;text-align:center;" line-height="100%" y="163.77846" x="-87.064545">PP</tspan><tspan id="tspan5532" style="writing-mode:lr-tb;text-anchor:middle;text-align:center;" line-height="100%" y="177.77846" x="-87.064545">32 MB</tspan></text>
+       </g>
+       <g id="g5534" transform="translate(0.654252, 86.5345)">
+        <rect id="rect5536" stroke-linejoin="miter" stroke-dasharray="none" fill-rule="evenodd" height="36.5" width="66.5" stroke="#000" stroke-linecap="butt" stroke-miterlimit="4" y="148" x="-120" stroke-width="2" fill="#afc6e9"/>
+        <text id="text5538" style="text-anchor:middle;text-align:center;" xml:space="preserve" line-height="100%" y="163.77846" x="-87.064545" fill="#000000"><tspan id="tspan5540" style="writing-mode:lr-tb;text-anchor:middle;text-align:center;" line-height="100%" y="163.77846" x="-87.064545">PP</tspan><tspan id="tspan5542" style="writing-mode:lr-tb;text-anchor:middle;text-align:center;" line-height="100%" y="177.77846" x="-87.064545">32 MB</tspan></text>
+       </g>
+      </g>
+     </g>
+    </g>
+   </g>
+   <g id="g5550" transform="translate(353.654, 18.75)">
+    <rect id="rect5552" stroke-linejoin="miter" stroke-dasharray="none" fill-rule="evenodd" height="180" width="166" stroke="#000" stroke-linecap="butt" stroke-miterlimit="4" y="104" x="-131" stroke-width="3" fill="#80b3ff"/>
+    <text id="text5554" xml:space="preserve" line-height="100%" y="123.1068" x="-120.01389" fill="#000000"><tspan id="tspan5556" style="writing-mode:lr-tb;text-anchor:start;text-align:start;" line-height="100%" y="123.1068" x="-120.01389">PV</tspan><tspan id="tspan5558" style="writing-mode:lr-tb;text-anchor:start;text-align:start;" line-height="100%" y="137.1068" x="-120.01389">hdisk3</tspan></text>
+    <g id="g5560" transform="translate(0, 1.5115)">
+     <g id="g5562" transform="translate(-0.691496, -2)">
+      <g id="g5564" transform="translate(-2)">
+       <g id="g5566" transform="translate(0.654252)">
+        <rect id="rect5568" stroke-linejoin="miter" stroke-dasharray="none" fill-rule="evenodd" height="36.5" width="66.5" stroke="#000" stroke-linecap="butt" stroke-miterlimit="4" y="148" x="-120" stroke-width="2" fill="#afc6e9"/>
+        <text id="text5570" style="text-anchor:middle;text-align:center;" xml:space="preserve" line-height="100%" y="163.77846" x="-87.064545" fill="#000000"><tspan id="tspan5572" style="writing-mode:lr-tb;text-anchor:middle;text-align:center;" line-height="100%" y="163.77846" x="-87.064545">PP</tspan><tspan id="tspan5574" style="writing-mode:lr-tb;text-anchor:middle;text-align:center;" line-height="100%" y="177.77846" x="-87.064545">32 MB</tspan></text>
+       </g>
+       <g id="g5576" transform="translate(0.654252, 43.2672)">
+        <rect id="rect5578" stroke-linejoin="miter" stroke-dasharray="none" fill-rule="evenodd" height="36.5" width="66.5" stroke="#000" stroke-linecap="butt" stroke-miterlimit="4" y="148" x="-120" stroke-width="2" fill="#afc6e9"/>
+        <text id="text5580" style="text-anchor:middle;text-align:center;" xml:space="preserve" line-height="100%" y="163.77846" x="-87.064545" fill="#000000"><tspan id="tspan5582" style="writing-mode:lr-tb;text-anchor:middle;text-align:center;" line-height="100%" y="163.77846" x="-87.064545">PP</tspan><tspan id="tspan5584" style="writing-mode:lr-tb;text-anchor:middle;text-align:center;" line-height="100%" y="177.77846" x="-87.064545">32 MB</tspan></text>
+       </g>
+       <g id="g5586" transform="translate(0.654252, 86.5345)">
+        <rect id="rect5588" stroke-linejoin="miter" stroke-dasharray="none" fill-rule="evenodd" height="36.5" width="66.5" stroke="#000" stroke-linecap="butt" stroke-miterlimit="4" y="148" x="-120" stroke-width="2" fill="#afc6e9"/>
+        <text id="text5590" style="text-anchor:middle;text-align:center;" xml:space="preserve" line-height="100%" y="163.77846" x="-87.064545" fill="#000000"><tspan id="tspan5592" style="writing-mode:lr-tb;text-anchor:middle;text-align:center;" line-height="100%" y="163.77846" x="-87.064545">PP</tspan><tspan id="tspan5594" style="writing-mode:lr-tb;text-anchor:middle;text-align:center;" line-height="100%" y="177.77846" x="-87.064545">32 MB</tspan></text>
+       </g>
+      </g>
+      <g id="g5596" transform="translate(-2, 0.133627)">
+       <g id="g5598" transform="translate(0.654252)">
+        <rect id="rect5600" stroke-linejoin="miter" stroke-dasharray="none" fill-rule="evenodd" height="36.5" width="66.5" stroke="#000" stroke-linecap="butt" stroke-miterlimit="4" y="148" x="-120" stroke-width="2" fill="#afc6e9"/>
+        <text id="text5602" style="text-anchor:middle;text-align:center;" xml:space="preserve" line-height="100%" y="163.77846" x="-87.064545" fill="#000000"><tspan id="tspan5604" style="writing-mode:lr-tb;text-anchor:middle;text-align:center;" line-height="100%" y="163.77846" x="-87.064545">PP</tspan><tspan id="tspan5606" style="writing-mode:lr-tb;text-anchor:middle;text-align:center;" line-height="100%" y="177.77846" x="-87.064545">32 MB</tspan></text>
+       </g>
+       <g id="g5608" transform="translate(0.654252, 43.2672)">
+        <rect id="rect5610" stroke-linejoin="miter" stroke-dasharray="none" fill-rule="evenodd" height="36.5" width="66.5" stroke="#000" stroke-linecap="butt" stroke-miterlimit="4" y="148" x="-120" stroke-width="2" fill="#afc6e9"/>
+        <text id="text5612" style="text-anchor:middle;text-align:center;" xml:space="preserve" line-height="100%" y="163.77846" x="-87.064545" fill="#000000"><tspan id="tspan5614" style="writing-mode:lr-tb;text-anchor:middle;text-align:center;" line-height="100%" y="163.77846" x="-87.064545">PP</tspan><tspan id="tspan5616" style="writing-mode:lr-tb;text-anchor:middle;text-align:center;" line-height="100%" y="177.77846" x="-87.064545">32 MB</tspan></text>
+       </g>
+       <g id="g5618" transform="translate(0.654252, 86.5345)">
+        <rect id="rect5620" stroke-linejoin="miter" stroke-dasharray="none" fill-rule="evenodd" height="36.5" width="66.5" stroke="#000" stroke-linecap="butt" stroke-miterlimit="4" y="148" x="-120" stroke-width="2" fill="#afc6e9"/>
+        <text id="text5622" style="text-anchor:middle;text-align:center;" xml:space="preserve" line-height="100%" y="163.77846" x="-87.064545" fill="#000000"><tspan id="tspan5624" style="writing-mode:lr-tb;text-anchor:middle;text-align:center;" line-height="100%" y="163.77846" x="-87.064545">PP</tspan><tspan id="tspan5626" style="writing-mode:lr-tb;text-anchor:middle;text-align:center;" line-height="100%" y="177.77846" x="-87.064545">32 MB</tspan></text>
+       </g>
+      </g>
+      <g id="g5628" transform="translate(75.6543, 0.133627)">
+       <g id="g5630" transform="translate(0.654252)">
+        <rect id="rect5632" stroke-linejoin="miter" stroke-dasharray="none" fill-rule="evenodd" height="36.5" width="66.5" stroke="#000" stroke-linecap="butt" stroke-miterlimit="4" y="148" x="-120" stroke-width="2" fill="#afc6e9"/>
+        <text id="text5634" style="text-anchor:middle;text-align:center;" xml:space="preserve" line-height="100%" y="163.77846" x="-87.064545" fill="#000000"><tspan id="tspan5636" style="writing-mode:lr-tb;text-anchor:middle;text-align:center;" line-height="100%" y="163.77846" x="-87.064545">PP</tspan><tspan id="tspan5638" style="writing-mode:lr-tb;text-anchor:middle;text-align:center;" line-height="100%" y="177.77846" x="-87.064545">32 MB</tspan></text>
+       </g>
+       <g id="g5640" transform="translate(0.654252, 43.2672)">
+        <rect id="rect5642" stroke-linejoin="miter" stroke-dasharray="none" fill-rule="evenodd" height="36.5" width="66.5" stroke="#000" stroke-linecap="butt" stroke-miterlimit="4" y="148" x="-120" stroke-width="2" fill="#afc6e9"/>
+        <text id="text5644" style="text-anchor:middle;text-align:center;" xml:space="preserve" line-height="100%" y="163.77846" x="-87.064545" fill="#000000"><tspan id="tspan5646" style="writing-mode:lr-tb;text-anchor:middle;text-align:center;" line-height="100%" y="163.77846" x="-87.064545">PP</tspan><tspan id="tspan5648" style="writing-mode:lr-tb;text-anchor:middle;text-align:center;" line-height="100%" y="177.77846" x="-87.064545">32 MB</tspan></text>
+       </g>
+       <g id="g5650" transform="translate(0.654252, 86.5345)">
+        <rect id="rect5652" stroke-linejoin="miter" stroke-dasharray="none" fill-rule="evenodd" height="36.5" width="66.5" stroke="#000" stroke-linecap="butt" stroke-miterlimit="4" y="148" x="-120" stroke-width="2" fill="#afc6e9"/>
+        <text id="text5654" style="text-anchor:middle;text-align:center;" xml:space="preserve" line-height="100%" y="163.77846" x="-87.064545" fill="#000000"><tspan id="tspan5656" style="writing-mode:lr-tb;text-anchor:middle;text-align:center;" line-height="100%" y="163.77846" x="-87.064545">PP</tspan><tspan id="tspan5658" style="writing-mode:lr-tb;text-anchor:middle;text-align:center;" line-height="100%" y="177.77846" x="-87.064545">32 MB</tspan></text>
+       </g>
+      </g>
+     </g>
+    </g>
+   </g>
+   <text id="text5660" xml:space="preserve" y="99.824455" x="-133.92117" fill="#000000"><tspan id="tspan5662" style="writing-mode:lr-tb;text-anchor:start;text-align:start;" line-height="100%" y="99.824455" x="-133.92117">VG</tspan><tspan id="tspan5664" style="writing-mode:lr-tb;text-anchor:start;text-align:start;" line-height="100%" y="113.82446" x="-133.92117">myvg</tspan></text>
+   <path id="rect5666" stroke-linejoin="miter" d="M64.7,533v86h0.4l24.4,52,79.5,1,51-53v-44h98v-42h-253z" fill-opacity="0.42489271000000001" transform="translate(-196.533, -326.46)" stroke="#000" stroke-miterlimit="4" stroke-dasharray="none" stroke-width="1.99198616000000000" fill="#0b1728"/>
+   <g id="g5683" transform="translate(-3.34575, 233.091)">
+    <rect id="rect5685" stroke-linejoin="miter" stroke-dasharray="none" fill-rule="evenodd" height="48.6" width="81.6" stroke="#000" stroke-linecap="butt" stroke-miterlimit="4" y="111" x="-104" stroke-width="2" fill="#afc6e9"/>
+    <text id="text5687" xml:space="preserve" line-height="100%" y="131.1068" x="-92.013893" fill="#000000"><tspan id="tspan5795" style="writing-mode:lr-tb;text-anchor:start;text-align:start;" line-height="100%" y="131.1068" x="-92.013893">LV</tspan><tspan id="tspan5799" style="writing-mode:lr-tb;text-anchor:start;text-align:start;" line-height="100%" y="145.1068" x="-92.013893">/dev/hlv</tspan></text>
+   </g>
+   <path id="path5824" stroke-linejoin="miter" d="M381,206l1,83,32,54h-81l-29-54,1-83h76z" fill-opacity="0.42489271000000001" stroke="#000" stroke-miterlimit="4" stroke-dasharray="none" stroke-width="1.95737183000000000" fill="#0b1728"/>
+   <g id="g5826" transform="translate(436.654, 232.091)">
+    <rect id="rect5828" stroke-linejoin="miter" stroke-dasharray="none" fill-rule="evenodd" height="48.6" width="81.6" stroke="#000" stroke-linecap="butt" stroke-miterlimit="4" y="111" x="-104" stroke-width="2" fill="#afc6e9"/>
+    <text id="text5830" xml:space="preserve" line-height="100%" y="131.1068" x="-92.013893" fill="#000000"><tspan id="tspan5832" style="writing-mode:lr-tb;text-anchor:start;text-align:start;" line-height="100%" y="131.1068" x="-92.013893">LV</tspan><tspan id="tspan5834" style="writing-mode:lr-tb;text-anchor:start;text-align:start;" line-height="100%" y="145.1068" x="-92.013893">/dev/data</tspan></text>
+   </g>
+   <path id="path5836" stroke-linejoin="miter" d="M200,249v46l32,48-81,2-25-49v-47h74z" fill-opacity="0.42489271000000001" stroke="#000" stroke-miterlimit="4" stroke-dasharray="none" stroke-width="1.65405190000000000" fill="#0b1728"/>
+   <g id="g5838" transform="translate(254.857, 233.091)">
+    <rect id="rect5840" stroke-linejoin="miter" stroke-dasharray="none" fill-rule="evenodd" height="48.6" width="81.6" stroke="#000" stroke-linecap="butt" stroke-miterlimit="4" y="111" x="-104" stroke-width="2" fill="#afc6e9"/>
+    <text id="text5842" xml:space="preserve" line-height="100%" y="131.1068" x="-92.013893" fill="#000000"><tspan id="tspan5844" style="writing-mode:lr-tb;text-anchor:start;text-align:start;" line-height="100%" y="131.1068" x="-92.013893">LV</tspan><tspan id="tspan5846" style="writing-mode:lr-tb;text-anchor:start;text-align:start;" line-height="100%" y="145.1068" x="-92.013893">/dev/srvlv</tspan></text>
+   </g>
+   <g id="g5848" transform="translate(-5.34574, 313)">
+    <g id="g5862" transform="translate(2, -32)">
+     <rect id="rect5850" stroke-linejoin="miter" stroke-dasharray="none" fill-rule="evenodd" height="48.6" width="81.6" stroke="#000" stroke-linecap="butt" stroke-miterlimit="4" y="111" x="-104" stroke-width="2" fill="#5f8dd3"/>
+     <text id="text5852" xml:space="preserve" line-height="100%" y="131.1068" x="-92.013893" fill="#000000"><tspan id="tspan5856" style="writing-mode:lr-tb;text-anchor:start;text-align:start;" line-height="100%" y="131.1068" x="-92.013893">FS</tspan><tspan id="tspan5860" style="writing-mode:lr-tb;text-anchor:start;text-align:start;" line-height="100%" y="145.1068" x="-92.013893">jfs</tspan></text>
+    </g>
+    <g id="g5868" transform="translate(260, -32)">
+     <rect id="rect5870" stroke-linejoin="miter" stroke-dasharray="none" fill-rule="evenodd" height="48.6" width="81.6" stroke="#000" stroke-linecap="butt" stroke-miterlimit="4" y="111" x="-104" stroke-width="2" fill="#5f8dd3"/>
+     <text id="text5872" xml:space="preserve" line-height="100%" y="131.1068" x="-92.013893" fill="#000000"><tspan id="tspan5874" style="writing-mode:lr-tb;text-anchor:start;text-align:start;" line-height="100%" y="131.1068" x="-92.013893">FS</tspan><tspan id="tspan5876" style="writing-mode:lr-tb;text-anchor:start;text-align:start;" line-height="100%" y="145.1068" x="-92.013893">ext3</tspan></text>
+    </g>
+    <g id="g5878" transform="translate(442, -33)">
+     <rect id="rect5880" stroke-linejoin="miter" stroke-dasharray="none" fill-rule="evenodd" height="48.6" width="81.6" stroke="#000" stroke-linecap="butt" stroke-miterlimit="4" y="111" x="-104" stroke-width="2" fill="#5f8dd3"/>
+     <text id="text5882" xml:space="preserve" line-height="100%" y="131.1068" x="-92.013893" fill="#000000"><tspan id="tspan5884" style="writing-mode:lr-tb;text-anchor:start;text-align:start;" line-height="100%" y="131.1068" x="-92.013893">FS</tspan><tspan id="tspan5886" style="writing-mode:lr-tb;text-anchor:start;text-align:start;" line-height="100%" y="145.1068" x="-92.013893">jfs2</tspan></text>
+    </g>
+    <g id="g5888" transform="translate(2, 15.5)">
+     <rect id="rect5890" stroke-linejoin="miter" stroke-dasharray="none" fill-rule="evenodd" height="48.6" width="81.6" stroke="#000" stroke-linecap="butt" stroke-miterlimit="4" y="111" x="-104" stroke-width="2" fill="#2c5aa0"/>
+     <text id="text5892" xml:space="preserve" line-height="100%" y="131.1068" x="-92.013893" fill="#000000"><tspan id="tspan5894" style="writing-mode:lr-tb;text-anchor:start;text-align:start;" line-height="100%" y="131.1068" x="-92.013893">MP</tspan><tspan id="tspan5896" style="writing-mode:lr-tb;text-anchor:start;text-align:start;" line-height="100%" y="145.1068" x="-92.013893">/home/</tspan></text>
+    </g>
+    <g id="g5898" transform="translate(260, 15.5)">
+     <rect id="rect5900" stroke-linejoin="miter" stroke-dasharray="none" fill-rule="evenodd" height="48.6" width="81.6" stroke="#000" stroke-linecap="butt" stroke-miterlimit="4" y="111" x="-104" stroke-width="2" fill="#2c5aa0"/>
+     <text id="text5902" xml:space="preserve" line-height="100%" y="131.1068" x="-92.013893" fill="#000000"><tspan id="tspan5904" style="writing-mode:lr-tb;text-anchor:start;text-align:start;" line-height="100%" y="131.1068" x="-92.013893">MP</tspan><tspan id="tspan5906" style="writing-mode:lr-tb;text-anchor:start;text-align:start;" line-height="100%" y="145.1068" x="-92.013893">/var/www</tspan></text>
+    </g>
+    <g id="g5908" transform="translate(442, 14.5)">
+     <rect id="rect5910" stroke-linejoin="miter" stroke-dasharray="none" fill-rule="evenodd" height="48.6" width="81.6" stroke="#000" stroke-linecap="butt" stroke-miterlimit="4" y="111" x="-104" stroke-width="2" fill="#2c5aa0"/>
+     <text id="text5912" xml:space="preserve" line-height="100%" y="131.1068" x="-92.013893" fill="#000000"><tspan id="tspan5914" style="writing-mode:lr-tb;text-anchor:start;text-align:start;" line-height="100%" y="131.1068" x="-92.013893">MP</tspan><tspan id="tspan5916" style="writing-mode:lr-tb;text-anchor:start;text-align:start;" line-height="100%" y="145.1068" x="-92.013893">/data/</tspan></text>
+    </g>
+   </g>
+   <text id="text5942" xml:space="preserve" y="505.92017" x="148.84445" fill="#000000"><tspan id="tspan5944" style="writing-mode:lr-tb;text-anchor:start;text-align:start;" line-height="100%" y="505.92017" x="148.84445">ls /var/www</tspan><tspan id="tspan5950" style="writing-mode:lr-tb;text-anchor:start;text-align:start;" line-height="100%" y="519.92017" x="148.84445">example.org</tspan><tspan id="tspan5963" style="writing-mode:lr-tb;text-anchor:start;text-align:start;" line-height="100%" y="533.92017" x="148.84445">foo.org</tspan><tspan id="tspan5965" style="writing-mode:lr-tb;text-anchor:start;text-align:start;" line-height="100%" y="547.92017" x="148.84445">localhost</tspan><tspan id="tspan5952" style="writing-mode:lr-tb;text-anchor:start;text-align:start;" line-height="100%" y="561.92017" x="148.84445"/></text>
+   <text id="text5967" xml:space="preserve" y="505.92017" x="337.31906" fill="#000000"><tspan id="tspan5969" style="writing-mode:lr-tb;text-anchor:start;text-align:start;" line-height="100%" y="505.92017" x="337.31906">ls /data</tspan><tspan id="tspan5975" style="writing-mode:lr-tb;text-anchor:start;text-align:start;" line-height="100%" y="519.92017" x="337.31906">notizen.txt</tspan><tspan id="tspan5984" style="writing-mode:lr-tb;text-anchor:start;text-align:start;" line-height="100%" y="533.92017" x="337.31906">startsrv.sh</tspan><tspan id="tspan5986" style="writing-mode:lr-tb;text-anchor:start;text-align:start;" line-height="100%" y="547.92017" x="337.31906">foo.bar</tspan><tspan id="tspan5977" style="writing-mode:lr-tb;text-anchor:start;text-align:start;" line-height="100%" y="561.92017" x="337.31906"/></text>
+   <text id="text5918" xml:space="preserve" y="505.91333" x="-109.15555" fill="#000000"><tspan id="tspan5930" style="writing-mode:lr-tb;text-anchor:start;text-align:start;" line-height="100%" y="505.91333" x="-109.15555">ls /home</tspan><tspan id="tspan5934" style="writing-mode:lr-tb;text-anchor:start;text-align:start;" line-height="100%" y="519.91333" x="-109.15555">user01</tspan><tspan id="tspan5936" style="writing-mode:lr-tb;text-anchor:start;text-align:start;" line-height="100%" y="533.91333" x="-109.15555">user02</tspan><tspan id="tspan5928" style="writing-mode:lr-tb;text-anchor:start;text-align:start;" line-height="100%" y="547.91333" x="-109.15555">user03</tspan></text>
+   <g id="g6035" transform="translate(-44, -1.6811)">
+    <rect id="rect6025" fill-opacity="0.425" height="99" width="156" y="565" x="-116" fill="#5f8dd3"/>
+    <text id="text5996" xml:space="preserve" line-height="100%" y="583.90991" x="-110.15555" fill="#000000"><tspan id="tspan6004" style="writing-mode:lr-tb;text-anchor:start;text-align:start;" line-height="100%" y="583.90991" x="-110.15555">PP: Physical Partition </tspan><tspan id="tspan6015" style="writing-mode:lr-tb;text-anchor:start;text-align:start;" line-height="100%" y="597.90991" x="-110.15555">PV: Physical Volume</tspan><tspan id="tspan6017" style="writing-mode:lr-tb;text-anchor:start;text-align:start;" line-height="100%" y="611.90991" x="-110.15555">VG: Volume Group</tspan><tspan id="tspan6019" style="writing-mode:lr-tb;text-anchor:start;text-align:start;" line-height="100%" y="625.90991" x="-110.15555">LV: Logical Volume</tspan><tspan id="tspan6021" style="writing-mode:lr-tb;text-anchor:start;text-align:start;" line-height="100%" y="639.90991" x="-110.15555">FS: Filesystem</tspan><tspan id="tspan6023" style="writing-mode:lr-tb;text-anchor:start;text-align:start;" line-height="100%" y="653.90991" x="-110.15555">MP: Mounting Point</tspan></text>
+   </g>
+   <text id="text6029" xml:space="preserve" font-size="36px" font-stretch="normal" y="597.82892" x="4.4670529" fill="#000000"><tspan id="tspan6031" y="597.82892" x="4.4670529">LVM</tspan><tspan id="tspan3524" y="597.82892" x="4.4670529"/><tspan id="tspan3526" y="597.82892" x="4.4670529"/><tspan id="tspan3528" y="597.82892" x="4.4670529"/><tspan id="tspan3530" y="597.82892" x="4.4670529"/><tspan id="tspan3532" y="597.82892" x="4.4670529"/></text>
+   <text id="text3520" xml:space="preserve" font-size="36px" font-stretch="normal" y="636.62201" x="4.4670529" fill="#000000"><tspan id="tspan3522" font-stretch="normal" y="636.62201" x="4.4670529">Logical Volume Manager</tspan></text>
+  </g>
+ </g>
+</svg>
