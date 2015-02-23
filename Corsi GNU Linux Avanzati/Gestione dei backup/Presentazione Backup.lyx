@@ -1,0 +1,2089 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass beamer
+\begin_preamble
+\usetheme{Madrid}
+% \usecolortheme{crane}
+% Decommentate se la volete GIALLA
+% http://www.hartwork.org/beamer-theme-matrix/ per esempi di temi e colori
+
+
+%ridefinisce il footer per evitare di includere \institute tra () accanto al nome
+% http://tex.stackexchange.com/questions/35166/how-can-i-remove-the-institute-from-the-author-footline-on-beamer
+\setbeamertemplate{footline}
+{
+  \leavevmode%
+  \hbox{%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
+    \usebeamerfont{author in head/foot}\insertshortauthor%~~\beamer@ifempty{\insertshortinstitute}{}{(\insertshortinstitute)}
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+    \usebeamerfont{title in head/foot}\insertshorttitle
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
+    \usebeamerfont{date in head/foot}\insertshortdate{}\hspace*{2em}
+    \insertframenumber{} / \inserttotalframenumber\hspace*{2ex} 
+  \end{beamercolorbox}}%
+  \vskip0pt%
+}
+
+% hide navigation symbols in the bottom-right corner
+\usenavigationsymbolstemplate{}
+
+% set fonts for nicer pdf view
+\IfFileExists{lmodern.sty}{\usepackage{lmodern}}{}
+
+\setbeamercovered{transparent}
+% or whatever (possibly just delete it)
+
+\titlegraphic{\includegraphics[height=2cm]{poul-logo.pdf}}
+% Ricordate che dovete sempre avere il logo in pdf nella cartella dove avete il documento
+\end_preamble
+\use_default_options false
+\maintain_unincluded_children false
+\language italian
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman times
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 2
+\use_package amssymb 2
+\use_package cancel 1
+\use_package esint 0
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Andate in Documento -> Impostazioni -> Preambolo di LaTeX per dare un occhio
+ ad alcune opzioni
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Title screen
+\end_layout
+
+\begin_layout Title
+Backup
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+opzionale, è quello che viene scritto in basso al centro
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subtitle
+Cosa, Come,Quando e Perchè effettuare il Backup di sistema
+\end_layout
+
+\begin_layout Author
+Andrea Grazioso
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+href{mailto:grazioandre@gmail.com}{
+\backslash
+nolinkurl{grazioandre@gmail.com}}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Andrea Grazioso
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Lo so è un pò brutto, ma non ho trovato di meglio per far vedere autore
+ e mail con link mailto funzionante nella prima pagina.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Date
+Corsi Gnu/Linux Avanzati 2013/2014
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+Corsi Linux Avanzati
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+opzionale, è quello che viene scritto in basso a destra
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+If you wish to uncover everything in a step-wise fashion, uncomment the
+ following command:
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+beamerdefaultoverlayspecification{<+->}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Structuring a talk is a difficult task and the following structure may not
+ be suitable.
+ Here are some rules that apply for this solution: 
+\end_layout
+
+\begin_layout Itemize
+Exactly two or three sections (other than the summary).
+ 
+\end_layout
+
+\begin_layout Itemize
+At *most* three subsections per section.
+ 
+\end_layout
+
+\begin_layout Itemize
+Talk about 30s to 2min per frame.
+ So there should be between about 15 and 30 frames, all told.
+\end_layout
+
+\begin_layout Itemize
+A conference audience is likely to know very little of what you are going
+ to talk about.
+ So *simplify*! 
+\end_layout
+
+\begin_layout Itemize
+In a 20min talk, getting the main ideas across is hard enough.
+ Leave out details, even if it means being less precise than you think necessary.
+ 
+\end_layout
+
+\begin_layout Itemize
+If you omit details that are vital to the proof/implementation, just say
+ so once.
+ Everybody will be happy with that.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Cos'è un backup?
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Cos'è il backup?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Quotation
+There are two kinds of people: those who do regular backups and those who
+ never had a hard drive failure — Unknown.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Standard
+Con il termine 
+\begin_inset Quotes fld
+\end_inset
+
+backup
+\begin_inset Quotes frd
+\end_inset
+
+ si intende replicazione su supporti di memorizzazione di materiale informativo
+ archiviato nella memoria di massa del PC al fine di prevenire perdite di
+ dati a seguito di eventi malevoli o accidentali.
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Cosa minaccia i nostri dati?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Talk Backup media/chart.png
+	width 100page%
+	height 100page%
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Section
+Dove salvare il backup
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Supporti: CD, DVD e Blu-ray
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Eredi dei floppy disk questi supporti ottici sono diventati i principali
+ supporti per la vendita in campo audio, video, videoludico, software.
+\end_layout
+
+\begin_layout Standard
+Si presentano in vari formati ognuno con caratteristiche diverse a seconda
+ del campo di applicazione per cui sono stati progettati
+\end_layout
+
+\begin_layout ExampleBlock
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Pro
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout ExampleBlock
+Ottimali per il backup di dati
+\end_layout
+
+\begin_layout ExampleBlock
+Disponibili in vari formati (CD, DVD Blu-ray)
+\end_layout
+
+\begin_layout ExampleBlock
+Portatili
+\end_layout
+
+\begin_layout ExampleBlock
+Resistenti ai danni superficiali, come al magnetismo e all'azione dell'acqua
+\end_layout
+
+\begin_layout ExampleBlock
+Disponibili riscrivibili e non
+\end_layout
+
+\begin_layout ExampleBlock
+Elevata longevità
+\end_layout
+
+\begin_layout AlertBlock
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Contro
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout AlertBlock
+Necessitano di un drive apposito per essere utilizzati
+\end_layout
+
+\begin_layout AlertBlock
+Urti e scossoni durante la scrittura potrebbero rendere il drive illegibile
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Optical Media Comparison
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Talk Backup media/cd-dvd-bluray-logo.gif
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="5">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Dim Max
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Lifetime
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Min Write Speed
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Max Write Speed
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+CD
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+700MB
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+10
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1x=150Kib/s
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+56x=8400KiB/s
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+DVD
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4.7GB
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+30
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1x=1.32Mib/s
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+24x=32.46MiB/s
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Blu-ray
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+200GB
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+50
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1x=4.29Mib/s
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+16x=68.66MiB/s
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Block
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Nota Bene
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $1MiB=1,024MB$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Supporti: Flash Drive
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Dalle dimensioni ridotte e discreta capacità questi supporti hanno decisamente
+ spopolato nel corso degli ultimi anni grazie alla diffusione dello standard
+ USB; composti esclusivamente da materiale elettronico, è un peccato che
+ siano scarsamente affidabili, ciò non le rende consigliate per il backup
+ di dati.
+ 
+\end_layout
+
+\begin_layout ExampleBlock
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Pro
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout ExampleBlock
+Non necessitano di driver per l'uso
+\end_layout
+
+\begin_layout ExampleBlock
+Buona velocità di trasferimento 
+\end_layout
+
+\begin_layout ExampleBlock
+Estrema versatilità e portabilità
+\end_layout
+
+\begin_layout ExampleBlock
+Resistenti agli urti
+\end_layout
+
+\begin_layout ExampleBlock
+Buona longevità di circa 100'000 cicli di scrittura
+\end_layout
+
+\begin_layout AlertBlock
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Contro
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout AlertBlock
+Costo per GB piùttosto elevato
+\end_layout
+
+\begin_layout AlertBlock
+Facili da perdere
+\end_layout
+
+\begin_layout AlertBlock
+Scarsamente affidabili
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Supporti: Hard Disk
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Costituiti internamente da dischi magnetici in rapida rotazione attorno
+ ad un asse comune, letti da una testina messa in moto da un attuatore questi
+ sistemi sono diventati i principali supporti di memorizzazione di massa
+ in PC, laptop, server e console.
+ Ad oggi il costo di un GB negli hard disk è molto basso, circa $0.05/GB
+ e la loro durata è influenzata dal tipo di utilizzo che ne è stato fatto.
+\end_layout
+
+\begin_layout ExampleBlock
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Pro
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout ExampleBlock
+Elevatissima capacità
+\end_layout
+
+\begin_layout ExampleBlock
+Buona velocità di trasmissione
+\end_layout
+
+\begin_layout ExampleBlock
+Non necessitano di driver esterni per l'uso
+\end_layout
+
+\begin_layout ExampleBlock
+Compatibili con molte interfacce (PATA, SATA, USB, Firewire, eSATA)
+\end_layout
+
+\begin_layout AlertBlock
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Contro
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout AlertBlock
+Necessitano di rimanere il più possibile fermi durante l'uso
+\end_layout
+
+\begin_layout AlertBlock
+Per essere utilizzati al meglio occorre avere conoscenze sulla gestione
+ di dischi e di filesystem
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Supporti: Solid State Drive
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Gli SSD sono gli ultimi tipi di memorie ad essere approdate sul mercato
+ consumer.
+ Composti da circuiti integrati che fungono da memoria per l'archiviazione
+ dei dati in questi dispositivi non c'è nessuna parte in movimento, ciò,
+ unito alle capacità dell'interfaccia SATA li rende estremamente performanti.
+ Purtroppo sono anche maggiormente soggetti a guasti rispetto agli HDD,
+ perciò questi ultimi sono ancora da preferire nel caso si voglia archiviare
+ dati a lungo termine.
+\end_layout
+
+\begin_layout ExampleBlock
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Pro
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout ExampleBlock
+Grande capienza
+\end_layout
+
+\begin_layout ExampleBlock
+Elevatissima velocità di trasferimento
+\end_layout
+
+\begin_layout ExampleBlock
+Resistenti ad urti e movimenti durante l'uso
+\end_layout
+
+\begin_layout ExampleBlock
+Molto leggeri e silenziosi, adatti all'uso laptop
+\end_layout
+
+\begin_layout AlertBlock
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Contro
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout AlertBlock
+Costo elevato
+\end_layout
+
+\begin_layout AlertBlock
+Bassa aspettativa di vita
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Supporti Online: Cloud e Data Storage
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+In alternativa a device fisici di cui occuparsi personalmente si può optare
+ per affidarsi a servizi di archiviazione/backup online che si caratterizzano
+ per funzionalità aggiuntive come ridondanza dei dati in luoghi multipli,
+ protezione dei dati mediante RAID dei dischi, crittografia, banda illimitata
+ in upload, ed un servizio generalmente scalabile.
+ 
+\end_layout
+
+\begin_layout Itemize
+Amazon Glacier
+\end_layout
+
+\begin_layout Itemize
+OVH cloud storage
+\end_layout
+
+\begin_layout Itemize
+Backblaze
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Supporti: Considerazioni Finali
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Alla luce di quanto visto, quale supporto scegliere per il backup dei propri
+ dati?
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Standard
+La risposta non è così banale...
+\end_layout
+
+\end_deeper
+\begin_layout Section
+Come strutturare un backup
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Snapshot di sistema
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+E' il cosidetto Snapshot che salva lo stato esatto del sistema in un particolare
+ istante di tempo.
+\end_layout
+
+\begin_layout Standard
+Lo scopo di questa tecnica è copiare bit per bit tutte le informazioni contenute
+ nel disco sorgente ricostruendo così l'esatta struttura del sistema
+\end_layout
+
+\begin_layout Itemize
+dd
+\end_layout
+
+\begin_layout Itemize
+rsnapshot
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Backup di file
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Da semplice copia di file a backup strutturato, questo metodo è ottimo per
+ gli utenti del sistema che vogliono salvare esclusivamente la propria home
+ come per gli amministratori che vogliono un backup compatto dell'intero
+ sistema.
+\end_layout
+
+\begin_layout Itemize
+tar
+\end_layout
+
+\begin_layout Itemize
+rsync
+\end_layout
+
+\begin_layout Itemize
+duplicity
+\end_layout
+
+\begin_layout Standard
+Possibili aperture a tecniche avanzate
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Metodi Avanzati
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Complementari ai metodi appena visti vi sono tre tecniche avanzate che è
+ indispensabile conoscere
+\end_layout
+
+\begin_layout Description
+Incrementale, aggiunge all'ultimo backup, il materiale ha subito dei cambiamenti
+ dall'ultimo backup o incremento.
+ Più sicuro di quello differenziale ma necessità di attenzione nel ripristino
+\end_layout
+
+\begin_layout Description
+Differenziale, modifica di volta in volta il backup precedente con i file
+ che hanno subito dei cambiamenti.
+ Più veloce dell'incrementale e meno ingombrante, ma mantiene solo l'ultima
+ versione dei file.
+\end_layout
+
+\end_deeper
+\begin_layout Section
+Programmi di backup
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Ultime raccomandazioni
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Cose che dovreste sapere su
+\end_layout
+
+\begin_layout Itemize
+/tmp
+\end_layout
+
+\begin_layout Itemize
+/proc /sys
+\end_layout
+
+\begin_layout Itemize
+/etc /var
+\end_layout
+
+\begin_layout Itemize
+/dev /mnt /media
+\end_layout
+
+\begin_layout Standard
+Alte raccomandazioni
+\end_layout
+
+\begin_layout Itemize
+Attenzione ai vostri file
+\end_layout
+
+\begin_layout Itemize
+Ridurre gli sprechi
+\end_layout
+
+\begin_layout Itemize
+Live media
+\end_layout
+
+\begin_layout Itemize
+Cron
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+dd
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+dd è un utility di copia e conversione dati.
+ Se non altrimenti specificato dd si limita a copiare dati da una sorgente
+ alla destinazione.
+\end_layout
+
+\begin_layout LyX-Code
+dd if=/dev/sdx of=/dev/sdy
+\end_layout
+
+\begin_layout Description
+if - input file, cioè la sorgente 
+\end_layout
+
+\begin_layout Description
+of - output file, cioè la destinazione
+\end_layout
+
+\begin_layout Standard
+quando si usa dd è importante assicurarsi che si opera sulle giuste partizioni/f
+ile poichè questo comando è potenzialmente distruttivo.
+\end_layout
+
+\begin_layout Block
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+nota
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Block
+Per controllare che le partizioni siano quelle corrette ci si può servire
+ di tools come fdisk o gparted.
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Tar
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Graphics
+	filename Talk Backup media/tar.svg
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Inizialmente sviluppato per scrivere dati sequenzialmente (per effettuare
+ backup sui nastri magnetici), tar è ora un utility per riunire in un unico
+ blocco tanti file per distribuzione/archiviazione, preservanso allo stesso
+ tempo informazioni sui permessi e sulla struttura delle cartelle.
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Tar: funzionamento
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Graphics
+	filename Talk Backup media/Targzip.svg
+	scale 15
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout ExampleBlock
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+pro
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout ExampleBlock
+Permette di salvare i file in un unico blocco...
+\end_layout
+
+\begin_layout ExampleBlock
+...ed eventualmente comprimerlo
+\end_layout
+
+\begin_layout ExampleBlock
+Rispetta la struttura delle directory
+\end_layout
+
+\begin_layout ExampleBlock
+Salva i permessi dei file
+\end_layout
+
+\begin_layout AlertBlock
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+contro
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout AlertBlock
+Non conserva informazioni sul filesystem di partenza
+\end_layout
+
+\begin_layout AlertBlock
+Non segue i symlink (Attenzione a /proc e simili)
+\end_layout
+
+\begin_layout AlertBlock
+Utilizzare algoritmi di compressione può richiedere molta potenza di calcolo
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Tar Usage
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+tar -cvpzf /media/BackupStorage/backup01-03-14.tar.gz
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+--exclude=/media / 
+\end_layout
+
+\end_deeper
+\begin_layout Description
+c - crea un nuovo archivio.
+\end_layout
+
+\begin_layout Description
+v - verbose mode.
+\end_layout
+
+\begin_layout Description
+p - preserva i permessi dei file.
+\end_layout
+
+\begin_layout Description
+z - comprime i file usando l'algoritmo di gzip.
+\end_layout
+
+\begin_layout Description
+f - Specifica il path assoluto nel quale salvare il file.
+\end_layout
+
+\begin_layout Description
+/media/BackupStorage/backup01-03-14.tar.gz - Specifica il path in cui salvare
+ il backup.
+\end_layout
+
+\begin_layout Description
+--exclude=/path - Seleziona i percorsi da escludere.
+\end_layout
+
+\begin_layout Description
+/ - directory di partenza per il backup, che include tutte le relative sottocart
+elle.
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Rsync
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Rsync è un comando che permette la copia di file su una destinazione fisica
+ eventualmente tentando di copiare solo le differenze.
+ Noto anche per essere la versione avanzata di cp 
+\end_layout
+
+\begin_layout LyX-Code
+rsync -Pr source destination 
+\end_layout
+
+\begin_layout Description
+P - indica a rsync di mantenere i file parzialmente trasferiti e di mostrare
+ la barra dell'avanzamento durante il processo di trasferimento
+\end_layout
+
+\begin_layout Description
+r - opzione per la ricorsività nelle cartelle
+\end_layout
+
+\begin_layout Standard
+Altre opzioni comuni di utilizzo per rsync:
+\end_layout
+
+\begin_layout LyX-Code
+rsync -aAXv /* /backup_folder --exclude={...}
+\end_layout
+
+\begin_layout LyX-Code
+rsync -avz -e ssh 
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+remoteuser@remotehost:/remote/dir /this/dir/ 
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Utilizzo di ssh
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+dd if=/dev/sda | ssh username@servername.net
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+"dd of=/file"
+\end_layout
+
+\end_deeper
+\begin_layout LyX-Code
+tar -cvpz <...> / | ssh user@backuphost 
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+"( cat > ssh_backup01-03-14.tar.gz )"
+\end_layout
+
+\end_deeper
+\begin_layout Description
+| - pipe, indica che l'output del comando a sinistra verrà reindirizzato
+ al seguente
+\end_layout
+
+\begin_layout Description
+ssh - Secure Shell, tramite il quale ci si collega a 
+\begin_inset Quotes eld
+\end_inset
+
+backuphost
+\begin_inset Quotes erd
+\end_inset
+
+ come 
+\begin_inset Quotes eld
+\end_inset
+
+user
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+cat - utility di concatenamento di file
+\end_layout
+
+\begin_layout Description
+> - reindirizzamento dell'output 
+\end_layout
+
+\begin_layout Description
+ssh-backup01-03-14.tar.gz - destinazione
+\end_layout
+
+\begin_layout Block
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Nota
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Block
+Ricordati di settare chiavi ssh e permessi sia su localhost che su remote
+ host! 
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+rdiff-backup
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+rdiff-backup dir1 user@system::/dir2
+\end_layout
+
+\begin_layout LyX-Code
+     rdiff-backup dir1 dir2
+\end_layout
+
+\begin_layout Standard
+rdiff-backup è un utility in circolazione ormai da molto tempo che permette
+ il backup in locale o anche in remoto utilizzando il metodo incrementale.
+\end_layout
+
+\begin_layout ExampleBlock
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Pro
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout ExampleBlock
+preserva la struttura delle cartelle, links, permessi, attributi estesi,
+ metadati.
+\end_layout
+
+\begin_layout ExampleBlock
+ottimizzato per la rete
+\end_layout
+
+\begin_layout ExampleBlock
+facile da utilizzare
+\end_layout
+
+\begin_layout ExampleBlock
+permette backup incrementale
+\end_layout
+
+\begin_layout ExampleBlock
+mantiene dei log
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Duplicity
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+In merito all' 
+\begin_inset Quotes fld
+\end_inset
+
+eccessiva semplicità
+\begin_inset Quotes frd
+\end_inset
+
+ di rsync sono nati dubbi e perplessità nel momento in cui si è cominciato
+ ad archiviare sui propri PC dati sensibili, ed ecco quindi nascere duplicity,
+ che integra perfettamente tutte le funzionalità di rsync aggiungendo opzioni
+ per la sicurezza e la crittografia.
+\end_layout
+
+\begin_layout ExampleBlock
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Pro
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout ExampleBlock
+Molto semplice da utilizzare
+\end_layout
+
+\begin_layout ExampleBlock
+Permette il backup incrementale
+\end_layout
+
+\begin_layout ExampleBlock
+Ottimizzato per il backup
+\end_layout
+
+\begin_layout ExampleBlock
+Permette di cifrare i dati salvati
+\end_layout
+
+\begin_layout AlertBlock
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Contro
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout AlertBlock
+Pensato per il backup di singole macchine
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Duplicity Usage
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+duplicity /home/me sftp://uid@other.host//some_dir
+\end_layout
+
+\begin_layout Description
+/home/me - percorso da includere nel backup con tutte le relative sottocartelle
+\end_layout
+
+\begin_layout Description
+sftp://uid@other.host//some_dir - destinazione sottoforma di indirizzo sftp,
+ nello specifico ci si collega ad 
+\begin_inset Quotes eld
+\end_inset
+
+other.host
+\begin_inset Quotes erd
+\end_inset
+
+ come user 
+\begin_inset Quotes eld
+\end_inset
+
+uid
+\begin_inset Quotes erd
+\end_inset
+
+, e il backup avrà posto in 
+\begin_inset Quotes eld
+\end_inset
+
+some_dir
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+duplicity restore sftp://uid@other.host//dir /home/me
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Duplicity Usage Extended
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+duplicity -t 3D restore 
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+sftp://uid@other.host//come_dir /home/me
+\end_layout
+
+\end_deeper
+\begin_layout LyX-Code
+
+\end_layout
+
+\begin_layout Description
+xD - specifica la necessità di recuperare dei dati di x giorni prima che,
+ ad esempio, sono stati cancellati per errore e poi è stato lanciato il
+ comando di duplicity per avviare il backup
+\end_layout
+
+\begin_layout Standard
+Infine è possibile eliminare dati che oramai non servono più se avessimo
+ bisogno di spazio per nuovi backup:
+\end_layout
+
+\begin_layout LyX-Code
+duplicity remove-older-than 30D 
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+sftp://uid@other.host//some_dir
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Bacula e Amanda
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Talk Backup media/img7.svg
+	width 70page%
+	height 100pheight%
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Riferimenti
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Backup Handbook
+\end_layout
+
+\begin_layout Itemize
+\begin_inset CommandInset href
+LatexCommand href
+name "http://en.wikipedia.org/"
+target "http://en.wikipedia.org/"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset CommandInset href
+LatexCommand href
+name "https://help.ubuntu.com/community/BackupYourSystem/TAR"
+target "https://help.ubuntu.com/community/BackupYourSystem/TAR"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset CommandInset href
+LatexCommand href
+name "https://wiki.archlinux.org/index.php/"
+target "https://wiki.archlinux.org/index.php/"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset CommandInset href
+LatexCommand href
+name "http://www.tomshardware.com/reviews/usb-3-uas-turbo,3215-2.html"
+target "http://www.tomshardware.com/reviews/usb-3-uas-turbo,3215-2.html"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset CommandInset href
+LatexCommand href
+name "http://data-backup-software-review.toptenreviews.com/removable-backup-media.html"
+target "http://data-backup-software-review.toptenreviews.com/removable-backup-media.html"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset CommandInset href
+LatexCommand href
+name "http://www.nongnu.org/rdiff-backup"
+target "http://www.nongnu.org/rdiff-backup"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Giornalinux 2.0 N14 - 
+\begin_inset CommandInset href
+LatexCommand href
+name "www.poul.org"
+target "www.poul.org"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset CommandInset href
+LatexCommand href
+name "http://www.bacula.org/en/"
+target "http://www.bacula.org/en/"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset CommandInset href
+LatexCommand href
+name "http://amanda.org/"
+target "http://amanda.org/"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset CommandInset href
+LatexCommand href
+name "http://aws.amazon.com"
+target "http://aws.amazon.com"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Unix and Linux system administration handbook, fourth edition, Evi Nemeth,
+ Garth Snyder, Trent R.
+ Hein, Ben Whaley
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Grazie per l'attenzione!
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+
+\size largest
+\lang english
+Grazie per l'attenzione!
+\size default
+
+\begin_inset Graphics
+	filename /home/r4yan2/Documents/POuL/Template Slide POuL/by-sa.svg
+	height 0.9cm
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\size footnotesize
+Queste slides sono licenziate Creative Commons Attribution-ShareAlike 4.0
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\family typewriter
+\lang english
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://www.poul.org
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_body
+\end_document
