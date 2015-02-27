@@ -1,0 +1,4754 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass beamer
+\begin_preamble
+\usetheme{Berkeley}
+\usecolortheme{crane}
+\usepackage{pifont}
+\beamertemplatenavigationsymbolsempty
+\end_preamble
+\use_default_options true
+\begin_modules
+fixltx2e
+\end_modules
+\maintain_unincluded_children false
+\language italian
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman palatino
+\font_sans helvet
+\font_typewriter courier
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
+\papersize default
+\use_geometry true
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language french
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Dischi e Filesystem
+\end_layout
+
+\begin_layout Date
+27 marzo 2013
+\end_layout
+
+\begin_layout Author
+Stefano Sanfilippo
+\end_layout
+
+\begin_layout Institute
+POuL -- Politecnico Open unix Labs, Corsi Linux Avanzati
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+AtBeginSection[]{
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+frame<beamer>{
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+frametitle{Outline}
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+tableofcontents[currentsection,currentsubsection]
+\end_layout
+
+\begin_layout Plain Layout
+
+	}
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Part
+FHS
+\end_layout
+
+\begin_layout Section
+Definizione
+\end_layout
+
+\begin_layout BeginFrame
+FHS I
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+FHS
+\emph default
+ è lo standard per la struttura delle directory nei sistemi Linux.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset CommandInset href
+LatexCommand href
+target "http://www.pathname.com/fhs/"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Estensione della gerachia BSD
+\end_layout
+
+\begin_layout Itemize
+Mantenuto dalla Linux Foundation
+\end_layout
+
+\begin_layout Itemize
+Versione attuale è la 2.3 (29 gennaio 2004)
+\end_layout
+
+\begin_layout Itemize
+Successore di FSSTND 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+14 febbraio 1994
+\end_layout
+
+\end_inset
+
+ e 
+\family typewriter
+hier
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Storia: Anni '70, hier (7), poi 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout BeginFrame
+FHS II
+\end_layout
+
+\begin_layout Standard
+In pratica: definisce 
+\emph on
+dove 
+\emph default
+mettere 
+\emph on
+cosa
+\emph default
+.
+\end_layout
+
+\begin_layout Description
+Regola
+\begin_inset space ~
+\end_inset
+
+I tutti i files sono collocati sotto /, anche se memorizzati su dispositivi
+ fisici o virtuali differenti.
+\end_layout
+
+\begin_layout Description
+Regola
+\begin_inset space ~
+\end_inset
+
+II non tutte le directory specificate devono essere presenti sul sistema.
+\end_layout
+
+\begin_layout Description
+Regola
+\begin_inset space ~
+\end_inset
+
+III tutto è un file e se non è un file allora è un processo.
+ Anche i dispositivi di memoria (cfr.
+ C:
+\backslash
+, D:
+\backslash
+ di Windows) sono files speciali.
+\end_layout
+
+\begin_layout BeginFrame
+FHS III
+\end_layout
+
+\begin_layout Standard
+Le principali distribuzioni sono FHS-compliant, ma presentano alcune piccole
+ deviazioni.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Distribuzione
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Riferimento
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Debian
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+name "debian.org"
+target "http://www.debian.org/doc/debian-policy/ch-opersys.html"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+SuSe
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ 
+\begin_inset CommandInset href
+LatexCommand href
+name "novell.com"
+target "http://www.novell.com/documentation/suse91/suselinux-adminguide/html/ch12.html"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+RHEL/Fedora
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+name "redhat.com"
+target "http://www.redhat.com/docs/en-US/Red_Hat_Enterprise_Linux/html/Deployment_Guide/s1-filesystem-fhs.html"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ubuntu
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+name "ubuntu.com"
+target "https://help.ubuntu.com/community/LinuxFilesystemTreeOverview"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Compliance delle principali distribuzioni
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Colorare link!
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout AlertBlock
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Ma non tutte!!
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout AlertBlock
+Ad esempio, 
+\begin_inset CommandInset href
+LatexCommand href
+name "GoboLinux"
+target "http://en.wikipedia.org/wiki/GoboLinux"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Struttura
+\end_layout
+
+\begin_layout Subsection
+Generale
+\end_layout
+
+\begin_layout BeginFrame
+Gerarchia
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align left
+\begin_inset Tabular
+<lyxtabular version="3" rows="11" columns="2">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top" width="0">
+<column alignment="left" valignment="top" width="0">
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Percorso
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Contenuto
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+/
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+cartella 
+\emph on
+root
+\emph default
+, la 
+\emph on
+radice
+\emph default
+ del filesystem.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+/boot
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+files di avvio: bootloader, kernel e initrd.
+ 
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Qualcuno ha spiegato cosa sono?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+/etc
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+files di configurazione del sistema 
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Non sono ammessi binari in questa cartella, Verificare
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+/home
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+cartelle personali degli utenti
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+/media
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+punto di mount per i filesystem esterni (cd\SpecialChar \ldots{}
+)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+/mnt
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+punto di mount per i filesystem interni temporanei
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+/opt
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+pacchetti software 
+\emph on
+opz
+\emph default
+ionali (concetto elastico)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+/root
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+home dell'utente root 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+perché fuori?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+/usr
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+eseguibili e librerie per le applicazioni utente 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+read only
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+/var
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+dati (mutabili), log e cache di sistema
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout AlertBlock
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout AlertBlock
+/usr e /var contengono delle sottogerarchie.
+\end_layout
+
+\begin_layout Subsection
+Eseguibili
+\end_layout
+
+\begin_layout BeginFrame
+Gerarchia per eseguibili e librerie
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Structure
+status collapsed
+
+\begin_layout Plain Layout
+FHS specifica una gerachia a 
+\emph on
+tre livelli
+\end_layout
+
+\end_inset
+
+
+\emph on
+:
+\emph default
+ eseguibili e librerie possono comparire in tre punti del filesystem:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="2">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top" width="0">
+<column alignment="left" valignment="top" width="0">
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+/
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+essenziali al funzionamento del sistema
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+/usr
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+applicazioni utente
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+/usr/local
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+applicazioni locali (installate a mano\SpecialChar \ldots{}
+)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Structure
+status collapsed
+
+\begin_layout Plain Layout
+In ciascun percorso
+\end_layout
+
+\end_inset
+
+, i binari sono suddivisi in 3 cartelle:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="2">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top" width="0">
+<column alignment="left" valignment="top" width="0">
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\SpecialChar \ldots{}
+/bin
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+binari
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\SpecialChar \ldots{}
+/lib
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+librerie
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\SpecialChar \ldots{}
+/sbin
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+binari di sistema
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout AlertBlock
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Perché separare bin e sbin?
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout AlertBlock
+Di solito, i binari in \SpecialChar \ldots{}
+/sbin richiedono privilegi di amministratore per
+ funzionare.
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Nota poi
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout BeginFrame
+Gerarchia /usr
+\end_layout
+
+\begin_layout Standard
+Oltre a /sbin, /bin e /lib, contiene
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="2">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top" width="0">
+<column alignment="left" valignment="top" width="0">
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+/usr/include
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Include files (cfr.
+ *.h del C/C++)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+/usr/share
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Dati delle applicazioni (immagini, suoni\SpecialChar \ldots{}
+)
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+sottogerarchia?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+/usr/src
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Codice sorgente (es.
+ kernel)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A sua volta, /usr/share contiene cartelle standard (consuetudine, non coperte
+ da FHS
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+controllare
+\end_layout
+
+\end_inset
+
+):
+\end_layout
+
+\begin_layout Itemize
+\SpecialChar \ldots{}
+/icons
+\end_layout
+
+\begin_layout Itemize
+\SpecialChar \ldots{}
+/wallpapers
+\end_layout
+
+\begin_layout Itemize
+\SpecialChar \ldots{}
+/sounds
+\end_layout
+
+\begin_layout Itemize
+\SpecialChar \ldots{}
+/pixmaps (icone e immagini dei programmi)
+\end_layout
+
+\begin_layout Itemize
+\SpecialChar \ldots{}
+/doc
+\end_layout
+
+\begin_layout Standard
+E altre cartelle (specifiche per i singoli programmi, es.
+ \SpecialChar \ldots{}
+/amarok/)
+\end_layout
+
+\begin_layout Subsection
+Speciali
+\end_layout
+
+\begin_layout BeginFrame
+FS speciali
+\end_layout
+
+\begin_layout Standard
+Non sono vere 
+\begin_inset Quotes fld
+\end_inset
+
+cartelle
+\begin_inset Quotes frd
+\end_inset
+
+, ma rappresentazioni virtuali di alcuni aspetti del sistema, nello spirito
+ della Regola III (tutto è un file).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="2">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top" width="0">
+<column alignment="left" valignment="top" width="0">
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+/dev
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+riferimenti ai dispositivi 
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Differenza con ls, 
+\emph on
+file speciali
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+/proc
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+informazioni sui processi e sul kernel 
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+giochino con /proc
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Sono il punto di mount di FS opportuni.
+\end_layout
+
+\begin_layout BeginFrame
+Files temporanei
+\end_layout
+
+\begin_layout Block
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{Regola}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Block
+se vanno persi, il sistema non ne sentirà la mancanza.
+ Sono memorizzati in due posizioni diverse, a seconda del tempo di persistenza
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="2">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top" width="0">
+<column alignment="left" valignment="top" width="0">
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+/tmp
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Cancellata ad ogni riavvio (o anche in corsa)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+/var/tmp
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Persistente
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout BeginFrame
+Files variabili
+\end_layout
+
+\begin_layout Standard
+Dati condivisi delle applicazioni durante il normale funzionamento.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="2">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top" width="0">
+<column alignment="left" valignment="top" width="0">
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+/var/cache
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Cache di sistema (velocizzano applicazioni)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+/var/lib
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Informazioni di stato
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+/var/lock
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Lock files
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+tieni traccia uso delle risorse
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+/var/log
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Log di sistema (demoni, firewall, accessi\SpecialChar \ldots{}
+)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+/var/run
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Informazioni sul sistema (utenti connessi\SpecialChar \ldots{}
+)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+/var/spool
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Coda per le operazioni lunghe (stampa, mail\SpecialChar \ldots{}
+)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout AlertBlock
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{Problema}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout AlertBlock
+/var spesso è montato come una partizione separata, quindi potrebbe non
+ essere accessibile nelle prime fasi di avvio.
+ 
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+No trucchetti come /dev/.systemd
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Deviazioni dallo standard
+\end_layout
+
+\begin_layout BeginFrame
+Deviazioni dallo standard
+\end_layout
+
+\begin_layout Standard
+Le moderne distribuzioni Linux creano altre due directory, non standard:
+\end_layout
+
+\begin_layout Description
+/run come /var/run, ma montata come filesystem virtuale, 
+\begin_inset Flex Alert
+status collapsed
+
+\begin_layout Plain Layout
+subito accessibile
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Description
+/sys contiene i parametri del kernel e le opzioni per configurarne il funzioname
+nto.
+\begin_inset Flex Structure
+status collapsed
+
+\begin_layout Plain Layout
+ NOTA
+\end_layout
+
+\end_inset
+
+: sui vecchi unix, era un collegamento al codice sorgente del kernel.
+\end_layout
+
+\begin_layout Block
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Block
+Alcune distribuzioni (cfr.
+ Archlinux e Fedora) appiattiscono la gerarchia a tre livelli degli eseguibli:
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Gestione facile, monto in lettura
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+/lib, /sbin e /bin potrebbero essere collegamenti a /usr/\SpecialChar \ldots{}
+
+\end_layout
+
+\end_deeper
+\begin_layout Part
+Gestione di filesystem
+\end_layout
+
+\begin_layout Section
+Dispositivi
+\end_layout
+
+\begin_layout BeginFrame
+Dispositivi (file speciali)
+\end_layout
+
+\begin_layout Standard
+Distinguiamo tre tipi diversi di dispositivo:
+\end_layout
+
+\begin_layout Description
+A
+\begin_inset space ~
+\end_inset
+
+blocchi operazioni di I/O per 
+\emph on
+blocchi
+\emph default
+ di dimensione predeterminata (
+\begin_inset Flex Structure
+status collapsed
+
+\begin_layout Plain Layout
+es.
+\end_layout
+
+\end_inset
+
+ hard disk, che si leggono a settori -- p.e.
+ di 4KB)
+\end_layout
+
+\begin_layout Description
+A
+\begin_inset space ~
+\end_inset
+
+caratteri operazioni di I/O per singoli byte (o, comunque, senza blocchi
+ di dimensione fissata) (
+\begin_inset Flex Structure
+status collapsed
+
+\begin_layout Plain Layout
+es.
+\end_layout
+
+\end_inset
+
+ standard output)
+\end_layout
+
+\begin_layout Description
+Speciali sono 
+\begin_inset Quotes fld
+\end_inset
+
+astrazioni
+\begin_inset Quotes frd
+\end_inset
+
+, non necessariamente legate ai dispositivi di I/O.
+\end_layout
+
+\begin_layout Standard
+Per ragioni di sicurezza, i dispositivi possono essere creati solo da root
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+con mknod
+\end_layout
+
+\end_inset
+
+ e non sono direttamente accessibili ai normali utenti.
+\end_layout
+
+\begin_layout Section
+Partizioni
+\end_layout
+
+\begin_layout BeginFrame
+Partizioni
+\end_layout
+
+\begin_layout Standard
+Sono le suddivisioni del disco.
+ Ogni disco deve avere almeno una partizione, sulla quale si può creare
+ il FS.
+ Esistono due schemi di partizioni, che tengono traccia del punto in cui
+ ogni p.
+ inizia e del tipo di FS che contengono:
+\end_layout
+
+\begin_layout Description
+MBR legacy, la struttura dati precede la prima partizione.
+ La tabella delle partizioni descrive al massimo 4 partizioni fisiche, di
+ 2TiB
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+entry a 32bit, settori di 512B
+\end_layout
+
+\end_inset
+
+ l'una al massimo.
+ Sono state aggiunte le partizioni logiche, memorizzate in una lista concatenata
+ (
+\begin_inset Flex Alert
+status collapsed
+
+\begin_layout Plain Layout
+se si danneggia il record di una, si perdono i dati delle seguenti
+\end_layout
+
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Description
+GPT usata su UEFI e su alcuni sistemi BIOS.
+ Innalza i limiti di MBR (128 partizioni, max 8ZiB)
+\end_layout
+
+\begin_layout Standard
+Notare che i due schemi possono coesistere
+\end_layout
+
+\begin_layout Section
+mount e umount
+\end_layout
+
+\begin_layout BeginFrame
+mount
+\end_layout
+
+\begin_layout Itemize
+Ogni dispositivo ha un file speciale corrispondente nella cartella /dev.
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+mostrare con ls
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+I dispositivi sono direttamente leggibili e scrivibili (ad esempio, standard
+ input), ma a volte sono disponibili interfacce di livello superiore, specialmen
+te se la lettura/scrittura avviene secondo un protocollo.
+\end_layout
+
+\begin_layout Itemize
+Per accedere ai dati contenuti in un dispositivo a blocchi (i files), bisogna
+ 
+\begin_inset Quotes fld
+\end_inset
+
+montarlo
+\begin_inset Quotes frd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Il comando per montare i filesystem è 
+\begin_inset Flex Structure
+status collapsed
+
+\begin_layout Plain Layout
+mount
+\end_layout
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+# mount $nome_device $punto_di_mount
+\end_layout
+
+\begin_layout ExampleBlock
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout ExampleBlock
+Eseguire mount senza argomenti mostrerà i FS attualmente montati, con le
+ relative opzioni.
+\end_layout
+
+\begin_layout BeginFrame
+umount
+\end_layout
+
+\begin_layout Standard
+\align left
+È il comando simmetrico: serve a 
+\begin_inset Quotes fld
+\end_inset
+
+smontare
+\begin_inset Quotes frd
+\end_inset
+
+ un dispositivo, in modo da effettuare una rimozione sicura e indolore:
+\begin_inset Newline newline
+\end_inset
+
+
+\family typewriter
+# umount $punto_di_mount
+\begin_inset Newline newline
+\end_inset
+
+# umount $nome_device
+\end_layout
+
+\begin_layout AlertBlock
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout AlertBlock
+Non è un errore, il comando è umount, non u
+\emph on
+n
+\emph default
+mount!
+\end_layout
+
+\begin_layout Section
+fuser
+\end_layout
+
+\begin_layout BeginFrame
+fuser
+\end_layout
+
+\begin_layout Standard
+Non è possibile smontare un filesystem occupato (es.
+ c'è un trasferimento di file in corso), in tal caso si usa 
+\begin_inset Flex Structure
+status collapsed
+
+\begin_layout Plain Layout
+fuser
+\end_layout
+
+\end_inset
+
+ per mostrare il PID dei programmi che stanno usando il dispositivo.
+\end_layout
+
+\begin_layout Description
+#
+\begin_inset space ~
+\end_inset
+
+fuser
+\begin_inset space ~
+\end_inset
+
+/nome/del/file PID dei processi che hanno aperto 
+\emph on
+il file 
+\emph default
+specificato
+\end_layout
+
+\begin_layout Description
+#
+\begin_inset space ~
+\end_inset
+
+fuser
+\begin_inset space ~
+\end_inset
+
+-c
+\begin_inset space ~
+\end_inset
+
+$punto_di_mount PID dei processi che stanno usando un 
+\emph on
+qualsiasi
+\emph default
+ file nel dispositivo montato alla posizione specificata.
+\end_layout
+
+\begin_layout AlertBlock
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{Attenzione!}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout AlertBlock
+I comandi precedenti vanno eseguiti da root, altrimenti non avranno effetto!
+\end_layout
+
+\begin_layout BeginFrame
+df
+\end_layout
+
+\begin_layout Standard
+Indica quanto spazio libero rimane su ogni partizione.
+ Viene spesso usato con l'opzione 
+\emph on
+-h
+\emph default
+, che riporta le misure in unità 
+\begin_inset Quotes fld
+\end_inset
+
+
+\emph on
+h
+\emph default
+uman-readable
+\begin_inset Quotes frd
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+df con e senza -h
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\family typewriter
+$ df
+\begin_inset Newline newline
+\end_inset
+
+$ df -h
+\end_layout
+
+\begin_layout AlertBlock
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout AlertBlock
+Lo spazio libero non corrisponde alla differenza tra la capacità massima
+ e la somma della dimensione dei files! (una parte potrebbe essere riservata).
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+e2fs...
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Notazione
+\end_layout
+
+\begin_layout BeginFrame
+Notazione per i dispositivi I
+\end_layout
+
+\begin_layout Standard
+I dispositivi compaiono nella cartella /dev e hanno 
+\emph on
+nomi convenzionali.
+\end_layout
+
+\begin_layout AlertBlock
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout AlertBlock
+Le notazioni riguardano 
+\emph on
+solo 
+\emph default
+Linux! (es.
+ BSD usa altre convenzioni).
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+es.
+ wd0
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="3">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Dispositivo
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Input
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Output
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+/dev/null
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="left" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Scarta l'input
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+N/A
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+utile per scartare
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+/dev/zero
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="left" valignment="middle" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Flusso continuo di NULL
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+/dev/full
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Quotes fld
+\end_inset
+
+Disco pieno
+\begin_inset Quotes frd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+/dev/random
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="left" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+N/A
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Flusso
+\emph on
+ truly random
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+/dev/urandom
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Flusso pseudorandom
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Dispositivi speciali
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout BeginFrame
+Notazione per i dispositivi II
+\end_layout
+
+\begin_layout Standard
+I dischi PATA/SATA (la quasi totalità di quelli usati attualmente) usano
+ una prefisso 
+\emph on
+sd 
+\emph default
+e una convenzione a due livelli:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename filesystem.svg
+	width 80page%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout AlertBlock
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout AlertBlock
+Su MBR, la prima partizione logica è sempre sdX5
+\end_layout
+
+\begin_layout BeginFrame
+Notazione per i dispositivi III
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0">
+<column alignment="left" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Framebuffer
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+/dev/fb
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+CD-ROM
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+/dev/cdromX
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Lettori Floppy Disk
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+/dev/fdX
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Terminali virtuali
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+/dev/ptX
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Terminali
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+/dev/ttyX, ttyS (seriale), ttyUSBX
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Loop
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+/dev/loopX
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Altri nomi, con X 
+\emph on
+numero progressivo 
+\emph default
+del dispositivo
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+/dev/stdin, /dev/stdout e /dev/stderr sono file!
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Esercizio per verificare che sia così
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Esistono ancora altri nomi, meno usati (legacy o rari), non li tratteremo
+ (e Google è vostro amico ☺)
+\end_layout
+
+\begin_layout Section
+Loop
+\end_layout
+
+\begin_layout BeginFrame
+Loop
+\end_layout
+
+\begin_layout Standard
+Pseudo-device che rende un file accessibile come se fosse un dispositivo
+ a blocchi.
+\end_layout
+
+\begin_layout Itemize
+Utile per montare immagini di dischi o chiavette senza doverle masterizzare.
+\end_layout
+
+\begin_layout Itemize
+Su Linux, mount si occupa di tutto, deve solo essere informato con l'opzione
+ loop:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\family typewriter
+# mount -o loop nome_file punto_di_mount
+\end_layout
+
+\end_deeper
+\begin_layout Section
+UDev
+\end_layout
+
+\begin_layout BeginFrame
+UDev
+\end_layout
+
+\begin_layout Itemize
+Su unix classico, i dispositivi vengono creati con mknod.
+\end_layout
+
+\begin_layout Itemize
+Sui sistemi Linux moderni i dispositivi a blocchi sono creati e gestiti
+ automagicamente da un demone, UDev.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Udev ascolta gli eventi di sistema (uevent, appunto) e reagisce opportunamente.
+\end_layout
+
+\begin_layout Itemize
+È un componente articolato, ma non ce ne occuperemo.
+ 
+\emph on
+Sappiate che esiste
+\emph default
+ 
+\emph on
+e funziona
+\emph default
+.
+\end_layout
+
+\end_deeper
+\begin_layout ExampleBlock
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout ExampleBlock
+Quando attaccate una chiavetta, viene creato automaticamente /dev/sdb1
+\end_layout
+
+\begin_layout Section
+Hard e soft link
+\end_layout
+
+\begin_layout BeginFrame
+Hard e soft link
+\end_layout
+
+\begin_layout Enumerate
+Nel FS, i files sono rappresentati da inode.
+ Un file nel FS è un link ad un inode.
+\end_layout
+
+\begin_layout Enumerate
+Un 
+\begin_inset Flex Structure
+status collapsed
+
+\begin_layout Plain Layout
+hard link
+\end_layout
+
+\end_inset
+
+ crea un altro link allo stesso inode.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Quando cancellate un file, viene rimosso un link all'inode.
+ L'inode viene marcato come cancellabile quando non ci sono più hard link
+ che lo puntano.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Un 
+\begin_inset Flex Structure
+status collapsed
+
+\begin_layout Plain Layout
+soft link
+\end_layout
+
+\end_inset
+
+ è un collegamento ad un altro nome nel FS.
+\end_layout
+
+\begin_layout Enumerate
+Spostare o rinominare un file non influenzerà un hard link, perché è un
+ collegamento all'inode (e i cambiamenti all'inode si riflettono su tutti
+ gli hard link).
+\end_layout
+
+\begin_layout Enumerate
+Gli hard link sono validi solo nello stesso FS, mentre i soft link possono
+ espandarsi ad altri FS (essendo semplici riferimenti al nome del file).
+\end_layout
+
+\begin_layout Section
+fstab
+\end_layout
+
+\begin_layout BeginFrame
+fstab
+\end_layout
+
+\begin_layout Itemize
+fstab elenca tutti i dispositivi disponibili sul sistema e indica come vanno
+ inizializzati o integrati nel FS del sistema.
+\end_layout
+
+\begin_layout Itemize
+È usato ancora per la configurazione dell'hard disk principale e i FS di
+ startup, ma 
+\begin_inset Flex Alert
+status collapsed
+
+\begin_layout Plain Layout
+è stato soppiantato
+\end_layout
+
+\end_inset
+
+ da UDev per i dispositivi esterni.
+\end_layout
+
+\begin_layout ExampleBlock
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Linea di /etc/fstab
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout ExampleBlock
+
+\family typewriter
+\size small
+# device name mpoint fs-type options dump-freq pass-num
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\family typewriter
+\size small
+Esercizio su scrivere fstab
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Organizzazione
+\end_layout
+
+\begin_layout BeginFrame
+Organizzazione
+\end_layout
+
+\begin_layout Standard
+Uno schema su disco usuale prevede più partizioni per gestire meglio i dati.
+ Non ci sono regole assolute -- dipende dall'uso che la distribuzione fa
+ di ciascuna partizione.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="3">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Percorso
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Dimensioni consigliate
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Motivo primo
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+/
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+10~20GB
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Applicazioni installate
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+/boot
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+50MB~100MB
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Numero di kernel
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+/home
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+?
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Utente
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+/var
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5~10G
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Cache varie
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout AlertBlock
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset Quotes fld
+\end_inset
+
+Partizionate
+\begin_inset Quotes frd
+\end_inset
+
+ l'uso del disco! Es.
+ Separare /var/mail limita l'effetto dello spam.
+\end_layout
+
+\begin_layout Itemize
+Se possibile, lasciare un po' di spazio libero per futuri assestamenti.
+\end_layout
+
+\end_deeper
+\begin_layout Section
+S.M.A.R.T.
+\end_layout
+
+\begin_layout BeginFrame
+S.M.A.R.T.
+\end_layout
+
+\begin_layout Standard
+I dischi rigidi (quasi tutti) hanno un sistema di diagnostica interna, detto
+ S\SpecialChar \@.
+M\SpecialChar \@.
+A\SpecialChar \@.
+R\SpecialChar \@.
+T\SpecialChar \@.
+, che fornisce diversi indicatori di affidabilità per anticipare i
+ guasti e salvaguardare i dati.
+ Alcuni dati forniti da S\SpecialChar \@.
+M\SpecialChar \@.
+A\SpecialChar \@.
+R\SpecialChar \@.
+T\SpecialChar \@.
+ sono:
+\end_layout
+
+\begin_layout Itemize
+Temperatura
+\end_layout
+
+\begin_layout Itemize
+Numero di settori danneggiati
+\end_layout
+
+\begin_layout Itemize
+Ore di funzionamento
+\end_layout
+
+\begin_layout Standard
+Possono essere visualizzati con strumenti appositi: 
+\begin_inset Flex Structure
+status collapsed
+
+\begin_layout Plain Layout
+smartctl
+\end_layout
+
+\end_inset
+
+ (CLI), 
+\begin_inset Flex Structure
+status collapsed
+
+\begin_layout Plain Layout
+gsmartcontrol
+\end_layout
+
+\end_inset
+
+ e 
+\begin_inset Flex Structure
+status collapsed
+
+\begin_layout Plain Layout
+palimpsest
+\end_layout
+
+\end_inset
+
+ (grafici).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename palimpsest.png
+	height 20pheight%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Part
+Tipi di Filesystem
+\end_layout
+
+\begin_layout Section
+FS overview
+\end_layout
+
+\begin_layout BeginFrame
+Concetti di base I
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Senza pretesa di coprire ciascun argomento in modo esaustivo, dovete conoscere
+ il significato di alcuni termini
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+Checksumming calcolo di codici di controllo per dati e metadati, dà una
+ certa resistenza alle 
+\begin_inset Quotes fld
+\end_inset
+
+silent corruptions
+\begin_inset Quotes frd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+Deduplicazione mappatura di copie identiche della stessa risorsa sullo stesso
+ blocco (cfr.
+ COW)
+\end_layout
+
+\begin_layout Description
+Copy
+\begin_inset space ~
+\end_inset
+
+on
+\begin_inset space ~
+\end_inset
+
+Write
+\begin_inset space ~
+\end_inset
+
+(COW) creazione 
+\begin_inset Quotes fld
+\end_inset
+
+al volo
+\begin_inset Quotes frd
+\end_inset
+
+ di una copia delle risorse condivise, in caso di modifica unilaterale (duplico
+ solo se necessario).
+\end_layout
+
+\begin_layout BeginFrame
+Concetti di base II
+\end_layout
+
+\begin_layout Description
+Frammentazione Suddivisione di un file in più blocchi o gruppi di blocchi
+ non contigui.
+ Rallenta I/O su dischi a rotazione (obbliga ad un seek), sfrutta meglio
+ lo spazio (tappa i buchi).
+\end_layout
+
+\begin_layout Description
+Deframmentazione Rimozione della f., ottenuta muovendo i blocchi per rendere
+ contiguo il più grande numero possibile (100% limite teorico).
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Solo dischi a rotazione, conta qualcosa su SSD?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+Extent area di memorizzazione contigua (blocchi contigui) riservata per
+ un file.
+ Riduce la frammentazione.
+ 
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Quando si scrive di nuovo sul file, i dati vengono scritti a partire dagli
+ ultimi.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout BeginFrame
+Concetti di base III
+\end_layout
+
+\begin_layout Description
+Journaling scrittura su disco per transazioni (come nei DB) per garantire
+ correttezza e consistenza del FS in caso di cadute di tensione.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Le operazioni (metadati) vengono inserite nel 
+\begin_inset Flex Structure
+status collapsed
+
+\begin_layout Plain Layout
+log
+\end_layout
+
+\end_inset
+
+ (un'area riservata del FS), poi applicate.
+ Ogni successo/fallimento viene registrato.
+ In caso di spegnimento, Linux analizza il log e prende opportune misure.
+\end_layout
+
+\end_deeper
+\begin_layout BeginFrame
+Concetti di base IV
+\end_layout
+
+\begin_layout Description
+Mirroring copia esatta del contenuto del FS: in caso di rottura del disco,
+ potrà essere sostituito e ripristinato.
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Esistono più strumenti
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+Quota quantità massima di spazio sul FS usabile da un utente, gruppo, processo
+ (o una combinazione).
+\end_layout
+
+\begin_layout Description
+Wear
+\begin_inset space ~
+\end_inset
+
+leveling
+\begin_inset space ~
+\end_inset
+
+(TRIM) distribuzione dell'uso delle celle di memoria su un SSD, per bilanciare
+ l'usura della flash.
+ Viene effettuata dall'hardware, ma ha bisogno della collaborazione del
+ SO (che deve sapere e indicare quali blocchi non sono più in uso).
+\end_layout
+
+\begin_layout BeginFrame
+Principali FS
+\end_layout
+
+\begin_layout Standard
+In uso attuale, sono diffusi 5 filesystem:
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+max dimensione
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="9">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size tiny
+Nome
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size tiny
+Stato
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size tiny
+Journal
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size tiny
+COW
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size tiny
+C'sum
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size tiny
+Dedupe
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size tiny
+Defrag
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size tiny
+Mirror
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size tiny
+Quota
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size tiny
+ext4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size tiny
+stabile
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+checkmark
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+~{}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ding{55}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ding{55}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+checkmark
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ding{55}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+checkmark
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size tiny
+btrfs
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size tiny
+\begin_inset Quotes fld
+\end_inset
+
+testing
+\begin_inset Quotes frd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+checkmark
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+checkmark
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+checkmark
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+checkmark
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+~{}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+checkmark
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+~{}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size tiny
+zfs
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size tiny
+stabile
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+checkmark
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+checkmark
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+checkmark
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+checkmark
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+checkmark
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+checkmark
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+checkmark
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size tiny
+vfat
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size tiny
+legacy
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ding{55}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ding{55}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ding{55}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ding{55}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ding{55}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ding{55}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ding{55}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size tiny
+ntfs
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size tiny
+legacy
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+checkmark
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ding{55}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+name "?"
+target "http://serverfault.com/questions/186788/does-windows-have-a-checksumming-filesystem-like-zfs-or-btrfs"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ding{55}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+~{}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+~{}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Richiede DFS
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+checkmark
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+fsck
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout AlertBlock
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout AlertBlock
+VFAT DEVE essere EVITATO su qualsiasi disco fisso, ma è utile per chiavette
+ (compatibile con Windows): no Journal!!
+\end_layout
+
+\begin_layout BeginFrame
+Note
+\end_layout
+
+\begin_layout Enumerate
+ZFS non può essere distribuito assieme al Kernel di Linux per questione
+ di licenza.
+ Va installato a parte.
+\end_layout
+
+\begin_layout Enumerate
+EXT4 è stabile.
+ BTRFS (che lo rimpiazzerà) è dichiarato sperimentale, ma il formato su
+ disco è stabile -- salvo 
+\begin_inset Quotes fld
+\end_inset
+
+bug che rendano la modifica assolutamente necessaria
+\begin_inset Quotes frd
+\end_inset
+
+.
+ Se i dati memorizzati non sono essenziali (es.
+ backup), è consigliato provarlo.
+\end_layout
+
+\begin_layout Enumerate
+BTRFS e ZFS offrono circa le stesse caratteristiche, ma ZFS è nato nel mondo
+ OpenSolaris, BTRFS in quello Linux.
+\end_layout
+
+\begin_layout Enumerate
+Un volume EXT4 può essere convertito in BTRFS: è possibile installare EXT4
+ e, in futuro, convertire.
+\end_layout
+
+\begin_layout Enumerate
+BTRFS e ZFS supportano la compressione trasparente, ma è consigliata solo
+ in sistemi multi-core/CPU, dove l'overhead è difficilmente notato (1 core
+ == NO!)
+\end_layout
+
+\begin_layout Section
+FS virtuali
+\end_layout
+
+\begin_layout BeginFrame
+FS speciali
+\end_layout
+
+\begin_layout Description
+procfs montato in /proc, fornisce informazioni sui processi attivi, sotto
+ forma di pseudo-FS (es.
+ /proc/$PID)
+\end_layout
+
+\begin_layout Description
+sysfs montato in /sys, permette di modificare i parametri del kernel e apprender
+e la configurazione del sistema.
+\end_layout
+
+\begin_layout Description
+tmpfs FS creato nella RAM, utile per /run, /var/lock e altre strutture 
+\begin_inset Quotes fld
+\end_inset
+
+piccole
+\begin_inset Quotes frd
+\end_inset
+
+ (RAM limitata) che hanno bisogno di velocità ma non devono resistere al
+ reboot
+\end_layout
+
+\begin_layout Description
+aufs raggruppa più FS, facendoli apparire come un solo FS virtuale.
+ Successore di unionfs.
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Perché???
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout BeginFrame
+Altri FS
+\end_layout
+
+\begin_layout Description
+squashfs FS compresso in sola lettura.
+ Viene spesso usato nei Live CD, facendo risparmiare spazio.
+\end_layout
+
+\begin_layout Description
+ISO
+\begin_inset space ~
+\end_inset
+
+9660
+\begin_inset space ~
+\end_inset
+
+(e
+\begin_inset space ~
+\end_inset
+
+UDF) FS in sola lettura usato nei CD dati.
+ UDF è il successore (usato nei CD-RW e nei DVD)
+\end_layout
+
+\begin_layout Description
+eCryptfs overlay che supporta la cifratura trasparente a livello di singoli
+ file e path (es.
+ si può abilitare solo per una cartella).
+\end_layout
+
+\begin_layout Part
+Tecnologie
+\end_layout
+
+\begin_layout Section
+LUKS
+\end_layout
+
+\begin_layout BeginFrame
+LUKS
+\end_layout
+
+\begin_layout Standard
+Permette la cifratura del disco.
+ Una partizione LUKS può contenere qualsiasi filesystem, la cifratura avviene
+ al livello dei singoli blocchi (al contrario di eCryptFS).
+\end_layout
+
+\begin_layout Block
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Block
+La modalità di funzionamento consigliata è AES256 (512 bit), XTS-plain64.
+\end_layout
+
+\begin_layout BeginFrame
+Perché cifrare?
+\end_layout
+
+\begin_layout Enumerate
+In caso di furto del laptop, nessuno (CIA?) potrà leggerne il contenuto
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+fotografie, email, etc.
+ sono al sicuro
+\end_layout
+
+\begin_layout Itemize
+account e password salvate pure!
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Niente bisogno di cancellare il disco se dovesse andare in 
+\begin_inset Quotes fld
+\end_inset
+
+manutenzione
+\begin_inset Quotes frd
+\end_inset
+
+ o essere rivenduto.
+\end_layout
+
+\begin_layout Enumerate
+Riduce la possibilità di manomissione criminale
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+injecting limitato al booloader/immagine del kernel.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+In alcuni casi (studi medici, etc.) è un obbligo di Legge.
+\end_layout
+
+\begin_layout Enumerate
+Protegge i dati sui vostri server (probabilmente ospitati in una server
+ farm) da sguardi indiscreti.
+\end_layout
+
+\begin_layout Section
+LVM2
+\end_layout
+
+\begin_layout BeginFrame
+Logical Volume Mapper (LVM2)
+\end_layout
+
+\begin_layout Standard
+Mappa i blocchi fisici di uno o più partizioni fisiche (di tipo LVM, appunto)
+ in un unico spazio di blocchi di partizioni 
+\begin_inset Quotes fld
+\end_inset
+
+virtuali
+\begin_inset Quotes frd
+\end_inset
+
+.
+ La traduzione fisico--virtuale avviene a livello del kernel.
+ Permette quindi di:
+\end_layout
+
+\begin_layout Itemize
+Ridimensionare le partizioni a sistema acceso (dipende anche dal FS)
+\end_layout
+
+\begin_layout Itemize
+Fondere più dischi (partizioni) fisici, creandone uno virtuale di dimensione
+ pari alla somma
+\end_layout
+
+\begin_layout Itemize
+Fare striping, ovvero distribuire i blocchi dei files su più dischi, aumentando
+ il throughput
+\end_layout
+
+\begin_layout Itemize
+Mirroring (snapshotting), indipendentemente dal FS sulle partizioni LVM2.
+\end_layout
+
+\begin_layout Standard
+BTRFS e ZFS offrono nativamente queste caratteristiche, in tal caso l'uso
+ di LVM diventa opzionale.
+\end_layout
+
+\begin_layout Section
+RAID
+\end_layout
+
+\begin_layout BeginFrame
+RAID
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Redundant Array of Independent Disks
+\emph default
+: distribuisce i dati su più dischi facendoli figurare come un unico disco
+ virtuale, in modo che il guasto di un dispositivo danneggi minimamente
+ il contenuto del disco virtuale.
+ Permette di realizzare uno storage persistente.
+ 
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Unito all'hot swap (rimozione e aggiunta di dischi senza spegnere il sistema)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Esistono più configurazioni RAID, identificate da un numero (RAID-1, RAID-3,
+ RAID-5\SpecialChar \ldots{}
+).
+ La distribuzione dei dati viene effettuata a livello di byte o blocco su
+ un numero (minimo) variabile di dischi, dipendente dalla configurazione
+ RAID.
+\end_layout
+
+\begin_layout Block
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Block
+I dischi devono essere della stessa dimensione -- altrimenti viene presa
+ a riferimento la dimensione del più piccolo e lo spazio in eccesso sugli
+ altri è ignorato: spreco.
+\end_layout
+
+\begin_layout Part
+Licenza
+\end_layout
+
+\begin_layout BeginFrame
+Licenza
+\end_layout
+
+\begin_layout Standard
+Questa opera è licenziata sotto i termini della Creative Commons, Attribuzione
+ -- Non commerciale -- Condividi allo stesso modo 3.0 Italia License.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Per una copia della licenza, consultare 
+\begin_inset CommandInset href
+LatexCommand href
+target "http://creativecommons.org/licenses/by-nc-sa/3.0/it/"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename by-nc-sa.eu.svg
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout EndFrame
+
+\end_layout
+
+\end_body
+\end_document
