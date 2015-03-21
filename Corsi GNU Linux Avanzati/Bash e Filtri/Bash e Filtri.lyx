@@ -4,7 +4,8 @@
 \begin_header
 \textclass beamer
 \begin_preamble
-\usetheme{Madrid}
+\usetheme{CambridgeUS}
+\usecolortheme{beaver}
 % or ...
 % set fonts for nicer pdf view
 \IfFileExists{lmodern.sty}{\usepackage{lmodern}}{}
@@ -18,7 +19,7 @@
 \end_preamble
 \use_default_options false
 \maintain_unincluded_children false
-\language english
+\language italian
 \language_package default
 \inputencoding auto
 \fontencoding global
@@ -127,7 +128,7 @@ In principle, this file can be redistributed and/or modified under the terms
 \end_layout
 
 \begin_layout Section*
-Title screen
+Command-line kung-fu
 \end_layout
 
 \begin_layout Title
@@ -159,7 +160,7 @@ Bash, filtri & co.
 \end_layout
 
 \begin_layout Author
-Riccardo Binetti
+Emanuele Santoro
 \begin_inset Newline newline
 \end_inset
 
@@ -171,9 +172,9 @@ status open
 
 
 \backslash
-href{mailto:punkerbino@gmail.com}{
+href{mailto:manu@santoro.tk}{
 \backslash
-nolinkurl{punkerbino@gmail.com}}
+nolinkurl{manu@santoro.tk}}
 \end_layout
 
 \end_inset
@@ -183,7 +184,7 @@ nolinkurl{punkerbino@gmail.com}}
 status open
 
 \begin_layout Plain Layout
-Riccardo Binetti
+Emanuele Santoro
 \end_layout
 
 \end_inset
@@ -192,7 +193,7 @@ Riccardo Binetti
 \end_layout
 
 \begin_layout Date
-Corsi GNU/Linux Avanzati 2014
+Corsi GNU/Linux Avanzati 2015
 \begin_inset Note Note
 status collapsed
 
@@ -213,7 +214,7 @@ Not really informative to the audience, more for people (including yourself)
 status open
 
 \begin_layout Plain Layout
-Corsi Linux Avanzati 2014
+Corsi Linux Avanzati 2015
 \begin_inset Note Note
 status collapsed
 
@@ -338,7 +339,8 @@ A title should summarize the slide in an understandable fashion for anyone
 \end_layout
 
 \begin_layout Standard
-Sì, il terminale viene usato anche nell'era delle GUI stilose
+Anche nell'era delle gui graficose e colorate, usare un interprete di comandi
+ testuale ha i suoi vantaggi
 \end_layout
 
 \begin_layout Pause
@@ -346,17 +348,8 @@ Sì, il terminale viene usato anche nell'era delle GUI stilose
 \end_layout
 
 \begin_layout Itemize
-È agnostico rispetto a distribuzione, ambiente grafico e OS
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-Finché rimaniamo nei sistemi unix-like
-\end_layout
-
-\end_inset
-
-
+Funziona su qualsiasi distribuzione di GNU/Linux, e anche sulla maggior
+ parte dei sistemi non-linux
 \end_layout
 
 \begin_deeper
@@ -376,10 +369,16 @@ Si può usare da remoto e/o su una macchina senza schermo
 
 \end_deeper
 \begin_layout Itemize
-Automatizzazione molto facilitata
+Molto semplice da programmare, ottima per automatizzare compiti ripetitivi
 \end_layout
 
 \begin_deeper
+\begin_layout Itemize
+Essendo un vero e proprio linguaggio di programmazione, è preciso ed affidabile.
+ Se dovete operare in maniera precisa su molti files, è un modo veloce e
+ preciso di operare.
+\end_layout
+
 \begin_layout Pause
 
 \end_layout
@@ -394,7 +393,7 @@ Man
 \end_layout
 
 \begin_layout BeginFrame
-Un comando per domarli tutti
+I have no idea what i'm doing
 \end_layout
 
 \begin_layout Standard
@@ -406,12 +405,12 @@ man
 \end_layout
 
 \begin_layout Itemize
-Se siete in dubbio su cosa faccia un comando, digitate 
+Se incontrate un comando nuovo e/o volete saperne di più sulle funzioni
+ di un comando usate 
 \family typewriter
-man comando
+man
 \family default
-.
- Vi risolverà buona parte dei dubbi e vi risparmierà un po' di "RTFM"
+ (manual)
 \end_layout
 
 \begin_deeper
@@ -476,6 +475,19 @@ p
  per tornare in cima
 \end_layout
 
+\begin_layout Itemize
+Nota: il comportamento preciso della ricerca dipende dal pager in uso (tipicamen
+te 
+\family typewriter
+less
+\family default
+ o 
+\family typewriter
+more
+\family default
+)
+\end_layout
+
 \begin_layout Pause
 
 \end_layout
@@ -498,7 +510,8 @@ q
 \begin_layout Itemize
 
 \family typewriter
-man man
+Se avete dubbi...
+ man man ;)
 \end_layout
 
 \begin_layout Subsection
@@ -556,6 +569,10 @@ cd nomecartella
  è la directory un livello più in su
 \end_layout
 
+\begin_layout Itemize
+~ è la cartella home dell'utente corrente ~<utente> è la home di <utente>
+\end_layout
+
 \begin_layout Pause
 
 \end_layout
@@ -578,7 +595,8 @@ Creiamo qualcosa
 \family typewriter
 touch nomefile
 \family default
- -- crea un file vuoto se non esiste
+ -- crea un file vuoto se non esiste, altrimenti ne aggiorna la data e l'ora
+ dell'ultimo accesso
 \end_layout
 
 \begin_deeper
@@ -750,6 +768,15 @@ shred nomefile
 -u
 \family default
  -- dopo averlo sovrascritto, lo cancella
+\end_layout
+
+\begin_layout Itemize
+-n <k> -- sovrascrive il file k volte invece di tre
+\end_layout
+
+\begin_layout Itemize
+-z -- sovrascrive il file un'ultima volta con degli zeri, per nascondere
+ la rimozione sicura
 \end_layout
 
 \begin_layout Pause
@@ -951,6 +978,21 @@ La history è salvata nel file
  nella home dell'utente
 \end_layout
 
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Il comando 
+\family typewriter
+history
+\family default
+ vi mostra ...
+ la vostra history dei comandi
+\end_layout
+
 \begin_layout BeginFrame
 Domande?
 \end_layout
@@ -967,7 +1009,7 @@ Demo!
 \end_layout
 
 \begin_layout Section
-Editor di testo
+Vi for dummies
 \end_layout
 
 \begin_layout Subsection
@@ -975,19 +1017,21 @@ Introduzione
 \end_layout
 
 \begin_layout BeginFrame
-Scriviamo qualcosa
+Text-editor e le religioni
 \end_layout
 
 \begin_layout Standard
-Dobbiamo poter modificare in qualche modo i nostri file.
-\begin_inset Newline newline
-\end_inset
-
-Text editors to the rescue!
+Nell'amministrazione di sistemi Unix e Unix-compatibili si tende a passare
+ molto tempo usando editor di testo.
 \end_layout
 
 \begin_layout Standard
-Ne vediamo 3 in particolare:
+Viene pertanto naturale abituarsi ad un certo editor, personalizzarlo, renderlo
+ più efficace.
+\end_layout
+
+\begin_layout Standard
+Gli editor principali su i sistemi Unix sono tre:
 \end_layout
 
 \begin_layout Itemize
@@ -999,237 +1043,243 @@ nano
 \begin_layout Itemize
 
 \family typewriter
-vim
+vi
 \end_layout
 
 \begin_layout Itemize
 
 \family typewriter
-emacs
-\end_layout
-
-\begin_layout Subsection
-nano
-\end_layout
-
-\begin_layout BeginFrame
-
-\family typewriter
-nano
-\end_layout
-
-\begin_layout Quotation
-“nano è il miglior text editor del mondo” cit.
- Nessuno
-\end_layout
-
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Presente di default in tutte le maggiori distribuzioni
-\end_layout
-
-\begin_layout Itemize
-Semplice da usare
-\end_layout
-
-\begin_layout Itemize
-Piuttosto basilare
-\end_layout
-
-\begin_layout Itemize
-Avviatelo sempre con l'opzione 
-\family typewriter
--w 
-\family default
-(altrimenti spezza le righe troppo lunghe)
-\end_layout
-
-\begin_layout Itemize
-I comandi sono segnati in basso
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-^X va interpretato come Ctrl+X 
-\end_layout
-
-\end_deeper
-\begin_layout Subsection
-vim
-\end_layout
-
-\begin_layout BeginFrame
-
-\family typewriter
-vim
-\end_layout
-
-\begin_layout Quotation
-
-\size small
-“I've been using Vim for about 2 years now, mostly because I can't figure
- out how to exit it.”
-\end_layout
-
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Editor modale
-\end_layout
-
-\begin_layout Itemize
-I modi di utilizzo base sono: Normal, Insert e Command mode
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Nella modalità Normal (a cui si accede premendo 
-\family typewriter
-Esc
-\family default
-) si può navigare all'interno del file di testo
-\end_layout
-
-\begin_layout Itemize
-Nella modalità Insert (a cui si accede premendo 
-\family typewriter
-i
-\family default
- in modalità Normal) si può modificare il file
-\end_layout
-
-\begin_layout Itemize
-Nella modalità Command (a cui si accede premendo : in modalità Normal) si
- possono inserire comandi o impostazioni per l'editor
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-“Aiuto, ho aperto vim per sbaglio, come esco?”
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-:wq per uscire salvando il file, :q! per uscire senza salvare
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Questo è l'utilizzo base, si può usare in modo più avanzato
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-\begin_inset Flex URL
-status collapsed
-
-\begin_layout Plain Layout
-
-http://www.viemu.com/vi-vim-cheat-sheet.gif
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsection
-Emacs
-\end_layout
-
-\begin_layout BeginFrame
-
-\family typewriter
-emacs
-\end_layout
-
-\begin_layout Quotation
-
-\size small
-“emacs is a great operating system, lacking only a decent editor”
-\end_layout
-
-\begin_layout Pause
-
-\end_layout
-
-\begin_layout Itemize
-GNU Emacs è un ambiente operativo che ha all'interno un interprete Lisp
-\end_layout
-
-\begin_layout Itemize
-C'è una modalità per qualsiasi cosa (dal lettore mp3 allo psicologo)
-\end_layout
-
-\begin_layout Itemize
-Il suo utilizzo si basa prevalentemente su combinazioni di tasti
-\end_layout
-
-\begin_layout Itemize
-È estremamente personalizzabile e scriptabile
-\end_layout
-
-\begin_layout Itemize
-Questa flessibilità si paga con un utilizzo di risorse maggiore
-\end_layout
-
-\begin_layout Subsection
-Quale scegliere
-\end_layout
-
-\begin_layout BeginFrame
-Ma quindi, qual è l'editor migliore?
+GNU Emacs
 \end_layout
 
 \begin_layout Standard
-\align center
-\begin_inset Graphics
-	filename real_programmers.png
-	width 70page%
+Nano è un editor semplice da usare, che offre poche possibilità di personalizzaz
+ione e decisamente poche funzionalità avanzate.
+\end_layout
 
+\begin_layout Standard
+vi e GNU Emacs sono due editor complessi ma molto potenti.
+\end_layout
+
+\begin_layout Subsection
+vi
+\end_layout
+
+\begin_layout BeginFrame
+vi for dummies
+\end_layout
+
+\begin_layout Standard
+Perché imparare ad usare vi, anche se ci piace GNU Emacs, nano, o qualcos'altro?
+\end_layout
+
+\begin_layout Standard
+Senza entrare nelle guerre di religione, vi è l'unico editor che sicuramente
+ troverete in tutti gli Unix che vi troverete ad usare.
+ Infatti la sua presenza è 
+\begin_inset Quotes eld
 \end_inset
 
+imposta
+\begin_inset Quotes erd
+\end_inset
+
+ nella 
+\begin_inset Quotes eld
+\end_inset
+
+Single UNIX specification
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout EndFrame
 
 \end_layout
 
 \begin_layout BeginFrame
-Ma quindi, qual è l'editor migliore?
+editor modale
 \end_layout
 
 \begin_layout Standard
-
-\size large
-Se volete scatenare un flame tra utenti Linux, questa è un'ottima domanda
- da fare.
-\begin_inset Newline newline
+Vi è un editor 
+\begin_inset Quotes eld
 \end_inset
 
+particolare
+\begin_inset Quotes erd
+\end_inset
 
+.
+ 
 \end_layout
 
 \begin_layout Standard
-
-\size large
-Non vi costa niente provarli tutti e scegliere qual è il migliore 
-\shape slanted
-per voi.
-\begin_inset Newline newline
+Vi è un editor 
+\begin_inset Quotes eld
 \end_inset
 
+modale
+\begin_inset Quotes erd
+\end_inset
+
+, nel senso che ha due modalità di funzionamento, e gli stessi tasti si
+ comportano diversamente a seconda della modalità in cui vi trovate.
+\end_layout
+
+\begin_layout Standard
+Le due modalità sono la 
+\begin_inset Quotes eld
+\end_inset
+
+modalità inserimento
+\begin_inset Quotes erd
+\end_inset
+
+ e la 
+\begin_inset Quotes eld
+\end_inset
+
+modalità comandi
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+La modalità predefinita è la modalità comandi.
+ Premendo Esc si torna sempre nella modalità comandi.
+\end_layout
+
+\begin_layout Standard
+Premendo i, a oppure o si entra nella modalità inserimento.
+\end_layout
+
+\begin_layout EndFrame
+
+\end_layout
+
+\begin_layout BeginFrame
+modalità comandi
+\end_layout
+
+\begin_layout Standard
+Nella modalità comandi, tutti i tasti della vostra tastiera forniscono dei
+ comandi all'editor.
+ Sequenze diverse di caratteri forniscono comandi diversi.
+\end_layout
+
+\begin_layout Itemize
+Spostarsi nel file: h (sinistra) j (sotto) k (sopra) l (destra)
+\end_layout
+
+\begin_layout Itemize
+i -- inserire del testo a partire dalla posizione corrente del cursore
+\end_layout
+
+\begin_layout Itemize
+a -- inserire del testo appartire dalla posizione immediatamente successiva
+ al cursore
+\end_layout
+
+\begin_layout Itemize
+/ -- inizia una ricerca di testo nel documento
+\end_layout
+
+\begin_layout Itemize
+n -- trova la prossima occorrenza del testo cercato nella ricerca
+\end_layout
+
+\begin_layout Itemize
+u -- annulla l'ultima operazione (undo)
+\end_layout
+
+\begin_layout Itemize
+.
+ -- ripete l'ultima operazione (eventualmente annulla l'annullamento)
+\end_layout
+
+\begin_layout Itemize
+: (due punti) -- comincia ad inserire un comando
+\end_layout
+
+\begin_layout EndFrame
+
+\end_layout
+
+\begin_layout BeginFrame
+Vi for dummies - i comandi
+\end_layout
+
+\begin_layout Itemize
+:w -- write, salva il file corrente
+\end_layout
+
+\begin_layout Itemize
+:q -- quit (esci)
+\end_layout
+
+\begin_layout Itemize
+I comandi possono essere concatenati: salva + esci = :wq
+\end_layout
+
+\begin_layout Standard
+A seconda del tipo di vi che state usando (vim, nvi, elvis o altro) ci potrebber
+o essere dalle decine alle centinaia di altri comandi, ma questi sono bene
+ o male quelli che vi serviranno sempre.
+\end_layout
+
+\begin_layout EndFrame
+
+\end_layout
+
+\begin_layout BeginFrame
+Vi for dummies - la modalità inserimento
+\end_layout
+
+\begin_layout Standard
+Nella modalità inserimento si può effettivamente inserire/cancellare del
+ testo.
+\end_layout
+
+\begin_layout Standard
+Per entrare in modalità inserimento si preme:
+\end_layout
+
+\begin_layout Itemize
+i -- per inserire del testo nella posizione corrente del cursore (insert)
+\end_layout
+
+\begin_layout Itemize
+a -- per 
+\begin_inset Quotes eld
+\end_inset
+
+appendere
+\begin_inset Quotes erd
+\end_inset
+
+ del testo, ovvero inserire del testo nella posizione immediatamente successiva
+ a quella del cursore
+\end_layout
+
+\begin_layout Itemize
+o -- per inserire del testo nella linea successiva a quella corrente
+\end_layout
+
+\begin_layout Standard
+Dopo ognuno di questi comandi si entra nella modalità inserimento.
+ Per uscire dalla modalità inserimento si preme Esc.
+\end_layout
+
+\begin_layout EndFrame
+
+\end_layout
+
+\begin_layout BeginFrame
 
 \end_layout
 
@@ -1327,9 +1377,16 @@ updatedb
 \family typewriter
 find
 \family default
- -- cerca dei file all'interno di una gerarchia di cartelle
+ -- cerca dei file all'interno di una gerarchia di cartelle, eventualmente
+ con dei parametri di ricerca
 \end_layout
 
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
 \begin_layout Subsection
 Redirezione e pipe
 \end_layout
@@ -1347,8 +1404,8 @@ Ogni processo ha almeno 3 canali di comunicazione di default:
 \end_layout
 
 \begin_layout Itemize
-stdin (0) -- il canale che di default riceve l'input che l'utente scrive
- sul terminale
+stdin (0) -- il canale che di riceve l'input, di default riceve ciò che
+ l'utente scrive sul terminale
 \end_layout
 
 \begin_deeper
@@ -1358,8 +1415,8 @@ stdin (0) -- il canale che di default riceve l'input che l'utente scrive
 
 \end_deeper
 \begin_layout Itemize
-stdout (1) -- il canale che stampa l'output vero e proprio del programma,
- di default stampa su terminale
+stdout (1) -- il canale che stampa l'output del programma, di default stampa
+ su terminale
 \end_layout
 
 \begin_deeper
@@ -1369,8 +1426,9 @@ stdout (1) -- il canale che stampa l'output vero e proprio del programma,
 
 \end_deeper
 \begin_layout Itemize
-stderr (2) -- il canale che stampa gli errori del programma, anche questo
- di default stampa su terminale
+stderr (2) -- un canale extra per segnalare errori senza mischiarli con
+ l'output.
+ di default scrive sul terminale
 \end_layout
 
 \begin_layout Pause
@@ -1462,13 +1520,7 @@ Utilizzando >> al posto di > in uno degli ultimi 3 comandi si ottiene lo
 \family typewriter
 comando1 | comando2
 \family default
- -- connette stdout di 
-\family typewriter
-comando1
-\family default
- a stdin di 
-\family typewriter
-comando2 
+ -- lo stdout di comando1 diventa lo stdin di comando2
 \end_layout
 
 \begin_layout BeginFrame
@@ -1528,6 +1580,47 @@ neq$
 
 \begin_layout Subsection
 Filtri
+\end_layout
+
+\begin_layout BeginFrame
+Cos'è un filtro ?
+\end_layout
+
+\begin_layout Standard
+In Unix, un filtro è un programma che:
+\end_layout
+
+\begin_layout Itemize
+legge dati in ingresso sullo stdin
+\end_layout
+
+\begin_layout Itemize
+trasforma questi dati in qualche maniera
+\end_layout
+
+\begin_layout Itemize
+produce dell'output su stdout.
+ l'ouput può essere una versione trasformata dell'input oppure altro.
+\end_layout
+
+\begin_layout Standard
+In Unix i filtri sono importanti perché data la loro natura (leggere su
+ stdin e scrivere su stdout) si prestano molto bene ad essere usati 
+\begin_inset Quotes eld
+\end_inset
+
+in cascata
+\begin_inset Quotes erd
+\end_inset
+
+ tramite le pipe.
+\end_layout
+
+\begin_layout Standard
+Esempio: un programma scarica una pagina web e lo passa ad un altro programma
+ che estrae degli URL e li passa ad un altro programma che scarica tali
+ url.
+ (hint: curl, grep, xargs+youtube-dl)
 \end_layout
 
 \begin_layout BeginFrame
@@ -1763,8 +1856,13 @@ tenere d'occhio” un file a cui vengono continuamente aggiunte righe in coda
 grep
 \end_layout
 
-\begin_layout Itemize
-Mostra le righe di un file che corrispondono ad un pattern (regular expression
+\begin_layout Standard
+grep è uno dei filtri più potenti ed importanti di un sistema Unix.
+\end_layout
+
+\begin_layout Standard
+Mostra le righe di un file che corrispondono (o meno) ad un pattern (regular
+ expression 
 \begin_inset Foot
 status open
 
@@ -1787,12 +1885,26 @@ https://xkcd.com/208/
 )
 \end_layout
 
+\begin_layout Standard
+Grep permette di ricevere in input del testo, una linea alla volta, ed effettuar
+e delle ricerche con opportuni parametri all'interno di ogni linea, e stampare
+ il risultato.
+\end_layout
+
+\begin_layout BeginFrame
+grep (2)
+\end_layout
+
 \begin_layout Itemize
 
 \family typewriter
 -v
 \family default
- -- attiva il match invertito (mostra le righe che non corrispondono)
+ -- attiva il match invertito (mostra le righe che 
+\series bold
+non
+\series default
+ corrispondono)
 \end_layout
 
 \begin_layout Itemize
@@ -1833,6 +1945,142 @@ https://xkcd.com/208/
 -E
 \family default
  -- usa le extended regular expression
+\end_layout
+
+\begin_layout Itemize
+-P -- usa PCRE, la sintassi per le espressioni regolari in stile Perl, presenti
+ nella maggior parte dei linguaggi di programmazione
+\end_layout
+
+\begin_layout Itemize
+-o -- mostra solo la parte di testo che matcha la regexp, non tutta la linea
+ (utile per estrarre del testo)
+\end_layout
+
+\begin_layout BeginFrame
+sed
+\end_layout
+
+\begin_layout Standard
+Sed è l'abbreviazione di 
+\series bold
+s
+\series default
+tream 
+\series bold
+ed
+\series default
+itor.
+ 
+\end_layout
+
+\begin_layout Standard
+Trasforma ogni linea che legge dallo stdin in base ad una serie di istruzioni
+ date come argomenti al programma stesso, e stampa il risultato sullo stdout
+\end_layout
+
+\begin_layout Standard
+L'uso più comune è effettuare delle sostituzioni nel testo:
+\end_layout
+
+\begin_layout Itemize
+echo night | sed s/night/day/
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+day
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+Ma può fare molto di più.
+\end_layout
+
+\begin_layout Standard
+Per maggiori informazioni consultate 
+\begin_inset CommandInset href
+LatexCommand href
+name "http://www.grymoire.com/Unix/Sed.html"
+target "http://www.grymoire.com/Unix/Sed.html"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout BeginFrame
+awk
+\end_layout
+
+\begin_layout Standard
+Awk è un filtro che consente di estrapolare ed eventualmente aggregare dati
+ provenienti da un file o da un flusso (connesso allo stdin).
+\end_layout
+
+\begin_layout Standard
+Nella versione più semplice, awk può dividere una serie di linee in formato
+ tabulare ed effettuare delle operazioni su ogni elemento di ogni linea.
+\end_layout
+
+\begin_layout Standard
+Praticamente, un esempio: rilevare tutti i programmi che sta eseguendo un
+ utente:
+\end_layout
+
+\begin_layout Itemize
+ps aux | awk '$1 == 
+\begin_inset Quotes eld
+\end_inset
+
+manu
+\begin_inset Quotes erd
+\end_inset
+
+ {print $11}'
+\end_layout
+
+\begin_layout Standard
+Quando awk legge una linea, la spezza ad ogni occorrenza di un delimitatore
+ (lo spazio è il delimitatore predefinito, altrimenti è possibile specificare
+ un delimitatore personalizzato con l'opzione -F).
+ Alla variabile $0 viene assegnata l'intera linea, a $1 il primo elemento
+ della linea, a $2 il secondo e così via.
+\end_layout
+
+\begin_layout BeginFrame
+Awk (links)
+\end_layout
+
+\begin_layout Standard
+Effective AWK programming, il manuale della versione GNU di awk (quella
+ distribuita con quasi tutte le distribuzioni di GNU/Linux):
+\end_layout
+
+\begin_layout Itemize
+\begin_inset CommandInset href
+LatexCommand href
+name "https://www.gnu.org/software/gawk/manual/"
+target "https://www.gnu.org/software/gawk/manual/"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Una buona guida ad awk:
+\end_layout
+
+\begin_layout Itemize
+\begin_inset CommandInset href
+LatexCommand href
+name "http://www.grymoire.com/Unix/Awk.html"
+target "http://www.grymoire.com/Unix/Awk.html"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout BeginFrame
