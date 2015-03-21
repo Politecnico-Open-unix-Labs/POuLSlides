@@ -1,0 +1,2114 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass beamer
+\begin_preamble
+\usetheme{Madrid}
+% \usecolortheme{crane}
+% Decommentate se la volete GIALLA
+% http://www.hartwork.org/beamer-theme-matrix/ per esempi di temi e colori
+
+
+%ridefinisce il footer per evitare di includere \institute tra () accanto al nome
+% http://tex.stackexchange.com/questions/35166/how-can-i-remove-the-institute-from-the-author-footline-on-beamer
+\setbeamertemplate{footline}
+{
+  \leavevmode%
+  \hbox{%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
+    \usebeamerfont{author in head/foot}\insertshortauthor%~~\beamer@ifempty{\insertshortinstitute}{}{(\insertshortinstitute)}
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+    \usebeamerfont{title in head/foot}\insertshorttitle
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
+    \usebeamerfont{date in head/foot}\insertshortdate{}\hspace*{2em}
+    \insertframenumber{} / \inserttotalframenumber\hspace*{2ex} 
+  \end{beamercolorbox}}%
+  \vskip0pt%
+}
+
+% hide navigation symbols in the bottom-right corner
+\usenavigationsymbolstemplate{}
+
+% set fonts for nicer pdf view
+\IfFileExists{lmodern.sty}{\usepackage{lmodern}}{}
+
+\setbeamercovered{transparent}
+% or whatever (possibly just delete it)
+
+\titlegraphic{\includegraphics[height=2cm]{poul-logo.pdf}}
+% Ricordate che dovete sempre avere il logo in pdf nella cartella dove avete il documento
+
+% inserisce AUTOMATICAMENTE una slide di titolo sezione all'inizio di OGNI sezione: in questa slide viene visualizzato l'indice delle sezioni con evidenziata quella corrente.
+\AtBeginSection[]
+{
+  \begin{frame}<beamer>
+    \frametitle{Sezione \thesection}
+    \tableofcontents[currentsection]
+  \end{frame}
+}
+\end_preamble
+\use_default_options false
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman times
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks true
+\pdf_pdfborder true
+\pdf_colorlinks false
+\pdf_backref false
+\pdf_pdfusetitle true
+\papersize default
+\use_geometry true
+\use_package amsmath 2
+\use_package amssymb 2
+\use_package cancel 1
+\use_package esint 0
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Virtualizzazione e tools vari
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Creare e amministrare diversi tipi di macchine virtuali 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Author
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Otacon22
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+otacon22 - at - poul.org
+\end_layout
+
+\end_inset
+
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+otacon22
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Date
+Corsi GNU/Linux Avanzati 2014
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+GNU/Linux Avanzati
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+If you wish to uncover everything in a step-wise fashion, uncomment the
+ following command:
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+beamerdefaultoverlayspecification{<+->}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Structuring a talk is a difficult task and the following structure may not
+ be suitable.
+ Here are some rules that apply for this solution: 
+\end_layout
+
+\begin_layout Itemize
+Exactly two or three sections (other than the summary).
+ 
+\end_layout
+
+\begin_layout Itemize
+At *most* three subsections per section.
+ 
+\end_layout
+
+\begin_layout Itemize
+Talk about 30s to 2min per frame.
+ So there should be between about 15 and 30 frames, all told.
+\end_layout
+
+\begin_layout Itemize
+A conference audience is likely to know very little of what you are going
+ to talk about.
+ So *simplify*! 
+\end_layout
+
+\begin_layout Itemize
+In a 20min talk, getting the main ideas across is hard enough.
+ Leave out details, even if it means being less precise than you think necessary.
+ 
+\end_layout
+
+\begin_layout Itemize
+If you omit details that are vital to the proof/implementation, just say
+ so once.
+ Everybody will be happy with that.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+SSH tuning
+\end_layout
+
+\begin_layout Subsection
+Security
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+SSH Key Auth
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Per fare login utilizzando una chiave ssh su un server remoto:
+\end_layout
+
+\begin_layout Itemize
+Generiamo una coppia di chiavi ssh pubblica/privata sul nostro client
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+ssh-keygen
+\end_layout
+
+\begin_layout Itemize
+scegliamo il percorso, eventualmente possiamo proteggere la chiave con una
+ password necessaria a 
+\begin_inset Quotes eld
+\end_inset
+
+sbloccarla
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Sul server ssh su cui fare il login, nell'utente su cui vogliamo fare login:
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+mkdir ~/.ssh #se non esiste gia'
+\end_layout
+
+\begin_layout LyX-Code
+touch ~/.ssh/authorized_keys
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+SSH Key Auth
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Copiamo la chiave ssh 
+\series bold
+pubblica
+\series default
+ creata dal client (quella che finisce con .pub), nel file ~/.ssh/authorized_keys
+ sul server
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Assicuriamoci poi sempre di aver impostato i 
+\series bold
+permessi giusti
+\series default
+ nelle cartelle (se sono sbagliati non possiamo fare login con la chiave)
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+chmod -R 600 ~/.ssh
+\end_layout
+
+\begin_layout LyX-Code
+chown -R nomeutente:nomeutente ~/.ssh
+\end_layout
+
+\end_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Sul client:
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+ssh nomeutente@hostname -i /path/to/ssh/private/key
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+SSH Key Auth
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Nel caso in cui vogliamo forzare il login con chiave pubblica
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+
+\size tiny
+ssh nomeutente@hostname -i /path/to/ssh/private/key -o PubkeyAuthentication=yes
+\end_layout
+
+\end_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Dualmente, per forzare il login con password:
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+
+\size tiny
+ssh nomeutente@hostname -i /path/to/ssh/private/key -o PubkeyAuthentication=no
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Subsection
+Tunneling
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+SSH Security Tuning
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Apriamo 
+\emph on
+/etc/ssh/sshd_config
+\end_layout
+
+\begin_layout Itemize
+Forziamo il protocollo versione 2 (la versione 1 ha problemi di sicurezza)
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+Protocol 2
+\end_layout
+
+\end_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Disabilitiamo il login per root (sapere uno username rende semplice un bruteforc
+e, specialmente con auth con password)
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+PermitRootLogin no
+\end_layout
+
+\end_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Forziamo l'autenticazione con chiave pubblica:
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+PubkeyAuthentication yes
+\end_layout
+
+\begin_layout LyX-Code
+PasswordAuthentication no
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+SSH/Sudo Tuning
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Se utilizzate solo chiavi pubbliche ha senso togliere le password degli
+ utenti e utilizzare solo sudo (senza password)
+\end_layout
+
+\begin_layout Itemize
+Aggiungiamo una chiave pubblica per l'accesso via SSH nella home dell'utente
+ 
+\begin_inset Quotes eld
+\end_inset
+
+username
+\begin_inset Quotes erd
+\end_inset
+
+, così come visto prima.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Aggiungiamo l'utente al gruppo 
+\begin_inset Quotes eld
+\end_inset
+
+sudo
+\begin_inset Quotes erd
+\end_inset
+
+ e modifichiamo la riga relativa al gruppo 
+\begin_inset Quotes eld
+\end_inset
+
+sudo
+\begin_inset Quotes erd
+\end_inset
+
+ nel file /etc/sudoers come segue:
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+%sudo ALL=(ALL) NOPASSWD: ALL
+\end_layout
+
+\end_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Disabilitiamo l'accesso con password all'account dell'utente 
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+usermod -L username
+\end_layout
+
+\end_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Standard
+In questo modo possiamo loggarci sul server via SSH con chiave e possiamo
+ diventare root usando sudo, tutto senza utilizzare nessuna password.
+ Un attaccante che vuole 
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+SSH Tunneling
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Serve per dire al server ssh a cui ci colleghiamo di farci da TCP proxy
+ verso un host che lui può raggiungere
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename tunnel.pdf
+	width 100theight%
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+SSH Tunneling
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Può tornare molto utile per collegarsi a qualche servizio che è raggiungibile
+ solo dal server ssh remoto, senza stare a usare VPN o altro
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Ad esempio spesso è comodo se abbiamo un database MySQL (in ascolto su TCP
+ 3306) e vogliamo accederci da remoto per amministrarlo via CLI, senza 
+\begin_inset Quotes eld
+\end_inset
+
+esporlo
+\begin_inset Quotes erd
+\end_inset
+
+ su internet.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Con un tunnel ssh possiamo collegarci al server mysql usando come IP sorgente
+ 127.0.0.1, dato che la connessione viene instaurata dal server che si collega
+ a se stesso
+\end_layout
+
+\begin_layout LyX-Code
+ssh -Ntg -L 3308:127.0.0.1:3306 root@server
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Può tornare utile anche per fare connessioni ssh a catena
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+SSH Reverse Tunneling
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Diciamo al server: 
+\begin_inset Quotes eld
+\end_inset
+
+se ti attiva una connessione TCP su questa porta A, rigiramela a me, poi
+ io inoltro la connessione ad un altro host sulla porta B
+\end_layout
+
+\begin_layout Itemize
+Ad esempio
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+
+\size footnotesize
+ssh -Ntg -R *:8000:192.168.0.1:80 user@server_hostname
+\end_layout
+
+\begin_layout Itemize
+Dice al server 
+\begin_inset Quotes eld
+\end_inset
+
+server_hostname
+\begin_inset Quotes erd
+\end_inset
+
+ di restare in ascolto sulla porta TCP 8000 per connessioni da qualunque
+ indirizzo
+\end_layout
+
+\begin_layout Itemize
+Quando arriva una connessione al server, lui (tramite ssh) ce la inoltra.
+ Noi facciamo una connessione a 192.168.0.1 sulla porta 80 e gli inoltriamo
+ i dati ricevuti dal server
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+SSH Reverse Tunneling
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Note:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Sul server dobbiamo aggiungere in /etc/ssh/sshd_config l'opzione
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+GatewayPorts yes
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Se il client è dietro NAT, il NAT potrebbe terminare la connessione ssh
+ quando non stiamo ricevendo nessun dato.
+ Per evitarlo dobbiamo aggiungere sul server, sempre in /etc/ssh/sshd_config:
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+TCPKeepAlive yes
+\end_layout
+
+\end_deeper
+\end_deeper
+\end_deeper
+\begin_layout Section
+Virtualizzazione
+\end_layout
+
+\begin_layout Subsection
+Concetti base
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Perchè virtualizzare?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Per gestire meglio le 
+\series bold
+risorse
+\series default
+ che abbiamo a disposizione
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Per poter amministrare in modo più semplice vari servizi
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Se ho un sacco di servizi su una macchina sopra diventano un problema gli
+ aggiornamenti, la migrazione (SPOF), sicurezza tra vari servizi
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Per 
+\series bold
+isolare
+\series default
+ una applicazione poco sicura in un ambiente totalmente dedicato che possiamo
+ snapshottare
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Per fornire a 
+\series bold
+tanti utenti
+\series default
+ risorse completamente separate, su cui è possibile fare accounting
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Perchè virtualizzare?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Per avere un 
+\series bold
+ambiente
+\series default
+ di produzione 
+\series bold
+integrato
+\series default
+ per un singolo servizio
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Ad esempio un certo servizio deve girare con certe librerie che ci sono
+ su una certa versione del sistema operativo, che però vanno in conflitto
+ con altre cose
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Per avere 
+\begin_inset Quotes eld
+\end_inset
+
+
+\series bold
+scalabilità
+\series default
+
+\begin_inset Quotes erd
+\end_inset
+
+ delle risorse
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Avere la possibilità di aumentarle on-demand in base alle proprie necessità
+ grazie al fatto di non essere legati ad una specifica macchina
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Metto una VM su una macchina lenta, poi compro una macchina nuova e posso
+ spostare la VM aumentanone le prestazioni, senza reinstallarla.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Metodi di virtualizzazione
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+QEMU
+\end_layout
+
+\begin_layout Itemize
+KVM
+\end_layout
+
+\begin_layout Itemize
+LXC
+\end_layout
+
+\begin_layout Itemize
+OpenVZ
+\end_layout
+
+\begin_layout Standard
+Abbiamo poi tutta una serie di tools per sfruttare queste 
+\begin_inset Quotes eld
+\end_inset
+
+tecnologie
+\begin_inset Quotes erd
+\end_inset
+
+ in modo più o meno astratto
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+QEMU
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+.
+ Permette di emulare una CPU e dei device collegati ad essa.
+\end_layout
+
+\begin_layout Itemize
+Essendo un emulatore di CPU grezzo supporta varie piattaforme: 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Ad esempio possiamo emulare una CPU ARM invece di x86 e installare una versione
+ di Linux per ARM
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Le performance non sono ottimali perché viene emulato completamente tutto
+ il comportamento del processore
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+KVM
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
+\series bold
+K
+\series default
+ernel-based 
+\series bold
+V
+\series default
+irtual 
+\series bold
+M
+\series default
+achine
+\end_layout
+
+\begin_layout Itemize
+Se il nostro processore supporta le estensioni per la 
+\series bold
+virtualizzazione hardware
+\series default
+ (Intel-VTx o AMD-V) accelerata, possiamo utilizzare questa interfaccia
+ del kernel che aumenta moltissimo le performance
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Verifica estensioni
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Verifichiamo che la CPU del nostro server supporti la virtualizzazione hardware
+ (attenzione: può essere che sia supportata ma disabilitata nel BIOS)
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout LyX-Code
+egrep -c '(vmx|svm)' /proc/cpuinfo
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Per aumentare le performance è meglio utilizzare un kernel a 64 bit.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Per verificare se la nostra CPU è a 64 bit:
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+egrep -c ' lm ' /proc/cpuinfo
+\end_layout
+
+\end_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Per verificare se il nostro kernel installato è a 64 bit:
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+uname -m
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+QEMU-KVM
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+sudo apt-get install qemu-kvm 
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Facciamo il boot di una livecd su una macchina con 2 core, 128MB di ram
+ e vediamo l'output video su VNC
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+
+\size tiny
+kvm -m 128 -smp 2 -runas nobody -vnc 127.0.0.1:0 -cdrom /path/to/livecd.iso
+\end_layout
+
+\end_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Aggiungendo l'opzione 
+\begin_inset Quotes eld
+\end_inset
+
+-net tap,ifname=vmint0
+\begin_inset Quotes erd
+\end_inset
+
+ aggiungiamo una interfaccia di rete virtuale, che sulla macchina host avrà
+ nome vmint0 (mentre sulla macchina virtuale viene vista normalmente come
+ eth0).
+ 
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Possiamo poi decidere se fare NAT, agganciare l'interfaccia ad un bridge
+ o utilizzare la rete solo punto-punto
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Creare un immagine disco
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Come disco per la macchina virtuale possiamo utilizzare diverse cose, a
+ seconda delle esigenze/comodità.
+\end_layout
+
+\begin_layout Itemize
+Quanto grande ci serve il disco?
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Una immagine minimale di Linux occupa intorno ai 2GB, mentre una completa
+ intorno agli 8GB
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Possiamo quasi sempre ridimensionare il disco della macchina virtuale, ma
+ è sempre un problema e richiede tempo.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Creare un immagine disco
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+File, logical volume o SAN
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Utilizzare un file come disco per la VM è sempre l'opzione più semplice,
+ anche se può avere qualche problema di performance come vedremo tra poco
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Se il sistema host che ospita la VM ha un disco che utilizza LVM, possiamo
+ decidere di allocare un volume logico LVM per la macchina virtuale.
+ Abbiamo prestazioni migliori.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+SAN: Se abbiamo uno storage iSCSI sulla rete locale (vedi 
+\emph on
+openiscsi
+\emph default
+ e simili).
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Utilizzare un disco intero della macchina host è solitamente sconsigliato
+ per motivi di sicurezza.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Creare un immagine disco
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+L'opzione più comune è l'utilizzo di files come dischi.
+ 
+\end_layout
+
+\begin_layout Itemize
+Files a dimensione 
+\series bold
+variabile
+\series default
+:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Possiamo utilizzare files 
+\series bold
+sparsi
+\series default
+: La VM vede un disco di certe dimensioni, ma lo spazio nel file sul sistema
+ host viene allocato man mano che la VM lo utilizza.
+ 
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Files 
+\series bold
+qcow2
+\series default
+: Simili ai files sparsi, è un formato utilizzato da QEMU per i dischi che
+ cresce man mano che viene allocato dalla VM.
+ qcow2 supporta gli snapshot del disco.
+ È il formato più lento.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Qcow2 e i files sparsi sono lenti perché il sistema host deve allocare un
+ nuovo settore ogni volta che la VM va a scrivere nuovi dati.
+ Inoltre se la macchina host finisce lo spazio a disposizione, il disco
+ della VM può corrompersi.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Files a dimensione 
+\series bold
+fissa
+\series default
+:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Possiamo allocare un semplice file di dimensioni identiche a quelle del
+ disco visto dalla VM.
+ In questo modo risolviamo il problema del tempo di allocazione dei blocchi
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Creare un immagine disco
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Dimensione 
+\series bold
+variabile
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+qemu-img create -f qcow2 guest.qcow2 8192M
+\end_layout
+
+\begin_layout Itemize
+Crea un file qcow2 per un disco da 8192MB
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Dimensione 
+\series bold
+fissa
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+dd if=/dev/zero of=guest.img bs=1M count=8192
+\end_layout
+
+\begin_layout Itemize
+Alloca un file da 8192MB chiamato guest.img
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Configurare la rete
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Le scelte sono solitamente 3:
+\end_layout
+
+\begin_layout Itemize
+Scheda 
+\begin_inset Quotes eld
+\end_inset
+
+
+\series bold
+solo host
+\series default
+
+\begin_inset Quotes erd
+\end_inset
+
+: Sulla macchina host lasciamo una interfaccia di rete che funge da interfaccia
+ punto-punto verso quella della VM
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Scheda in 
+\series bold
+bridge
+\series default
+: Mettiamo l'interfaccia della VM in bridge con una interfaccia fisica della
+ macchina host.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Un bridge tra due interfacce è un po' come se fossero fisicamente 
+\begin_inset Quotes eld
+\end_inset
+
+switchate
+\begin_inset Quotes erd
+\end_inset
+
+ insieme.
+ Tutti i dati che arrivano su una vanno nell'altra
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+# brctl show  
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+bridge name	bridge id		    STP enabled   interfaces
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+brvm           8000.001ec9daa349    no            eth0 							
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+                                                  tapVM 
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Configurare la rete
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Scheda in 
+\series bold
+NAT
+\series default
+: Possiamo mettere le varie interfacce delle VM del sistema host in un bridge.
+ Quindi le vm è come se fossero tutte collegate ad uno switch comune.
+ Poi possiamo cambiare le regole di firewalling dell'host per far comunicare
+ le VM tramite NAT
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+
+\size scriptsize
+iptables -t nat -A POSTROUTING -s 192.168.100.0/24 -j MASQUERADE
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+iptables -A FORWARD -i brvm -o eth0 -j ACCEPT
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+iptables -A FORWARD -i eth0 -o brvm -j ACCEPT
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+iptables -t nat -A PREROUTING -p tcp --dport 80 -j DNAT 192.168.100.2:80
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Subsection
+Tools
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+libvirt/virsh
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+libvirtd è un demone per gestire macchine virtuali basate su QEMU/KVM/LXC
+\end_layout
+
+\begin_layout LyX-Code
+sudo apt-get install libvirt-bin
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Ci fornisce una interfaccia per definire e amministrare macchine virtuali
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Definiamo le macchine virtuali tramite dei files di definizione in formato
+ XML
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Un tool per interfacciarsi alle API di libvirt è 
+\series bold
+virsh
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+libvirt/virsh
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Creo una VM a partire dal file xml
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+$ virsh define /tmp/foo_new.xml 
+\end_layout
+
+\end_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Guardiamo la lista delle VM disponibili
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+
+\size footnotesize
+$ virsh list --all
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+ Id Name                 State
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+----------------------------------
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+  1 foo                  running
+\end_layout
+
+\end_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Operazioni con la VM:
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+
+\size scriptsize
+$ virsh start foo
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+$ virsh reboot foo
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+$ virsh shutdown foo
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+$ virsh suspend foo
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+$ virsh resume foo
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+libvirt/virsh
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Per cancellare una VM:
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+
+\size scriptsize
+$ virsh destroy foo_new
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+$ virsh undefine foo_new
+\end_layout
+
+\end_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Oltre ad utilizzare vnc, possiamo collegarci ad una console seriale
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+
+\size scriptsize
+$ virsh console foo_new
+\end_layout
+
+\begin_layout Itemize
+Teniamo conto che la macchina virtuale deve avere nella kernel line l'opzione
+ per utilizzare una console seriale, altrimenti non funzionerà.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+virt-install
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+virt-install è un frontend per generare la configurazione di macchine virtuali
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+virt-install -r 512 --accelerate -n GuestVM2
+\backslash
+
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+     --cdrom debian-7.4.0-amd64-CD-1.iso
+\backslash
+
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+     --vcpus=2 --description="descrizione vm"
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+     --disk /var/lib/libvirt/images/guest.qcow2,format=qcow2,bus=virtio
+\backslash
+
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+     --network=bridge=testbridge
+\backslash
+
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+     --graphics vnc,password=foobar,port=5904 --virt-type kvm
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+vmbuilder
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Esiste un altro frontend, 
+\emph on
+vmbuilder
+\emph default
+, che permette di creare e installare automaticamente VM basate su ubuntu:
+\end_layout
+
+\begin_layout LyX-Code
+sudo vmbuilder kvm ubuntu --suite precise
+\backslash
+
+\end_layout
+
+\begin_layout LyX-Code
+     --flavour server --cpus=2 --arch amd64
+\backslash
+
+\end_layout
+
+\begin_layout LyX-Code
+     -o --libvirt qemu:///system
+\backslash
+
+\end_layout
+
+\begin_layout LyX-Code
+     --ip 192.168.0.100 --mask=255.255.255.0
+\backslash
+
+\end_layout
+
+\begin_layout LyX-Code
+     --net=192.168.0.0 --bcast=192.168.0.255
+\backslash
+
+\end_layout
+
+\begin_layout LyX-Code
+     --gw 192.168.0.1 --hostname vmcorsilinux
+\backslash
+
+\end_layout
+
+\begin_layout LyX-Code
+     --swapsize=1024 --rootsize=10240
+\backslash
+
+\end_layout
+
+\begin_layout LyX-Code
+     --user poul --pass antani
+\backslash
+
+\end_layout
+
+\begin_layout LyX-Code
+     --name poul --addpkg=openssh-server
+\end_layout
+
+\end_deeper
+\begin_layout Section*
+Appendice
+\end_layout
+
+\begin_layout Subsection*
+Fonti
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Fonti
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Documentazione Ubuntu su KVM, libvirt e virsh: 
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+https://help.ubuntu.com/community/KVM
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Subsection*
+Licenza
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Ultima slide
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+
+\size largest
+Grazie per l'attenzione!
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset VSpace vfill
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Se volete cambiare licenza cambiate l'immagine e la scritta sotto
+\end_layout
+
+\begin_layout Plain Layout
+si consiglia di consultare http://creativecommons.org/ e http://creativecommons.or
+g/about/downloads per le immagini (possibilmente vettoriali)
+\end_layout
+
+\begin_layout Plain Layout
+ricordate di configurare inkscape per le immagini vettoriali (se non lo
+ avete già fatto - e voi lo avete già fatto, vero?!)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename by-sa.svg
+	height 0.9cm
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\size footnotesize
+Queste slides sono licenziate Creative Commons Attribution-ShareAlike 4.0
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\family typewriter
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://www.poul.org
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_body
+\end_document

@@ -1,0 +1,28 @@
+* fail2ban
+* logs
+* roba aggiuntiva su iptables (ex: natting)
+* qemu e kvm
+* vmbuilder
+* networking per vm
+
+* Come capire se la propria cpu supporta kvm e accelerazioni per la virtualizzazione
+
+
+* virsh
+   - Opera in /var/lib/libvirt
+   Formato xml: http://libvirt.org/format.html
+   Definizioni delle VM in /etc/libvirt/qemu/GuestVM.xml
+   qemu-img create -f qcow2 /var/lib/libvirt/images/guest.qcow2 8192M
+
+   virt-install -r 512 --accelerate -n GuestVM2 --cdrom debian-7.4.0-amd64-CD-1.iso --vcpus=2 --description="descrizione vm" --disk /var/lib/libvirt/images/guest.qcow2,format=qcow2,bus=virtio --nonetworks --graphics vnc,password=foobar,port=5904 --virt-type kvm
+
+
+   con "--network=bridge=testbridge,model=virtio" ci attacchiamo ad un bridge e viene attaccato vnet0
+
+
+   destroy ..
+   undefine ..
+
+
+
+   
