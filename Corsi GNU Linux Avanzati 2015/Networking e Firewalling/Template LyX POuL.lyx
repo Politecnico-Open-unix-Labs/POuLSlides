@@ -1,0 +1,5800 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass beamer
+\begin_preamble
+\usetheme{Madrid}
+\usefonttheme{serif}
+% \usecolortheme{crane} %GIALLA
+% more colors & themes http://www.hartwork.org/beamer-theme-matrix/
+
+\setbeamercovered{transparent}
+% transizioni: gli elementi nascosti vengono visualizzati in trasparenza
+
+%\beamerdefaultoverlayspecification{<+->}
+% transizioni: di default i paragrafi e gli elenchi (puntati e numerati) vengono scoperti passo per passo.
+% usate con cautela
+
+\usenavigationsymbolstemplate{}
+% hide navigation symbols (bottom-right corner in every slide)
+
+\titlegraphic{\includegraphics[height=2cm]{poul-logo.pdf}}
+% Aggiunge il logo del POuL in prima pagina
+% Ricordate che dovete sempre avere il logo in pdf nella cartella dove avete il documento (poul-logo.pdf)
+
+\IfFileExists{lmodern.sty}{\usepackage{lmodern}}{}
+% sets nice fonts (if available)
+
+% inserisce AUTOMATICAMENTE una slide di titolo sezione all'inizio di OGNI sezione: in questa slide viene visualizzato l'indice delle sezioni, evidenziata quella corrente.
+\AtBeginSection[]
+{
+  \begin{frame}<beamer>
+    \frametitle{Sezione \thesection}
+    \tableofcontents[currentsection]
+  \end{frame}
+}
+
+% ridefinisce il footer per evitare di includere \institute tra () accanto al nome
+% LyX 2.1 pare abbia risolto questo bug. Lascio questo codice commentato, rimane utile per nascondere forzatamente \institute dal pedice nel caso si desiderasse aggiungerlo in seguito
+% fonte: http://tex.stackexchange.com/questions/35166/how-can-i-remove-the-institute-from-the-author-footline-on-beamer
+%\setbeamertemplate{footline}
+%{
+%  \leavevmode%
+%  \hbox{%
+%  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
+%    \usebeamerfont{author in head/foot}\insertshortauthor%~~\beamer@ifempty{\insertshortinstitute}{}{(\insertshortinstitute)}
+ % \end{beamercolorbox}%
+ % \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+%    \usebeamerfont{title in head/foot}\insertshorttitle
+%  \end{beamercolorbox}%
+%  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
+%    \usebeamerfont{date in head/foot}\insertshortdate{}\hspace*{2em}
+%    \insertframenumber{} / \inserttotalframenumber\hspace*{2ex} 
+%  \end{beamercolorbox}}%
+%  \vskip0pt%
+%}
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language italian
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks true
+\pdf_pdfborder true
+\pdf_colorlinks false
+\pdf_backref false
+\pdf_pdfusetitle true
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language french
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Andate in 
+\end_layout
+
+\begin_layout Plain Layout
+
+\bar under
+D
+\bar default
+ocumento -> Imposta
+\bar under
+z
+\bar default
+ioni -> Preambolo di LaTeX 
+\end_layout
+
+\begin_layout Plain Layout
+per dare un occhio ad un po' di opzioni e configurazioni standard.
+ FATELO.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Title
+Introduzione al Networking
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Introduzione al Networking 
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+il titolo breve è opzionale (solo se diverso dal titolo esteso) e viene
+ visualizzato a pedice.
+ Se desideri mantenere il titolo esteso anche a pedice, cancella il campo
+ titolo breve (e non solo il suo contenuto).
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subtitle
+Guida introduttiva alla configurazione di rete e al firewalling in ambiente
+ GNU/Linux
+\end_layout
+
+\begin_layout Author
+Andrea Grazioso
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+href{mailto:grazioandre@gmail.com}{
+\backslash
+nolinkurl{grazioandre@gmail.com}}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Andrea Grazioso
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+dai...interpola le annotazioni e dimmi cosa ti aspetti di dover fare qui.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Date
+
+\lang english
+Corsi GNU/Linux avanzati 2015 - Amministrazione di Sistema
+\lang italian
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Corsi Linux 2015
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+il nome evento pedice è opzionale (solo se diverso dal nome evento esteso)
+ e viene visualizzato a pedice.
+\end_layout
+
+\begin_layout Plain Layout
+Se desideri mantenere il nome evento esteso anche a pedice, cancella il
+ campo nome evento breve (e non solo il suo contenuto).
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Introduzione
+\end_layout
+
+\begin_layout Subsection
+Networking General
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Networking General
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\lang english
+Networking vuol dire costruire, progettare e usare una rete, inclusa la
+ parte fisica (cablaggio, trasmissione del segnale, ecc), la selezione e
+ l'uso di un protocollo telecomunicativo e stack software er utilizzare
+ e gestire la rete, e l'assegnazione di adeguate policy e procedure di utilizzo
+ della rete
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Networking General
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Graphics
+	filename img/netfuck.jpg
+	width 100line%
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Networking General
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Graphics
+	filename img/setup_gara.pdf
+	width 100line%
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Ambienti di Test
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Description
+Netkit 
+\lang english
+The poor man's system to experiment computer networking
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Description
+Mininet 
+\lang english
+realistic virtual network, running real kernel, switch and application code,
+ on a single machine
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Section
+Configuring the network
+\end_layout
+
+\begin_layout Subsection
+Prelude
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+It Works!
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\lang english
+Maybe it just works?
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+Se l'host viene connesso ad una rete in cui è presente un router/switch
+ con DHCP configurato è probabile che sia già tutto pronto per accedere
+ ad Internet
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Maybe not...
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\lang english
+Può capitare che le interfacce di rete non siano visualizzate dal sistema
+ operativo 
+\begin_inset Quotes eld
+\end_inset
+
+out of the box
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+Partendo dalle basi:
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+Per scoprire quali moduli del kernel sono disponibili per il networking
+ possiamo cercare direttamente nel filesystem
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout LyX-Code
+
+\lang english
+root@Hello:~# ls /lib/modules/`uname -r`/kernel/drivers/net
+\end_layout
+
+\begin_layout LyX-Code
+
+\lang english
+appletalk  can       ethernet  ieee802154  macvtap.ko     nlmon.ko       ppp
+        sungem_phy.ko  vmxnet3   wireless arcnet     dsa       fddi     
+ ifb.ko      mdio.ko        ntb_netdev.ko  rionet.ko  team           vxlan.ko
+  xen-netback bonding    dummy.ko  hamradio  irda        mii.ko         phy
+            sb1000.ko  usb            wan caif       eql.ko    hyperv    macvlan.ko
+  netconsole.ko  plip           slip       veth.ko        wimax 
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+Se sappiamo quale driver necessita la nostra scheda di rete possiamo usare
+ 
+\begin_inset Quotes eld
+\end_inset
+
+modprobe
+\begin_inset Quotes erd
+\end_inset
+
+ per caricare il modulo del kernel associato.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+It Works! Again
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\lang english
+Con i giusti moduli caricati possiamo verificare quali interfaccie di rete
+ sono rilevate nel sistema semplicemente con 
+\series bold
+ls
+\series default
+:
+\end_layout
+
+\begin_layout LyX-Code
+
+\lang english
+root@Hello:~# ls /sys/class/net/ 
+\end_layout
+
+\begin_layout LyX-Code
+
+\lang english
+eth0  eth1  lo
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Subsection
+Physical Layer
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+mii-tool e autonegoziazione
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
+\lang english
+Occasionalmente le le schede Ethernet hanno delle opzioni configurabili
+ riguardo le loro capacità Ethernet e posso essere interrogate a riguardo:
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+Se il cavo Ethernet è collegato alla scheda e se arriva segnale sul cavo.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+Se la scheda supporta 10/100/1000 Mb/s in modalità half-duplex o full-duplex
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+Quali sono le capacità dello switch a cui è collegata la nostra scheda
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+Se 
+\series bold
+l'
+\emph on
+autonegoziazione
+\series default
+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+
+\lang english
+Subito dopo aver collegato il cavo alla scheda e aver ricevuto il link,
+ la scheda tenta di inviare una serie di frame di varie dimensioni per capire
+ quali sono le velocità supportate dal partner.
+\end_layout
+
+\end_inset
+
+
+\emph default
+ ha funzionato o no
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+
+\lang english
+Problemi di negoziazione possono causare 
+\series bold
+gravi 
+\series default
+problemi di performance della scheda di rete
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+mii-tool e autonegoziazione
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\lang english
+Se la scheda è dotata di mii transreceiver è possibile utilizzare 
+\begin_inset Quotes eld
+\end_inset
+
+mii-tool
+\begin_inset Quotes erd
+\end_inset
+
+ per verificare le capacità dell'interfaccia
+\end_layout
+
+\begin_layout LyX-Code
+
+\lang english
+mii-tool -v eth0
+\end_layout
+
+\begin_layout LyX-Code
+
+\size tiny
+\lang english
+eth0: negotiated 1000baseTx-FD flow-control, link ok
+\end_layout
+
+\begin_layout LyX-Code
+
+\size tiny
+\lang english
+  product info: vendor 00:08:18, model 54 rev 6
+\end_layout
+
+\begin_layout LyX-Code
+
+\size tiny
+\lang english
+  basic mode:autonegotiation enabled
+\end_layout
+
+\begin_layout LyX-Code
+
+\size tiny
+\lang english
+  basic status: autonegotiation complete, link ok
+\end_layout
+
+\begin_layout LyX-Code
+
+\size tiny
+\lang english
+  capabilities: 1000baseT-FD 100baseTx-FD 100baseTx-HD 10baseT-FD 10baseT-HD
+\end_layout
+
+\begin_layout LyX-Code
+
+\size tiny
+\lang english
+  advertising:  1000baseT-FD 100baseTx-FD 100baseTx-HD 10baseT-FD 10baseT-HD
+ flow-control
+\end_layout
+
+\begin_layout LyX-Code
+
+\size tiny
+\lang english
+  link partner: 1000baseT-FD 100baseTx-FD 100baseTx-HD 10baseT-FD 10baseT-HD
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+In caso di problemi di autoconfigurazione si può forzare una scheda ad usare
+ una determinata modalità, ricordandoci ovviamente di fare lo stesso anche
+ dall'altro lato del cavo!
+\end_layout
+
+\begin_layout LyX-Code
+
+\lang english
+mii-tool -force=100BaseTx-FD eth0
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Subsection
+Datalink Layer
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+iproute2
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\lang english
+Le interfacce di rete possono anche essere 
+\begin_inset Quotes eld
+\end_inset
+
+spente
+\begin_inset Quotes erd
+\end_inset
+
+ via 
+\series bold
+software
+\series default
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+Il nuovo tool 
+\series bold
+ip
+\series default
+ sostituisce gran parte dei vecchi tool per operare sulle schede di rete
+ (ifconfig, route, netstat...)
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+Comandi più semplici
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+
+\lang english
+ip [options] object command
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\lang english
+Feature di rete più recenti meglio implementate in un unico tool (tunnel)
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+iproute2: informazioni
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\lang english
+Vedere le 
+\series bold
+informazioni
+\series default
+ a livello datalink delle interfacce, come ad esempio il MAC address e se
+ risulta 
+\begin_inset Quotes eld
+\end_inset
+
+up
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+\lang english
+$ ip link show
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+\lang english
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 16436 qdisc noqueue state UNKNOWN
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+\lang english
+     link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00 
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+\lang english
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state
+ UP
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+\lang english
+     qlen 1000 link/ether 00:de:ad:be:ef:ca brd ff:ff:ff:ff:ff:ff 
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+iproute2: spegnere ed accendere le luci
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\lang english
+Possiamo cambiare lo stato di una interfaccia e 
+\series bold
+attivarla
+\series default
+ o disattivarla.
+ 
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+\lang english
+$ ip link set dev eth0 up
+\end_layout
+
+\begin_layout LyX-Code
+
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+\lang english
+$ ip link set dev eth1 down
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+iproute2: MAC address
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\lang english
+Possiamo cambiare il 
+\series bold
+MAC
+\series default
+ address di un interfaccia.
+ 
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+\lang english
+$ ip link set dev eth0 address XX:XX:XX:XX:XX:XX
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+Il MAC address è 
+\series bold
+scritto indelebilmente
+\series default
+ all'interno di ciascuna scheda di rete per identificarle in modo univoco,
+ tuttavia il sistema operativo è in grado di 
+\begin_inset Quotes eld
+\end_inset
+
+chiudere un occhio
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+iproute2: ARP
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\lang english
+Possiamo abilitare o disabiliare ARP se dovesse servire (e se sappiamo quello
+ che stiamo facendo!)
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+\lang english
+$ ip link set dev eth0 arp off
+\end_layout
+
+\begin_layout LyX-Code
+
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+\lang english
+$ ip link set dev eth0 arp on
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+Possiamo visualizzare la 
+\series bold
+tabella ARP
+\series default
+:
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+\lang english
+$ ip neigh show 
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+\lang english
+10.99.0.254 dev eth0 lladdr 00:11:22:33:44:55 REACHABLE
+\end_layout
+
+\end_deeper
+\begin_layout Subsection
+
+\lang english
+Network Layer
+\end_layout
+
+\begin_layout Frame
+
+\lang english
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\lang english
+ip: Indirizzi IP
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\lang english
+Una volta che abbiamo una interfaccia funzionante, possiamo 
+\series bold
+assegnarle uno o più indirizzi IP
+\series default
+:
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+\lang english
+$ ip address add 192.168.0.2/24 dev eth0
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+\lang english
+$ ip address add 1234:40ac:1:8d6b::1/64 dev eth0
+\end_layout
+
+\begin_layout LyX-Code
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+Il formato utilizzato per indicare gli indirizzi IP è 
+\series bold
+VLSM
+\series default
+ (Variable-length subnet masking).
+ Indichiamo quindi sempre la lunghezza della netmask.
+ 
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+
+\lang english
+L'indirizzamento a classi IP (Classe A,B,C....) è 
+\bar under
+deprecato
+\bar default
+ e non viene più utilizzato dal 1993.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+Rimuovere indirizzi:
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+\lang english
+$ ip address del 192.168.0.2/24 dev eth0
+\end_layout
+
+\begin_layout LyX-Code
+
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+\lang english
+$ ip address flush dev eth0
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+
+\lang english
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+IP e Netmask
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout LyX-Code
+
+\lang english
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\lang english
+\begin_inset Graphics
+	filename img/ipaddress.svg
+	width 100line%
+	height 20pheight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\lang english
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\lang english
+IpAddress
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+L'Indirizzo IP è unico per un host che deve essere accessibile tramite Internet.
+ Per far si che sia distinguibile tra hosts dentro e fuori la rete, l'indirizzo
+ IP si divide in due parti
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Rete
+\end_layout
+
+\begin_layout Itemize
+Host
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+IP e Netmask
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+La separazione è scritta con la netmask, che permette di identificare quale
+ sia l'una e quale l'altra parte 
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\lang english
+\begin_inset Graphics
+	filename img/ipAddressNetmask.svg
+	width 100line%
+	height 25pheight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\lang english
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\lang english
+Netmask
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+Per accedere ad Internet, ogni computer nella rete deve sapere quale host
+ condivide la connessione ad Internet, il cosidetto 
+\series bold
+gateway
+\series default
+
+\begin_inset space ~
+\end_inset
+
+.
+
+\series bold
+ 
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Il gateway è anch'esso un regolare host e pertanto possiede un ip, tipicamente
+ il primo o l'ultimo della rete (ad esempio 192.168.0.1)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+ip: indirizzi IP
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+
+\size scriptsize
+\lang english
+$ ip address show
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+\lang english
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group
+ default
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+
+\size scriptsize
+\lang english
+link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+\lang english
+inet 127.0.0.1/8 scope host lo
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+
+\size scriptsize
+\lang english
+valid_lft forever preferred_lft forever
+\end_layout
+
+\end_deeper
+\begin_layout LyX-Code
+
+\size scriptsize
+\lang english
+inet6 ::1/128 scope host
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+\lang english
+valid_lft forever preferred_lft forever 
+\end_layout
+
+\end_deeper
+\begin_layout LyX-Code
+
+\size scriptsize
+\lang english
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state
+ UP group default qlen 1000     
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+
+\size scriptsize
+\lang english
+link/ether 04:01:47:d6:2a:01 brd ff:ff:ff:ff:ff:ff
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+\lang english
+inet 178.62.152.115/18 brd 178.62.191.255 scope global eth0  
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+
+\size scriptsize
+\lang english
+valid_lft forever preferred_lft forever
+\end_layout
+
+\end_deeper
+\begin_layout LyX-Code
+
+\size scriptsize
+\lang english
+inet6 2a03:b0c0:0:1010::85:5001/64 scope global
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+
+\size scriptsize
+\lang english
+valid_lft forever preferred_lft forever
+\end_layout
+
+\end_deeper
+\begin_layout LyX-Code
+
+\size scriptsize
+\lang english
+inet6 fe80::601:47ff:fed6:2a01/64 scope link
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+
+\size scriptsize
+\lang english
+valid_lft forever preferred_lft forever
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout LyX-Code
+
+\size scriptsize
+\lang english
+3: eth1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state
+ UP group default qlen 1000     
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+
+\size scriptsize
+\lang english
+link/ether 04:01:47:d6:2a:02 brd ff:ff:ff:ff:ff:ff
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+\lang english
+inet 10.129.212.70/16 brd 10.129.255.255 scope global eth1
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+
+\size scriptsize
+\lang english
+valid_lft forever preferred_lft forever
+\end_layout
+
+\end_deeper
+\begin_layout LyX-Code
+
+\size scriptsize
+\lang english
+inet6 fe80::601:47ff:fed6:2a02/64 scope link
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+
+\size scriptsize
+\lang english
+valid_lft forever preferred_lft forever 
+\end_layout
+
+\end_deeper
+\end_deeper
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+
+\lang english
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\lang english
+iproute2: Route
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\lang english
+Possiamo visualizzare le rotte configurate dal sistema
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+\lang english
+$ ip route show
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+\lang english
+default via 192.168.0.254 dev eth0  
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+\lang english
+192.168.0.0/24 dev eth0  proto kernel  scope link  src 192.168.0.2  metric 2
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+E aggiungerne/rimuoverne
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+\lang english
+$ ip route add 1.2.3.0/24 via 192.168.0.254 dev eth0
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+\lang english
+$ ip route del 1.2.3.4 via 192.168.0.254 dev eth0
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+Per poter 
+\begin_inset Quotes eld
+\end_inset
+
+collegarci
+\begin_inset Quotes erd
+\end_inset
+
+ ad Internet dobbiamo avere una route di default, delegata ad un gateway
+ presente sulla nostra rete locale.
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+\lang english
+$ ip route add default via 192.168.0.254 dev eth0
+\end_layout
+
+\begin_layout LyX-Code
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+
+\lang english
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\lang english
+Routing
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\lang english
+Ogni host GNU/Linux è anche un router:
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
+\lang english
+Per permettere il 
+\begin_inset Quotes eld
+\end_inset
+
+forwarding
+\begin_inset Quotes erd
+\end_inset
+
+ di pacchetti ip dobbiamo abilitarlo con
+\end_layout
+
+\end_deeper
+\begin_layout LyX-Code
+
+\lang english
+echo 
+\begin_inset Quotes eld
+\end_inset
+
+1
+\begin_inset Quotes erd
+\end_inset
+
+ > /proc/sys/net/ipv4/ip_forward
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+Altri host possono utilizzare noi come router (o gateway di default) e noi
+ provvedremo ad inoltrare Il traffico in base alle nostre regole di routing.
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+DHCP
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\lang english
+Se non si vuole assegnare un indirizzo IP statico alla macchina si può utilizzar
+e un client 
+\series bold
+DHCP
+\series default
+ per ottenere dal server DHCP installato nella rete locale tutte le informazioni
+ necessarie per la connessione
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+DHCP (Dynamic Host Configuration Protocol) permette di ricevere automaticamente
+ le informazioni di networking (IP address, netmask, broadcast address,
+ gateway, nameservers etc.), tramite i tool 
+\emph on
+dhcpcd/dhclient
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+\lang english
+$ dhclient eth0
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+\lang english
+Internet Systems Consortium DHCP Client V3.1.1
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+\lang english
+Copyright 2004-2008 Internet Systems Consortium.
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+\lang english
+All rights reserved.
+ For info, please visit http://www.isc.org/sw/dhcp/
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+\lang english
+Listening on LPF/eth0/6e:5f:98:37:0c:07 
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+\lang english
+Sending on   LPF/eth0/6e:5f:98:37:0c:07
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+\lang english
+Sending on   Socket/fallback
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+\lang english
+DHCPDISCOVER on eth0 to 255.255.255.255 port 67 interval 4
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+\lang english
+DHCPOFFER from 10.5.5.1
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+\lang english
+DHCPREQUEST on eth0 to 255.255.255.255 port 67
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+\lang english
+DHCPACK from 10.5.5.1
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+\lang english
+bound to 10.5.5.26 -- renewal in 297 seconds.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Configurazione su Debian/Ubuntu
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\lang english
+Su Debian e Ubuntu possiamo impostare le interfacce di rete in modo permanente
+ tramite il file 
+\emph on
+/etc/network/interfaces
+\emph default
+, che verrà letto e utilizzato all'avvio del sistema per configurare le
+ interfacce.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+\lang english
+# The loopback network interface
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+\lang english
+auto lo 
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+\lang english
+iface lo inet loopback
+\end_layout
+
+\begin_layout LyX-Code
+
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+\lang english
+auto eth0 
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+\lang english
+iface eth0 inet static
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+\lang english
+	address 192.168.0.2
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+\lang english
+	netmask 255.255.255.0
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+\lang english
+	network 192.168.0.0
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+\lang english
+	broadcast 192.168.0.255
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+\lang english
+	gateway 192.168.0.254
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+Se utilizziamo DHCP è più semplicemente:
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+\lang english
+# The loopback network interface
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+\lang english
+auto lo
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+\lang english
+iface lo inet loopback
+\end_layout
+
+\begin_layout LyX-Code
+
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+\lang english
+auto eth0
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+\lang english
+iface eth0 inet dhcp
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+DNS
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\lang english
+Dato che ogni host è identificato da un indirizzo IP per raggiungerlo tramite
+ nome abbiamo bisogno di un servizio che traduca i nomi in indirizzi IP.
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+DNS (Domain Name Service) effettua questo servizio, per cui è necessario
+ che i name server siano definiti in /etc/resolv.conf
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+
+\size tiny
+$ cat /etc/resolv.conf
+\end_layout
+
+\begin_layout LyX-Code
+
+\size tiny
+\lang english
+# Dynamic resolv.conf(5) file for glibc resolver(3) generated by resolvconf(8)
+ 
+\end_layout
+
+\begin_layout LyX-Code
+
+\size tiny
+\lang english
+#     DO NOT EDIT THIS FILE BY HAND -- YOUR CHANGES WILL BE OVERWRITTEN
+ 
+\end_layout
+
+\begin_layout LyX-Code
+
+\size tiny
+\lang english
+nameserver 192.168.0.1 
+\end_layout
+
+\begin_layout LyX-Code
+
+\size tiny
+\lang english
+search local 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\lang english
+In generale il gateway di default agisce da nameserver, ma alternativamente
+ si possono usare dei nameserver pubblici
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="2">
+<features rotate="0" booktabs="true" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="bottom" width="20text%">
+<row topspace="default" bottomspace="default">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Google
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="bottom" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Opendns
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+8.8.8.8
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+208.67.222.222
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+8.8.4.4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+208.67.220.220
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+
+\lang english
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\lang english
+proxies
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
+\lang english
+Se si accede ad internet tramite proxy, allora è necessario configurare
+ le impostazioni del proxy durante la configurazione di rete
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+
+\lang english
+Se il proxy richiede una combinazione username-password, la usata la seguente
+ sintassi per la variabile: http://username:password@proxy.poul.org:8080
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+Nel maggior parte dei casi basta definire le variabili usando gli hostname
+ dei server, ad esempio proxy.poul.org con la porta 8080
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+HTTP proxy (traffico HTTP e HTTPS)
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+
+\lang english
+root #export http_proxy="http://proxy.poul.org:8080"
+\end_layout
+
+\end_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+FTP proxy
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+
+\lang english
+root #export ftp_proxy="ftp://proxy.poul.org:8080"
+\end_layout
+
+\end_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+RSYNC proxy
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+
+\lang english
+root #export RSYNC_PROXY="proxy.poul.org:8080"
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+
+\lang english
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\lang english
+Testing the network: ping
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\lang english
+Per testare la rete di solito si usa il comando 
+\emph on
+ping
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+\lang english
+root@Hello:~# ping -c 3 www.poul.org 
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+\lang english
+PING poul.org (91.121.220.9) 56(84) bytes of data.
+ 
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+\lang english
+64 bytes from poul.org (91.121.220.9): icmp_seq=1 ttl=59 time=7.93 ms 
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+\lang english
+64 bytes from poul.org (91.121.220.9): icmp_seq=2 ttl=59 time=6.59 ms 
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+\lang english
+64 bytes from poul.org (91.121.220.9): icmp_seq=3 ttl=59 time=6.74 ms
+\end_layout
+
+\begin_layout LyX-Code
+
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+\lang english
+--- poul.org ping statistics --- 
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+\lang english
+3 packets transmitted, 3 received, 0% packet loss, time 2003ms 
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+\lang english
+rtt min/avg/max/mdev = 6.593/7.088/7.932/0.603 ms 
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+
+\lang english
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\lang english
+Wireless Access
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
+\lang english
+Quando si utilizza una scheda wireless (802.11), prima di tutto occorre definire
+ le impostazioni di configurazione.
+ Per accedere a tali impostazioni si usa 
+\emph on
+iwconfig
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\lang english
+\begin_inset Graphics
+	filename img/iwconfig.svg
+	width 100line%
+	height 30pheight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\lang english
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\lang english
+iwconfig
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Wireless Access
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+
+\lang english
+iwconfig wlan0 essid POuL-Spot
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout LyX-Code
+
+\lang english
+sudo wpa_supplicant -iwlan0 -c/etc/wpa_supplicant.conf
+\begin_inset Newline newline
+\end_inset
+
+ -Dnl80211,wext
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Wireless Access
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+
+\size scriptsize
+$ cat /etc/wpa_supplicant.conf
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+# The below line not be changed otherwise wpa_supplicant refuses to work
+ ctrl_interface=/var/run/wpa_supplicant 
+\end_layout
+
+\begin_layout LyX-Code
+
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+# Ensure that only root can read the WPA configuration 
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+ctrl_interface_group=0
+\end_layout
+
+\begin_layout LyX-Code
+
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+# Let wpa_supplicant take care of scanning and AP selection 
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+ap_scan=1 
+\end_layout
+
+\begin_layout LyX-Code
+
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+#Simple case: WPA-PSK, PSK as an ASCII passphrase, allow all valid ciphers
+ 
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+network={
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+ssid="simple" 
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+psk="very secret passphrase" 
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+#request SSID-specific scanning (for APs that reject # broadcast SSID)
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+scan_ssid=1
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+# The higher the priority the sooner we are matched 
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+priority=5 
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+} 
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+
+\lang english
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Recap
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Configurare una rete si può sintetizzare in 3 step:
+\end_layout
+
+\begin_layout Enumerate
+
+\lang english
+Assegnare un IP
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+
+\size footnotesize
+\lang english
+root #ip address add 192.168.0.2/24 dev eth0
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+
+\lang english
+Configurare il corretto routing 
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+
+\size footnotesize
+\lang english
+ip route add 1.2.3.0/24 via 192.168.0.1 dev eth0
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+
+\lang english
+Impostare i DNS in /etc/resolv.conf:
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+
+\size footnotesize
+\lang english
+root #nano -w /etc/resolv.conf
+\begin_inset Newline newline
+\end_inset
+
+nameserver 8.8.8.8 
+\begin_inset Newline newline
+\end_inset
+
+nameserver 8.8.4.4
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+
+\lang english
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\lang english
+Recap
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
+\lang english
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="2">
+<features rotate="0" booktabs="true" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top" width="0pt">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+Network Item 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+Example
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+The system IP address 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+192.168.0.2 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topspace="default" bottomspace="default">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+Netmask
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+255.255.255.0 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+Broadcast 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+192.168.0.255 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+Gateway 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+192.168.0.1 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+Nameserver(s) 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+195.130.130.5, 195.130.130.133 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Section
+Firewalling
+\end_layout
+
+\begin_layout Frame
+
+\lang english
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\lang english
+Firewalling
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\lang english
+Un firewall è un 
+\begin_inset Quotes eld
+\end_inset
+
+programma
+\begin_inset Quotes erd
+\end_inset
+
+ che si occupa di decidere se accettare o meno i pacchetti in transito su
+ un host.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+Un firewall può essere utile:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\lang english
+Su un router di frontiera per discriminare l'accesso ai servizi di una rete
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+Su un server, per esporre solo determinati servizi sul singolo server
+\end_layout
+
+\end_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+\begin_inset Quotes eld
+\end_inset
+
+Blocchiamo
+\begin_inset Quotes erd
+\end_inset
+
+ certi tipi di pacchetti in transito, in base a certe regole.
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Firewalling
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\lang english
+Il firewall deve essere l'unico punto di contatto della rete con l'esterno
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+
+\lang english
+Per evitare il problema di generare 
+\emph on
+Single Point Of Failure
+\emph default
+ è eventualmente possibile utilizzare più firewall sincronizzati costantemente
+ tra di loro: 
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://conntrack-tools.netfilter.org/
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset Graphics
+	filename img/Firewall.png
+	width 80text%
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+
+\lang english
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\lang english
+Firewalling
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\lang english
+All'interno del kernel Linux è presente una parte del kernel dedicata esclusivam
+ente a gestire le operazioni di firewalling, chiamata 
+\series bold
+\emph on
+netfilter
+\series default
+\emph default
+.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+In userspace possiamo utilizzare 
+\series bold
+iptables
+\series default
+/
+\series bold
+ip6tables
+\series default
+/
+\series bold
+ebtables 
+\series default
+come strumenti per comunicare al kernel le regole da applicare
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+
+\lang english
+A breve si migrerà ad un nuovo unico tool, chiamato 
+\series bold
+nftables
+\series default
+, che tuttavia non modifica la struttura delle tabelle e hooks che vedremo
+ tra un attimo.
+\end_layout
+
+\end_inset
+
+ a livello IP(v4 e v6) e (se necessario) Ethernet/datalink.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+Netfilter è un firewall di tipo 
+\series bold
+\emph on
+stateful
+\series default
+\emph default
+, cioè permette di tenere traccia delle connessioni che lo attraversano
+ e del loro stato.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+Netfilter si occupa anche di implementare le operazioni di NAT e port forwarding
+ spesso utilizzate.
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+
+\lang english
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\lang english
+Netfilter
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\lang english
+L'infrastruttura di Netfilter è basata su 5 
+\begin_inset Quotes eld
+\end_inset
+
+hooks
+\begin_inset Quotes erd
+\end_inset
+
+ presenti nel percorso dei pacchetti.
+ Sono 5 
+\begin_inset Quotes eld
+\end_inset
+
+punti
+\begin_inset Quotes erd
+\end_inset
+
+ dove i pacchetti devono per forza passare.
+ 
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+In ognuno di questi 
+\begin_inset Quotes eld
+\end_inset
+
+punti
+\begin_inset Quotes erd
+\end_inset
+
+ è possibile:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\lang english
+Permettere il passaggio del pacchetto (ACCEPT) 
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+Scartare il pacchetto e interromperlo (DROP) 
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+Redirigere il pacchetto
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+Modificare alcuni campi del pacchetto (
+\emph on
+mangle
+\emph default
+)
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+
+\lang english
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\lang english
+Netfilter
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+
+\lang english
+\begin_inset Graphics
+	filename /home/r4yan2/Documents/POuL/Corsi_Linux_15_Networking/diagramma.svg
+	lyxscale 50
+	height 80pheight%
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+
+\lang english
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\lang english
+Hooks
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+\lang english
+PREROUTING
+\series default
+: pacchetti in ingresso
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\lang english
+INPUT
+\series default
+: pacchetti destinati all'host stesso
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\lang english
+FORWARD
+\series default
+: pacchetti non destinati all'host stesso, che dobbiamo inoltrare
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\lang english
+OUTPUT
+\series default
+: pacchetti in uscita dall'host stesso
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\lang english
+POSTROUTING
+\series default
+: pacchetti in uscita
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+
+\lang english
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\lang english
+Netfilter
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\lang english
+Gli 
+\begin_inset Quotes eld
+\end_inset
+
+hooks
+\begin_inset Quotes erd
+\end_inset
+
+ non possono essere utilizzati direttamente.
+ Non possiamo metterci delle regole dentro.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+Le regole devono essere inserite in delle 
+\series bold
+tabelle
+\series default
+.
+ Ogni tabella ha dei punti di aggancio agli hook: le chain.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+Le tabelle utilizzate sono: 
+\emph on
+filter
+\emph default
+, 
+\emph on
+mangle
+\emph default
+, 
+\emph on
+nat 
+\emph default
+e 
+\emph on
+raw
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\lang english
+filter è la tabella con le regole principali
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+mangle è la tabella dove risiedono le regole che modificano i pacchetti
+ 
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+nat è la tabella dove avvengono le operazioni che permettono il NAT
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+\lang english
+raw 
+\emph default
+(saltiamo...)
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+
+\lang english
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\lang english
+Netfilter
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\lang english
+Riassumendo: 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\lang english
+il pacchetto segue il suo percorso
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+quando il pacchetto arriva in un hook si vanno a consultare le varie tabelle
+ che hanno regole in quell'hook (le tabelle da verificare sono in un certo
+ ordine)
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+il pacchetto entra nella 
+\emph on
+chain
+\emph default
+ di una tabella e lì vengono consultate tutte le regole presenti
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+se al termine delle verifiche, la decisione è 
+\begin_inset Quotes eld
+\end_inset
+
+ACCEPT
+\begin_inset Quotes erd
+\end_inset
+
+, allora il pacchetto prosegue il suo percorso e viene verificato nelle
+ tabelle successive
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+poi se il pacchetto prosegue ancora passerà nell'hook successivo
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+
+\lang english
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\lang english
+iptables
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\lang english
+Iniziamo a guardare la tabella di default, la tabella filter:
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+\lang english
+$ sudo iptables -nvL
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+\lang english
+Chain INPUT (policy ACCEPT 0 packets, 0 bytes)
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+\lang english
+pkts bytes target     prot opt in     out     source               destination
+         
+\end_layout
+
+\begin_layout LyX-Code
+
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+\lang english
+Chain FORWARD (policy ACCEPT 0 packets, 0 bytes)
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+\lang english
+pkts bytes target     prot opt in     out     source               destination
+  
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+\lang english
+      
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+\lang english
+Chain OUTPUT (policy ACCEPT 0 packets, 0 bytes)
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+\lang english
+pkts bytes target     prot opt in     out     source               destination
+     
+\end_layout
+
+\begin_layout LyX-Code
+
+\lang english
+  
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+
+\lang english
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\lang english
+iptables
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\lang english
+Nella tabella filter abbiamo 3 chains che si agganciano agli hooks di 
+\series bold
+INPUT
+\series default
+, 
+\series bold
+FORWARD
+\series default
+ e 
+\series bold
+OUTPUT
+\series default
+.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+Durante il percorso del pacchetto, quando si arriva nella chain della tabella,
+ si analizzano una per una le regole presenti dalla prima all'ultima.
+ Se nessuna regola fa 
+\series bold
+match
+\series default
+, si applica la 
+\emph on
+policy di default 
+\emph default
+della chain.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+La policy di default può essere ACCEPT o DROP.
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+
+\lang english
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\lang english
+iptables
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\lang english
+Ogni 
+\series bold
+regola
+\series default
+ è costituta da due parti principali:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\emph on
+\lang english
+Match:
+\emph default
+ È la parte della regola che specifica quali sono le caratteristiche del
+ pacchetto che cerchiamo
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+\lang english
+Target
+\emph default
+: È la parte della regola che specifica che operazione effettuare sul pacchetto
+ che fa match
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\lang english
+Solitamente si usa il minuscono per i nomi dei match e il maiuscolo per
+ i TARGET.
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+
+\lang english
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\lang english
+sintassi di iptables
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+
+\lang english
+iptables -A INPUT --source 192.168.0.153 -j DROP
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\lang english
+-A
+\series default
+ significa che vogliamo aggiungere questa regola (in coda alle altre) nella
+ 
+\bar under
+chain 
+\series bold
+INPUT
+\series default
+\bar default
+ (della tabella implicita filter)
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\lang english
+--source
+\series default
+ indica la condizione che il pacchetto IPv4 deve avere come sorgente l'indirizzo
+ 192.168.0.153
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\lang english
+-j DROP
+\series default
+ specifica che se le precedenti condizioni di match sono soddisfatte, l'operazio
+ne da effettuare è un 
+\series bold
+jump
+\series default
+ al target DROP, cioè 
+\bar under
+scartiamo il pacchetto
+\bar default
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\lang english
+Il pacchetto viene scartato e 
+\series bold
+non
+\series default
+ proseguirà nelle altre regole.
+ 
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+
+\lang english
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\lang english
+sintassi di iptables
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\lang english
+Nel match possiamo sempre utilizzare la negazione mettendo un punto esclamativo
+ davanti ad una delle condizioni del match.
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+Ad esempio:
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+
+\lang english
+iptables -A INPUT -s 192.168.0.0/24 ! -i eth1 -j DROP
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+\lang english
+-s
+\emph default
+ è come 
+\emph on
+--source, 
+\emph default
+utilizzando la notazione VLSM 
+\begin_inset Quotes eld
+\end_inset
+
+/24
+\begin_inset Quotes erd
+\end_inset
+
+ specifichiamo il 
+\series bold
+prefisso
+\series default
+, non l'indirizzo esatto.
+ 
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\lang english
+-i
+\series default
+ specifica il match sull'interfaccia di arrivo del pacchetto
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+
+\lang english
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\lang english
+sintassi di iptables
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+
+\lang english
+iptables -A [CHAIN] [condizioni di match] -j [target]
+\end_layout
+
+\begin_layout LyX-Code
+
+\lang english
+iptables -D [CHAIN] [condizioni di match] -j [target]
+\end_layout
+
+\begin_layout LyX-Code
+
+\lang english
+iptables -I [CHAIN] [condizioni di match] -j [target]
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout LyX-Code
+
+\lang english
+iptables -P [CHAIN] [ACCEPT|DROP]
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\lang english
+Policy di default della chain
+\end_layout
+
+\end_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout LyX-Code
+
+\lang english
+iptables -F [CHAIN] 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\lang english
+Per fare un flush delle regole nella chain (senza cambiare la policy di
+ default)
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+
+\lang english
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\lang english
+Cancellare una regola
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\lang english
+Possiamo riscriverla uguale mettendo -D al posto di -A
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+Oppure possiamo elencare le regole con i numeri a fianco
+\end_layout
+
+\begin_layout LyX-Code
+
+\lang english
+$ iptables -nvL --line-numbers
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+...e cancellare in base al numero:
+\end_layout
+
+\begin_layout LyX-Code
+
+\lang english
+$ iptables -t [table] -D [CHAIN] [numero regola]
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+
+\lang english
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\lang english
+ACCEPT/DROP
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\lang english
+Abbiamo visto che con DROP il pacchetto viene fermato.
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+Cosa succede con ACCEPT ?
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\lang english
+Il pacchetto viene accettato e passa alla chain successiva.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+Nel caso di INPUT non c'è una chain successiva, quindi viene passato al
+ sistema operativo
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+Però se siamo in PREROUTING ad esempio , non è detto che il pacchetto arrivi,
+ potrebbe essere bloccato in INPUT.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+
+\lang english
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\lang english
+Match comuni
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\lang english
+Interfaccia di rete di 
+\emph on
+input
+\emph default
+/
+\emph on
+output
+\emph default
+ del pacchetto
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+\emph on
+\lang english
+-i [iface]
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\emph on
+\lang english
+-o [iface]
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+Non possiamo usarli sempre questi match.
+ Ad esempio non ha senso usare -i nella chain di OUTPUT.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\lang english
+Indirizzo sorgente/destinazione
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+\emph on
+\lang english
+-s [address or network prefix]
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\emph on
+\lang english
+-d [address or network prefix]
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\lang english
+Protocollo di livello 4 e numeri di porta destinazione
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+\emph on
+\lang english
+-p udp --dport 53
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\lang english
+-p tcp --dport 22
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+
+\lang english
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\lang english
+Match stateful
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\lang english
+Tutti i match che abbiamo visto fino ad ora sono 
+\begin_inset Quotes eld
+\end_inset
+
+integrati
+\begin_inset Quotes erd
+\end_inset
+
+ in netfilter.
+ Molti altri match e quelli aggiuntivi necessitano quasi sempre di 
+\begin_inset Quotes eld
+\end_inset
+
+
+\series bold
+\emph on
+-m nome_modulo_match
+\series default
+\emph default
+
+\begin_inset Quotes erd
+\end_inset
+
+, per dire a iptables di caricare il modulo relativo.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+Possiamo fare match sullo stato della connessione correlata al pacchetto
+ utilizzando il modulo di tracking delle connessioni: 
+\series bold
+conntrack
+\end_layout
+
+\begin_layout LyX-Code
+
+\size small
+\lang english
+$ iptables -A INPUT -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+Questa regola dice se il pacchetto è aprte di una connnessione stabilita
+ (3-way handshake tcp completato, o nel caso di UDP è già 
+\begin_inset Quotes eld
+\end_inset
+
+passato qualcosa recentemente
+\begin_inset Quotes erd
+\end_inset
+
+)
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+
+\lang english
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\lang english
+Target comuni
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\lang english
+ACCEPT/DROP
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+REJECT: Come DROP ma genera un messaggio di errore ICMP o TCP che viene
+ rispedito al mittente
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\lang english
+Ad esempio:
+\end_layout
+
+\begin_layout LyX-Code
+
+\lang english
+-j REJECT --reject-with tcp-reset
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\lang english
+LOG: Salva una riga di log relativa al pacchetto che ha fatto match nei
+ log di sistema (dmesg)
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+
+\lang english
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\lang english
+RST o DROP?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
+\lang english
+Normalmente si preferisce non inviare nessun REJECT.
+ Con il REJECT si spreca banda e si è leggermente vulnerabili ad attacchi
+ DoS, oltre a rendere più facile il port scanning.
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+
+\lang english
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\lang english
+Blacklisting o whitelisting
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\lang english
+\begin_inset Quotes eld
+\end_inset
+
+Vogliamo fare una festa.
+ Facciamo la lista di tutti gli invitati o la lista di tutti i 'non invitati'
+ ? 
+\begin_inset Quotes eld
+\end_inset
+
+ (cit.)
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+Si fa sempre 
+\emph on
+whitelisting
+\emph default
+.
+ Se state facendo blacklisting state sbagliando qualcosa.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+Solitamente si impostano le policy di default di INPUT e FORWARD a DROP,
+ e poi si inseriscono una serie di regole per fare whitelisting del traffico
+ legittimo.
+ Di solito si lascia OUTPUT in ACCEPT, non ha molto senso bloccare anche
+ quello che generiamo noi.
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+
+\lang english
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\lang english
+Interfaccia di loopback
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\lang english
+L'interfaccia di rete 
+\begin_inset Quotes eld
+\end_inset
+
+lo
+\begin_inset Quotes erd
+\end_inset
+
+ è quella associata all'indirizzo 127.0.0.1 e tutta la rete 127.0.0.0/8
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+Molti programmi utilizzano questo indirizzamento per comunicazioni tra processi
+ e altro.
+ 
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\lang english
+Non 
+\series default
+dobbiamo bloccare questo traffico locale.
+\end_layout
+
+\begin_layout LyX-Code
+
+\lang english
+$ iptables -A INPUT -i lo -j ACCEPT
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+
+\lang english
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\lang english
+ICMP
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\lang english
+ICMP è un protocollo di servizio che si occupa di trasmettere informazioni
+ riguardanti malfunzionamenti, informazioni di controllo o messaggi tra
+ i vari componenti di una rete.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+Il tipo di pacchetto ICMP più famoso è senza dubbio la “echo request”, che
+ viene inviata con il comando ping e serve a sapere se un certo host è attivo
+ (e viene utilizzato per controllare se arrivano i pacchetti o ci sono problemi
+ sulla rete) 
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+A meno che non abbiate specifiche esigenze (ad esempio nascondere il fatto
+ che il vostro host è acceso) 
+\series bold
+è considerata pratica scorretta oltre che “maleducazione” ignorare i messaggi
+ ICMP
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+Se volete essere gentili semplicemente accettate tutto:
+\end_layout
+
+\begin_layout LyX-Code
+
+\lang english
+$ iptables -A INPUT -p icmp -j ACCEPT 
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+
+\lang english
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\lang english
+ICMP
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
+\lang english
+Se volete evitare di accettare propro tutto il traffico, almeno accettate
+ i tipi di messaggio ICMP fondamentali:
+\end_layout
+
+\begin_layout LyX-Code
+
+\size small
+\lang english
+$ iptables -A INPUT -p icmp --icmp-type 8 -j ACCEPT
+\end_layout
+
+\begin_layout LyX-Code
+
+\size small
+\lang english
+$ iptables -A INPUT -p icmp --icmp-type 3 -j ACCEPT
+\end_layout
+
+\begin_layout LyX-Code
+
+\size small
+\lang english
+$ iptables -A INPUT -p icmp --icmp-type 0 -j ACCEPT
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+Che corrispondono a:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\lang english
+Echo request (type 8)
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+Destination Unreachable (type 3) 
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+Echo reply (type 0) 
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+
+\lang english
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\lang english
+Esempio di config essenziale
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+
+\size scriptsize
+\lang english
+iptables -A INPUT -i lo -j ACCEPT
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+\lang english
+iptables -A INPUT -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+\lang english
+iptables -A INPUT -p icmp --icmp-type 8 -j ACCEPT
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+\lang english
+iptables -A INPUT -p icmp --icmp-type 3 -j ACCEPT
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+\lang english
+iptables -A INPUT -p icmp --icmp-type 0 -j ACCEPT
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+\lang english
+iptables -A INPUT -p tcp --dport 22 -m conntrack --ctstate NEW -j ACCEPT
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+\lang english
+iptables -A INPUT -p tcp --dport 80 -m conntrack --ctstate NEW -j ACCEPT
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+\lang english
+iptables -P INPUT DROP
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+\lang english
+iptables -P OUTPUT ACCEPT
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+\lang english
+iptables -P FORWARD DROP
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+esempio di config essenziale
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+\align left
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename img/iptables_after_config.svg
+	width 110line%
+	height 70pheight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+iptablesBasicConfig
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+
+\lang english
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\lang english
+Chiudersi fuori di casa
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\lang english
+Fate molta attenzione se state configurando una macchina remota (ad esempio
+ tramite ssh) quando impostate le policy di default! 
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+Caso tipico:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\lang english
+“Oh cavolo, non ho impostato nessun firewall su questa macchina...
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+beh...
+ per prima cosa policy di default DROP!” 
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+“Perché non risponde più il server?” 
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+Tramite cosa stavate comunicando? (-.-') 
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+
+\lang english
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\lang english
+Chiudersi fuori di casa
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
+\lang english
+Ricordatevi sempre di impostare le policy di default come ultimo passo,
+ dopo esservi assicurati di aver messo una regola per accettare le connessioni
+ nuove e stabilite per la vostra shell (ssh solitamente).
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+
+\lang english
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\lang english
+NAT - Network Address Translation
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
+\lang english
+Come funziona?
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\lang english
+\begin_inset Graphics
+	filename /home/r4yan2/Documents/POuL/Corsi_Linux_15_Networking/disegno1.svg
+	lyxscale 50
+	width 80text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\size small
+\lang english
+Quando un host, ad es.
+ 192.168.0.2 vuole connettersi ad un server esterno, ad es.
+ 5.6.7.8, invia i pacchetti al router di frontiera (gateway) che prende l'indirizzo
+ sorgente e lo sostituisce con il proprio (1.2.3.4).
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+
+\size small
+\lang english
+Il router sostituisce la mia porta TCP sorgente con una sua porta libera
+ e si annota questo scambio in una tabella di connessioni stabilite.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+
+\size small
+\lang english
+Quando arrivano le risposte dal server (solo risposte relative ad una connession
+e già stabilita), il router capisce chi è il destinatario nella rete locale
+ e sostiuisce l'indirizzo di destinazione (1.2.3.4) con l'indirizzo privato
+ 192.168.0.2 e con la porta destinazione corretta.
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+
+\lang english
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\lang english
+NAT: un abominio
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
+\lang english
+La NAT sarà tanto bella e comoda ma è un workaround (temporaneo fino ad
+ IPv6).
+ Quando è possibile non andrebbe usata.
+ Specialmente bisognerebbe 
+\series bold
+evitare di fare doppie NAT
+\series default
+ o altre cose simili..
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+NAT viola il modello gerarchico di IP
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+I processi su Internet non sono obbligati ad utilizzare TCP e UDP (vedi
+ SCTP - RFC 2960)
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+Il numero di connessioni contemporanee diminuisce a causa del numero limitato
+ di numeri di porte
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+NAPT trasforma Internet da una rete ad assenza di connessione
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+La NAT 
+\series bold
+da sola
+\series default
+ non è un meccanismo firewalling.
+ Le caratteristiche 
+\series bold
+stateful
+\series default
+ del firewall che implementa la NAT proteggono, non la NAT stessa.
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+Approfondimenti su 
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://tinyurl.com/nathorror
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+
+\lang english
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\lang english
+NAT: un abominio
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\lang english
+Se avete una valanga di IP pubblici o siete già dentro ad una NAT, evitate
+ di farne “yet another one”, grazie.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+Purtroppo molte volte c'è poco da fare (abbiamo solo un indirizzo IP pubblico
+ e tanti host da collegare) e siamo costretti ad usarla.
+ 
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+Vediamo allora come fare...
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+
+\lang english
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\lang english
+NAT
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+
+\lang english
+\begin_inset Graphics
+	filename /home/r4yan2/Documents/POuL/Corsi_Linux_15_Networking/disegno1.svg
+	lyxscale 50
+	width 80text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+
+\size tiny
+\lang english
+iptables -A FORWARD -s 192.168.0.0/24 -i eth1 -o eth0 -j ACCEPT
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+
+\size tiny
+\lang english
+iptables -A FORWARD -i eth0 -o eth1 -m state --state RELATED,ESTABLISHED
+ -j ACCEPT
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+
+\size tiny
+\lang english
+iptables -t nat -A POSTROUTING -s 192.168.0.0/24 -o eth0 -j SNAT --to-source
+ 1.2.3.4
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+
+\size tiny
+\lang english
+echo “1” > /proc/sys/net/ipv4/ip_forward
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+
+\lang english
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\lang english
+NAT
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\lang english
+Se il router ha un indirizzo IP dinamico potete utilizzare 
+\series bold
+-j MASQUERADE
+\series default
+ invece di SNAT, che identifica automaticamente l'indirizzo dell'interfaccia
+ utilizzata per la route di default.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+Come facciamo se vogliamo mettere su un servizio (ad.
+ es.
+ un server web) sull'host 192.168.0.3?
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\lang english
+\begin_inset Graphics
+	filename /home/r4yan2/Documents/POuL/Corsi_Linux_15_Networking/disegno1.svg
+	lyxscale 50
+	width 50text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+\lang english
+$ iptables -A FORWARD -i eth0 -o eth1 -p tcp --dport 80 -j ACCEPT
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+\lang english
+$ iptables -t nat -A PREROUTING -d 1.2.3.4 -i eth0 -j DNAT --to-destination
+ 192.168.0.3:80
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+
+\lang english
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\lang english
+IPv6
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\lang english
+Breve parentesi: Linux supporta nativamente Ipv6 fin dai primi standard.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\lang english
+Le assegnazioni di blocchi IPv4 da parte della IANA sono state esaurite
+ nel 2011.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+In tutti i grandi datacenter internazionali IPv6 è già attivo e utilizzato.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+In netfilter ipv6 è già supportato.
+ 
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\lang english
+Per chiarezza il tool userspace per gestire le regole relative al traffico
+ IPv6 è chiamato “ip6tables”.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\lang english
+Funziona esattamente allo stesso modo di iptables normale.
+ 
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+La principale differenza è che non esiste la NAT 
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+Una nota: Alcune funzionalità di ICMPv6 sono obbligatorie (Neighbor Discovery
+ Protocol, type 135 e 136) e se le bloccate avrete problemi di connessione.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+
+\size scriptsize
+\lang english
+ip6tables -A INPUT -p ipv6-icmp -j ACCEPT
+\end_layout
+
+\end_deeper
+\end_deeper
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+
+\lang english
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\lang english
+Rendere le regole persistenti
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\lang english
+Problema: Abbiamo tutte le nostre belle regole di iptables, però come facciamo
+ a salvarle tra un riavvio e l'altro (al riavvio il sistema operativo cancella
+ tutte le regole e ripristina tutte le chain vuote)
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+iptables-save e iptables-restore fanno al caso nostro.
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+
+\lang english
+iptables-save > /etc/firewall_rules
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+
+\lang english
+iptables-restore < /etc/firewall_rules
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\lang english
+Possiamo aggiungere in /etc/rc.local o altri script di startup a seconda
+ della distro.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Section*
+Appendice
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Fonti
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\lang english
+https://wiki.gentoo.org/wiki/Handbook:AMD64/Installation/Networking
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+Linux administrator Handbook
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+http://www.penguintutor.com/linux/basic-network-reference
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+Slides su firewalling su poul.org
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\lang english
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://www.poul.org/wp-content/uploads/2012/05/presentazione_netfilter.pdf
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://www.poul.org/wp-content/uploads/2014/04/Networking.pdf
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Section*
+Licenza
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Fine
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+
+\size largest
+Grazie per l'attenzione!
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Se volete cambiare licenza cambiate l'immagine e la scritta sotto
+\end_layout
+
+\begin_layout Plain Layout
+si consiglia di consultare http://creativecommons.org/ e http://creativecommons.or
+g/about/downloads per le immagini (possibilmente vettoriali)
+\end_layout
+
+\begin_layout Plain Layout
+ricordate di configurare inkscape per le immagini vettoriali (se non lo
+ avete già fatto - e voi lo avete già fatto, vero?!)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename by-sa.svg
+	height 0.9cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\size footnotesize
+Queste slides sono licenziate Creative Commons Attribution-ShareAlike 4.0
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://www.poul.org
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_body
+\end_document
