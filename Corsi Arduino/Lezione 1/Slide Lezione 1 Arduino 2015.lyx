@@ -1,0 +1,2378 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass beamer
+\begin_preamble
+\usetheme{Madrid}
+% \usecolortheme{crane}
+% Decommentate se la volete GIALLA
+% http://www.hartwork.org/beamer-theme-matrix/ per esempi di temi e colori
+\usenavigationsymbolstemplate{}
+
+
+% set fonts for nicer pdf view
+\IfFileExists{lmodern.sty}{\usepackage{lmodern}}{}
+
+\setbeamercovered{transparent}
+% or whatever (possibly just delete it)
+
+\titlegraphic{\includegraphics[height=2cm]{images/poul-logo.pdf}}
+% Ricordate che dovete sempre avere il logo in pdf nella cartella dove avete il documento
+\end_preamble
+\options handout
+\use_default_options false
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman times
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 2
+\use_package amssymb 2
+\use_package cancel 1
+\use_package esint 0
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Andate in Documento -> Impostazioni -> Preambolo di LaTeX per dare un occhio
+ ad alcune opzioni
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Title screen
+\end_layout
+
+\begin_layout Title
+Corso Arduino 2015
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Arduino 2015
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+opzionale, è quello che viene scritto in basso al centro
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subtitle
+18 Maggio 2015
+\end_layout
+
+\begin_layout Author
+Riccardo Binetti
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+href{mailto:arduino@rbino.com}{
+\backslash
+nolinkurl{arduino@rbino.com}}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Riccardo Binetti
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Lo so è un pò brutto, ma non ho trovato di meglio per far vedere autore
+ e mail con link mailto funzionante nella prima pagina.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Date
+Lezione 1 - Blinking LEDs with style
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Lezione 1
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+opzionale, è quello che viene scritto in basso a destra
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+If you wish to uncover everything in a step-wise fashion, uncomment the
+ following command:
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+beamerdefaultoverlayspecification{<+->}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Structuring a talk is a difficult task and the following structure may not
+ be suitable.
+ Here are some rules that apply for this solution: 
+\end_layout
+
+\begin_layout Itemize
+Exactly two or three sections (other than the summary).
+ 
+\end_layout
+
+\begin_layout Itemize
+At *most* three subsections per section.
+ 
+\end_layout
+
+\begin_layout Itemize
+Talk about 30s to 2min per frame.
+ So there should be between about 15 and 30 frames, all told.
+\end_layout
+
+\begin_layout Itemize
+A conference audience is likely to know very little of what you are going
+ to talk about.
+ So *simplify*! 
+\end_layout
+
+\begin_layout Itemize
+In a 20min talk, getting the main ideas across is hard enough.
+ Leave out details, even if it means being less precise than you think necessary.
+ 
+\end_layout
+
+\begin_layout Itemize
+If you omit details that are vital to the proof/implementation, just say
+ so once.
+ Everybody will be happy with that.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Introduzione
+\end_layout
+
+\begin_layout Subsection
+Premessa
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Fate domande
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename images/question.png
+	width 50col%
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Nel dubbio, non fatelo
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename images/familyguy.jpg
+	width 80col%
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Iscrivetevi al gruppo
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename images/qr-gwl097.pdf
+	width 50col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://bit.ly/arduino2015
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Section
+Cominciamo
+\end_layout
+
+\begin_layout Subsection
+Elettronica 101
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Voltaggio, corrente e resistenza (metafora acquatica)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename images/wateroohm.png
+	width 60col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Immaginiamo di avere un circuito chiuso d'acqua: l'acqua rappresenta gli
+ elettroni.
+\end_layout
+
+\begin_layout Itemize
+La velocità del flusso d'acqua rappresenta la corrente (simbolo I)
+\end_layout
+
+\begin_layout Itemize
+La differenza di pressione tra due punti rappresenta la tensione (o differenza
+ di potenziale) tra due punti (simbolo V)
+\end_layout
+
+\begin_layout Itemize
+Una larghezza del tubo inferiore al normale rappresenta una resistenza (simbolo
+ R)
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+La legge di Ohm
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Formula $V=R\cdot I$
+\end_inset
+
+
+\begin_inset space \hspace{}
+\length 3cm
+\end_inset
+
+ 
+\begin_inset Formula $I=\frac{V}{R}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Ci tornerà utile tra poco (ed è bene ricordarsela quando si lavora con component
+i elettronici)
+\end_layout
+
+\begin_layout Itemize
+A parità di differenza di potenziale (caso in cui ci si trova di solito):
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Se aumento la resistenza, diminuirà la corrente
+\end_layout
+
+\begin_layout Itemize
+Se diminuisco la resistenza, aumenterà la corrente
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Casi limite:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Se la resistenza è infinita (circuito aperto) non passa corrente
+\end_layout
+
+\begin_layout Itemize
+Se la resistenza è 0 (corto circuito) passa 
+\begin_inset Quotes eld
+\end_inset
+
+infinita
+\begin_inset Quotes erd
+\end_inset
+
+ corrente
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Resistenza di pull-up (o pull-down)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename images/PullUp.svg
+	width 15col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Serve a dare sempre un valore definito ad un'uscita collegata ad un bottone
+\end_layout
+
+\begin_layout Itemize
+Se lo switch è aperto:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Nella resistenza non passa corrente (il circuito è aperto)
+\end_layout
+
+\begin_layout Itemize
+Quindi la differenza di potenziale ai due capi della resistenza è 0
+\end_layout
+
+\begin_layout Itemize
+Quindi l'uscita è a 5 Volts
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Se lo switch è chiuso, è in corto con GND quindi l'uscita sarà a 0 Volts
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+il LED
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename images/electronics_led_diagram.png
+	width 30col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Il LED si accende quando l'anodo si trova almeno a ~2.0 V in più rispetto
+ al catodo
+\end_layout
+
+\begin_layout Itemize
+In soldoni, il - sarà collegato a GND e il + sarà collegato in serie ad
+ una resistenza, che poi andrà al pin
+\end_layout
+
+\begin_layout Itemize
+Quasi tutte le schede Arduino hanno un LED integrato (nel caso di Arduino
+ Leonardo è sul pin 13), per oggi useremo quello
+\end_layout
+
+\begin_layout AlertBlock
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Attenzione
+\end_layout
+
+\end_inset
+
+Non collegate mai un LED senza una resistenza in serie
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Resistenze per il LED
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Se volete calcolarvi la resistenza giusta per il vostro LED:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Controllate sul datasheet la forward current del vostro LED
+\end_layout
+
+\begin_layout Itemize
+Guardate che tensione c'è ai capi della serie di LED e resistenza (sottraendo
+ la tensione di accensione del LED)
+\end_layout
+
+\begin_layout Itemize
+Legge di Ohm: 
+\begin_inset Formula $R=\frac{V}{I}$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Oppure usate questa pratica tabellina per i voltaggi più comuni
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+La tabella assume un voltaggio di accensione di 2 V e una forward current
+ di 20mA (valori dei LED rossi standard da 5 o 3 mm)
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="5">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Vcc (V)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3.3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+9
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+12
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+R
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+68
+\begin_inset Formula $\Omega$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+150
+\begin_inset Formula $\Omega$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+390
+\begin_inset Formula $\Omega$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+560
+\begin_inset Formula $\Omega$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Se non avete il valore esatto usate una resistenza più grossa, non più piccola
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Potenziometro
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Come possiamo generare un segnale analogico che varia continuamente?
+\end_layout
+
+\begin_layout Standard
+Ad esempio, con un potenziometro (o trimmer)
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename images/POT.svg
+	width 20page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Collegato in questo modo, facendolo ruotare da un estremo all'altro OUT
+ varierà continuamente tra GND e VCC.
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Subsection
+I vostri compagni di viaggio
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Arduino Leonardo
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename images/Leonardo.svg
+	width 60col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Sarà il cervello dei nostri progetti
+\end_layout
+
+\begin_layout Itemize
+Leonardo rispetto a Uno permette di essere vista come un diverso dispositivo
+ USB
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Breadboard
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename images/Breadboard.svg
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Serve per connettere i vari componenti tra di loro
+\end_layout
+
+\begin_layout Itemize
+Non richiede saldatura
+\end_layout
+
+\begin_layout Itemize
+Ce ne sono di varie misure e tipi
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Collegamenti della Breadboard
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename images/Breadboard Connections.jpg
+	width 70col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+I due blocchi centrali sono collegati tra di loro a blocchi di 5 (lato corto)
+\end_layout
+
+\begin_layout Itemize
+I due blocchi centrali non sono collegati tra di loro
+\end_layout
+
+\begin_layout Itemize
+Le 4 (o 2) file sul lato lungo sono tutte collegate tra di loro
+\end_layout
+
+\begin_layout Itemize
+Su alcune breadboard, le file sul lato lungo sono interrotte a metà
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Fili in rame
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename images/breadboard-wire-500x500.jpg
+	width 35col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Servono a connettere Arduino alla Breadboard e i componenti quando la breadboard
+ non basta
+\end_layout
+
+\begin_layout Itemize
+Esistono dei set pretagliati per le breadboard se siete pigri
+\end_layout
+
+\begin_layout Itemize
+Altrimenti basta del cavo rigido e un paio di pinze
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Arduino IDE
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename images/arduide.png
+	height 40col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+È il programma che ci permette di scrivere sketch Arduino e di caricarli
+\end_layout
+
+\begin_layout Itemize
+Contiene anche molti esempi già pronti
+\end_layout
+
+\begin_layout Itemize
+Gira su Linux, Mac e Windows
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Test 1,2,3
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+
+\family typewriter
+int ledPin = 13;
+\end_layout
+
+\begin_layout LyX-Code
+
+\family typewriter
+void setup(){
+\end_layout
+
+\begin_layout LyX-Code
+
+\family typewriter
+  pinMode(ledPin, OUTPUT);
+\end_layout
+
+\begin_layout LyX-Code
+
+\family typewriter
+}
+\end_layout
+
+\begin_layout LyX-Code
+
+\family typewriter
+void loop(){
+\end_layout
+
+\begin_layout LyX-Code
+
+\family typewriter
+  digitalWrite(ledPin, HIGH);
+\end_layout
+
+\begin_layout LyX-Code
+
+\family typewriter
+}
+\end_layout
+
+\begin_layout Standard
+Il risultato dovrebbe essere il LED acceso fisso
+\end_layout
+
+\begin_layout AlertBlock
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Attenzione
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+Prima di caricare il codice, selezionate la board Arduino Leonardo (Strumenti
+ -> Tipo di Arduino)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Analisi
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\family typewriter
+int ledPin = 13;
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Assegna alla variabile ledPin il numero 13
+\end_layout
+
+\begin_layout Itemize
+Non è indispensabile ma appena i pin usati superano i 2 diventa comodo
+\end_layout
+
+\begin_layout Itemize
+Va definito fuori dalle funzioni di setup e loop (variabile globale)
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\family typewriter
+void setup(){...}
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+È una delle due funzioni che devono essere definite in ogni sketch
+\end_layout
+
+\begin_layout Itemize
+Tutto ciò che è al suo interno viene eseguito solo una volta appena Arduino
+ viene accesa
+\end_layout
+
+\begin_layout Itemize
+Di solito la si usa appunto per il setup iniziale
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\family typewriter
+void loop(){...}
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+L'altra funzione che deve venire definita in ogni sketch
+\end_layout
+
+\begin_layout Itemize
+Come si intuisce dal nome, viene eseguita tutta e poi si rinizia da capo,
+ finchè non si spegne Arduino
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Analisi/2
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\family typewriter
+pinMode(ledPin, OUTPUT);
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Imposta la modalità del pin
+\end_layout
+
+\begin_layout Itemize
+Il primo argomento è il numero del pin che si vuole impostare
+\end_layout
+
+\begin_layout Itemize
+Il secondo è la modalità (INPUT, OUTPUT o INPUT_PULLUP)
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\family typewriter
+digitalWrite(ledPin, HIGH);
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Setta un'uscita digitale
+\end_layout
+
+\begin_layout Itemize
+Il primo argomento è il numero del pin che si vuole settare
+\end_layout
+
+\begin_layout Itemize
+Il secondo è lo stato che si vuole impostare (HIGH o LOW)
+\end_layout
+
+\begin_layout Itemize
+Su Arduino Leonardo, HIGH significa che il pin sarà a 5 V, LOW che sarà
+ a 0 V
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Section
+Esercizi
+\end_layout
+
+\begin_layout Subsection
+Blinking LED
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Blinking LED
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\family typewriter
+delay(int nMilliseconds);
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Interrompe l'esecuzione per nMilliseconds
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+Con questa funzione dovreste ora essere in grado di scrivere l'Hello World
+ per eccellenza di Arduino: il blinking LED.
+ Dovete fare accendere e spegnere il LED ogni secondo.
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Subsection
+Digital Input
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Digital Input
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Finora abbiamo usato solo i pin come output.
+ Come avrete intuito possono essere usati anche come input.
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\size larger
+Come impostiamo il pin?
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Digital Input/2
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\family typewriter
+pinMode(ledPin, INPUT);
+\end_layout
+
+\begin_layout Itemize
+
+\family typewriter
+digitalRead(pin);
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Legge il pin (indicato con un numero) e ritorna HIGH o LOW
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\family typewriter
+if (condizione) {...} else {...}
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+se 
+\family typewriter
+condizione
+\family default
+ è 
+\family typewriter
+true
+\family default
+ esegue il codice tra la prima coppia di parentesi graffe, altrimenti il
+ codice tra la seconda coppia di parentesi graffe (non è obbligatorio avere
+ l'
+\family typewriter
+else
+\family default
+)
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\family typewriter
+A == B
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Se A è uguale a B, ritorna 
+\family typewriter
+true
+\family default
+, altrimenti 
+\family typewriter
+false
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Bottone
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename images/pushbutton_legs_final.jpg
+	width 35col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+A e C sono sempre connessi, B e D sono sempre connessi.
+ Quando si schiaccia il bottone sono tutti connessi
+\end_layout
+
+\begin_layout Itemize
+Cercate sempre informazioni sul bottone che state usando per esserne sicuri
+\end_layout
+
+\begin_layout Itemize
+Ricordate quello che avevamo detto all'inizio sulla resistenza di pullup!
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Circuito bottone
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename images/pushbutton.svg
+	width 85col%
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Tocca a voi
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Per prima cosa realizzate il classico blinking LED.
+\end_layout
+
+\begin_layout Itemize
+Poi realizzate un blinking LED che blinka soltanto quando il bottone è premuto,
+ mentre rimane spento se il bottone viene rilasciato.
+\end_layout
+
+\begin_layout Itemize
+Se finite anche il secondo esercizio, provate ad accendere il LED con il
+ bottone usato come 
+\begin_inset Quotes eld
+\end_inset
+
+toggle
+\begin_inset Quotes erd
+\end_inset
+
+: se schiacciato e rilasciato una volta accende il LED, se schiacciato e
+ rilasciato un'altra volta lo spegne.
+ Osservate le problematiche che sorgono.
+ Perché sorgono?
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\size larger
+Go!
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Soluzione blinking LED
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+
+\size small
+int ledPin = 13;
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+
+\size small
+int interval = 1000;
+\end_layout
+
+\begin_layout LyX-Code
+
+\size small
+void setup(){
+\end_layout
+
+\begin_layout LyX-Code
+
+\size small
+  pinMode(ledPin, OUTPUT);
+\end_layout
+
+\begin_layout LyX-Code
+
+\size small
+}
+\end_layout
+
+\begin_layout LyX-Code
+
+\size small
+void loop(){
+\end_layout
+
+\begin_layout LyX-Code
+
+\size small
+  digitalWrite(ledPin, HIGH);
+\end_layout
+
+\begin_layout LyX-Code
+
+\size small
+  delay(interval);
+\end_layout
+
+\begin_layout LyX-Code
+
+\size small
+  digitalWrite(ledPin, LOW);
+\end_layout
+
+\begin_layout LyX-Code
+
+\size small
+  delay(interval);
+\end_layout
+
+\begin_layout LyX-Code
+
+\size small
+}
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Soluzione LED + bottone
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+
+\size small
+int ledPin = 13;
+\end_layout
+
+\begin_layout LyX-Code
+
+\size small
+int buttonPin = 6;
+\end_layout
+
+\begin_layout LyX-Code
+
+\size small
+int interval = 1000;
+\end_layout
+
+\begin_layout LyX-Code
+
+\size small
+void setup(){
+\end_layout
+
+\begin_layout LyX-Code
+
+\size small
+  pinMode(buttonPin, INPUT);
+\end_layout
+
+\begin_layout LyX-Code
+
+\size small
+  pinMode(ledPin, OUTPUT);
+\end_layout
+
+\begin_layout LyX-Code
+
+\size small
+}
+\end_layout
+
+\begin_layout LyX-Code
+
+\size small
+void loop(){
+\end_layout
+
+\begin_layout LyX-Code
+
+\size small
+  if (digitalRead(buttonPin) == LOW){
+\end_layout
+
+\begin_layout LyX-Code
+
+\size small
+    digitalWrite(ledPin, HIGH);
+\end_layout
+
+\begin_layout LyX-Code
+
+\size small
+    delay(interval);
+\end_layout
+
+\begin_layout LyX-Code
+
+\size small
+    digitalWrite(ledPin, LOW);
+\end_layout
+
+\begin_layout LyX-Code
+
+\size small
+    delay(interval);
+\end_layout
+
+\begin_layout LyX-Code
+
+\size small
+  } else {
+\end_layout
+
+\begin_layout LyX-Code
+
+\size small
+    digitalWrite(ledPin, LOW);
+\end_layout
+
+\begin_layout LyX-Code
+
+\size small
+  }
+\end_layout
+
+\begin_layout LyX-Code
+
+\size small
+}
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Bonus level: bouncing
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename images/debounce.jpg
+	width 40page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Quando il bottone viene premuto, in realtà gli switch meccanici fanno un
+ po' di falsi contatti prima di stabilizzarsi.
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Debouncing in software, v1
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Come si può risolvere questo problema? Vediamo alcuni approcci.
+\end_layout
+
+\begin_layout Itemize
+Via software (bloccante): quando rileviamo lo stato che vogliamo, inseriamo
+ un delay successivo per evitare i contatti dopo (5ms dovrebbero bastare)
+\end_layout
+
+\begin_layout LyX-Code
+
+\family typewriter
+...
+\end_layout
+
+\begin_layout LyX-Code
+currState = 
+\size small
+digitalRead(buttonPin);
+\end_layout
+
+\begin_layout LyX-Code
+if (currState
+\size small
+ != prevState){
+\end_layout
+
+\begin_layout LyX-Code
+  delay(5);
+\end_layout
+
+\begin_layout LyX-Code
+  if (currState == LOW){
+\end_layout
+
+\begin_layout LyX-Code
+    ledState = !ledState;
+\end_layout
+
+\begin_layout LyX-Code
+    digitalWrite(ledPin, ledState);
+\end_layout
+
+\begin_layout LyX-Code
+}
+\end_layout
+
+\begin_layout LyX-Code
+prevState = currState;
+\end_layout
+
+\begin_layout LyX-Code
+...
+\end_layout
+
+\begin_layout Itemize
+Lo svantaggio è che si 
+\begin_inset Quotes eld
+\end_inset
+
+perdono
+\begin_inset Quotes erd
+\end_inset
+
+ 5ms ogni volta che si schiaccia il bottone
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Debouncing in software, v1: spiegazione
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Dobbiamo avere 3 variabili
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+currState, che conterrà ad ogni loop il valore di lettura del bottone
+\end_layout
+
+\begin_layout Itemize
+prevState, che conterrà il valore di lettura del loop precedente del bottone
+\end_layout
+
+\begin_layout Itemize
+ledState, che conterrà lo stato del LED
+\end_layout
+
+\begin_layout Itemize
+le variabili saranno di tipo boolean, ovvero con valore false o true: false
+ viene visto come LOW, true viene visto come HIGH
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Se lo stato del bottone è cambiato rispetto al loop precedente (!= significa
+ 
+\begin_inset Quotes eld
+\end_inset
+
+non uguale
+\begin_inset Quotes erd
+\end_inset
+
+), vuol dire che è stato o premuto o rilasciato
+\end_layout
+
+\begin_layout Itemize
+Aspettiamo 5 millisecondi per evitare il rumore del bouncing
+\end_layout
+
+\begin_layout Itemize
+Se lo stato attuale è LOW vuol dire che il bottone è stato schiacciato,
+ quindi invertiamo lo stato del LED
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+ledState = !ledState significa 
+\begin_inset Quotes eld
+\end_inset
+
+Assegna a ledState il valore inverso di ledState
+\begin_inset Quotes erd
+\end_inset
+
+ (! significa not).
+ Quindi se era true (HIGH) diventerà false (LOW) e viceversa.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Debouncing in software v2
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Via software (non bloccante): ad ogni giro del loop, se il bottone è nello
+ stato 
+\begin_inset Quotes eld
+\end_inset
+
+attivo
+\begin_inset Quotes erd
+\end_inset
+
+ incrementiamo un contatore, se è nello stato 
+\begin_inset Quotes eld
+\end_inset
+
+a riposo
+\begin_inset Quotes erd
+\end_inset
+
+ lo mettiamo a zero.
+ Impostiamo una soglia a quel contatore oltre cui il bottone è considerato
+ premuto.
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+...
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+if (digitalRead(buttonPin) == LOW){
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+  counter++;
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+} else {
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+  counter = 0;
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+}
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+if (counter > 50){
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+  currState = LOW;
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+} else {
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+  currState = HIGH;
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+}
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+if (currState == LOW && prevState == HIGH){
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+  ledState = !ledState;
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+  digitalWrite(ledPin, ledState);
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+}
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+prevState = currState;
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+...
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Debouncing in software, v2: spiegazione
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Dobbiamo avere 3 variabili come prima, più una variabile counter di tipo
+ unsigned int
+\end_layout
+
+\begin_layout Itemize
+Se il bottone è premuto, incrementiamo il contatore, se rileviamo che è
+ rilasciato (perché effettivamente rilasciato o per rumore di bouncing),
+ riportiamo il contatore a 0
+\end_layout
+
+\begin_layout Itemize
+Quando il contatore arriva ad una soglia (in questo caso 50), sappiamo che
+ il bottone è stato almeno quel numero di loop premuto senza rumore, quindi
+ dichiariamo che il suo stato è effettivamente 
+\begin_inset Quotes eld
+\end_inset
+
+premuto
+\begin_inset Quotes erd
+\end_inset
+
+ (LOW, per coerenza con gli esempi precedenti)
+\end_layout
+
+\begin_layout Itemize
+A questo punto, entreremo nell'if (solo il primo giro che il bottone è stato
+ dichiarato premuto) e invertiremo lo stato del LED
+\end_layout
+
+\begin_layout AlertBlock
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Attenzione
+\end_layout
+
+\end_inset
+
+
+\size footnotesize
+Questo metodo funziona male se ci sono dei delay nel codice.
+ Ad esempio, se state facendo blinkare il LED con due delay da 1000ms, ogni
+ 
+\begin_inset Quotes eld
+\end_inset
+
+giro
+\begin_inset Quotes erd
+\end_inset
+
+ del loop durerà ~2 secondi, quindi per arrivare alla soglia di 50 bisogna
+ tenere il bottone premuto 100 secondi! La prossima lezione vedremo come
+ evitare di usare la funzione delay e vivere felici.
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Debouncing in hardware
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Via hardware: con un filtro passa basso (con R=100k
+\begin_inset Formula $\Omega$
+\end_inset
+
+ e C = 47nF, 
+\begin_inset Formula $\tau$
+\end_inset
+
+ = R
+\begin_inset Formula $\times$
+\end_inset
+
+C = 4.7ms)
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename images/passabasso.svg
+	width 25page%
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Domande?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Se vi vengono in mente più tardi, fatele sul gruppo
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Subsection*
+Licenza
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Per oggi è tutto
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+
+\size largest
+Ci vediamo settimana prossima
+\begin_inset Newline newline
+\end_inset
+
+
+\size default
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Se volete cambiare licenza cambiate l'immagine e la scritta sotto
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename images/cc-by-sa.png
+	width 70col%
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\size footnotesize
+Queste slides sono licenziate Creative Commons Attribution-ShareAlike 3.0
+ Unported
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\family typewriter
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://www.poul.org
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_body
+\end_document
