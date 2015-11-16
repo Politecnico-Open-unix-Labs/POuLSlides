@@ -1,0 +1,3042 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass beamer
+\begin_preamble
+\usetheme{Madrid}
+%\usetheme{Marburg}
+\usefonttheme{structurebold}
+% \usecolortheme{crane} %GIALLA
+% more colors & themes http://www.hartwork.org/beamer-theme-matrix/
+
+\setbeamercovered{transparent}
+% transizioni: gli elementi nascosti vengono visualizzati in trasparenza
+
+\usenavigationsymbolstemplate{}
+% hide navigation symbols (bottom-right corner in every slide)
+
+\titlegraphic{\includegraphics[height=2cm]{newlogo.pdf}}
+% Aggiunge il logo del POuL in prima pagina
+
+\IfFileExists{lmodern.sty}{\usepackage{lmodern}}{}
+% sets nice fonts (if available)
+
+% inserisce AUTOMATICAMENTE una slide di titolo sezione all'inizio di OGNI sezione: in questa slide viene visualizzato l'indice delle sezioni, evidenziata quella corrente.
+\AtBeginSection[]
+{
+  \begin{frame}<beamer>
+    \frametitle{Sezione \thesection}
+    \tableofcontents[currentsection]
+  \end{frame}
+}
+
+%change color linksurl
+\hypersetup{ urlcolor=blue
+}
+
+%animatelines
+\usepackage{animate}
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language italian
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement H
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder true
+\pdf_colorlinks false
+\pdf_backref false
+\pdf_pdfusetitle true
+\pdf_quoted_options "linkcolor=black"
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\boxbgcolor #00aa7f
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language french
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Presentazioni & Curricula
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Corso LyX 2015
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Date
+Le classi di documento in LyX
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+13 Aprile 2015
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Author
+Adelina Doncheva
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+href{mailto:doncheva.adelina@gmail.com}{
+\backslash
+nolinkurl{doncheva.adelina@gmail.com}}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Adelina Doncheva
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Talk about what
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Section
+Perché LyX?
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Le classi di documento
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+LyX permette di concentrarsi sui 
+\series bold
+contenuti
+\series default
+.
+ Impaginare il documento finito è compito dei file di stile
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+I file .sty di latex definiscono una serie di tag al loro interno che in
+ LyX compaiono nel menu a tendina dei layout: alcuni sono standard, altri
+ sono utilizzabili a seconda del template scelto
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+In LyX esiste la classe documento che si "preoccupa" del tipo di documento.
+ 
+\end_layout
+
+\begin_layout Quote
+Trovate le classi che LyX offre nel menu:
+\end_layout
+
+\begin_layout Quote
+
+\series bold
+\begin_inset space \qquad{}
+\end_inset
+
+Document
+\series default
+ 
+\begin_inset Formula $\triangleright$
+\end_inset
+
+ 
+\series bold
+Settings
+\series default
+ 
+\begin_inset Formula $\triangleright$
+\end_inset
+
+ 
+\series bold
+Document Class
+\begin_inset space \hfill{}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Quote
+Alcuni esempi:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Letter
+\end_layout
+
+\begin_layout Itemize
+ModernCV
+\end_layout
+
+\begin_layout Itemize
+Beamer
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Keep in mind...
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+LyX mette a disposizione una vasta scelta di 
+\series bold
+Modelli 
+\series default
+pieni di note e utili commenti
+\end_layout
+
+\begin_layout Quote
+
+\series bold
+File
+\series default
+ 
+\begin_inset Formula $\triangleright$
+\end_inset
+
+ 
+\series bold
+New from Template...
+ 
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+beamer-conference-ornate-20min.lyx
+\end_layout
+
+\begin_layout Itemize
+letter.lyx
+\end_layout
+
+\begin_layout Itemize
+modernCV.lyx
+\end_layout
+
+\begin_layout Itemize
+slides.lyx
+\end_layout
+
+\begin_layout Itemize
+etc...
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Per chi vuole...
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+LyX permette anche di creare un layout su misura per un nuovo tipo di documento
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+È disponibile una guida accessibile andando su
+\end_layout
+
+\begin_layout Quote
+
+\series bold
+Help 
+\begin_inset Formula $\triangleright$
+\end_inset
+
+ Customization
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Section
+Classi di documento
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Per scrivere una lettera...
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Quote
+
+\series bold
+File
+\series default
+ 
+\begin_inset Formula $\triangleright$
+\end_inset
+
+
+\series bold
+ New from Template...
+
+\series default
+ 
+\begin_inset Formula $\triangleright$
+\end_inset
+
+ 
+\series bold
+letter.lyx
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout AlertBlock
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Nota Bene
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout AlertBlock
+L'ultima riga di commiato, detta 
+\series bold
+Signature
+\series default
+, va inserita nel documento prima del campo 
+\series bold
+Opening
+\series default
+, come specificato nel template
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+...o il ricettario della nonna *.*
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Quote
+
+\series bold
+File
+\series default
+ 
+\begin_inset Formula $\triangleright$
+\end_inset
+
+ 
+\series bold
+New from Template...
+
+\series default
+ 
+\begin_inset Formula $\triangleright$
+\end_inset
+
+ 
+\series bold
+/usr/share/lyx/examples/recipebook.lyx
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Compilare i campi a vostro piacimento
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Esportare il file pdf!
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Per gli autori in erba...
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+LyX offre anche la modalità 
+\series bold
+Book
+\series default
+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+ma non offre nessun Template per tale modalità
+\end_layout
+
+\end_inset
+
+, più precisamente
+\end_layout
+
+\begin_layout Quote
+
+\series bold
+File
+\series default
+ 
+\begin_inset Formula $\triangleright$
+\end_inset
+
+ 
+\series bold
+New
+\end_layout
+
+\begin_layout Quote
+
+\series bold
+Document
+\series default
+ 
+\begin_inset Formula $\triangleright$
+\end_inset
+
+ 
+\series bold
+Settings
+\series default
+ 
+\begin_inset Formula $\triangleright$
+\end_inset
+
+ 
+\series bold
+Document Class
+\series default
+ 
+\begin_inset Formula $\triangleright$
+\end_inset
+
+ 
+\series bold
+Book (Standard Class)
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+In questo caso vengono molto utili strumenti come "Parte" o "Capitolo"
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+e per quelli di bestseller...
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Ci vuole qualcosa 
+\begin_inset Quotes fld
+\end_inset
+
+in più
+\begin_inset Quotes frd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Divide et Impera
+\end_layout
+
+\begin_layout Quote
+
+\series bold
+Insert 
+\series default
+
+\begin_inset Formula $\triangleright$
+\end_inset
+
+ 
+\series bold
+File
+\series default
+ 
+\begin_inset Formula $\triangleright$
+\end_inset
+
+ 
+\series bold
+Child Document...
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Citazioni
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+È utile creare un ambiente bibliografia
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Per inserire la bibliografia andare su 
+\series bold
+Insert
+\series default
+ 
+\begin_inset Formula $\triangleright$
+\end_inset
+
+ 
+\series bold
+List/TOC
+\series default
+ 
+\begin_inset Formula $\triangleright$
+\end_inset
+
+ 
+\series bold
+BibTeX Bibliography...
+\end_layout
+
+\end_inset
+
+ con le fonti etichettate per riga
+\end_layout
+
+\begin_layout Quote
+
+\series bold
+Insert
+\series default
+ 
+\begin_inset Formula $\triangleright$
+\end_inset
+
+ 
+\series bold
+Citation...
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Section
+Modern CV
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Prerequisiti
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Block
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Soltanto uno
+\end_layout
+
+\end_inset
+
+Il pacchetto 
+\series bold
+\emph on
+texlive-latex-extra
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+In ambienti GNU/Linux come Ubuntu, l'installazione di LyX include di default
+ anche il suddetto pacchetto
+\end_layout
+
+\end_inset
+
+
+\series default
+\emph default
+ contiene ModernCV
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Potete trovare il template di esempio al seguente link 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://wiki.lyx.org/Examples/CV
+\end_layout
+
+\end_inset
+
+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+aggiunge alcuni dati direttamente nel preambolo, per avere il template completo
+ File 
+\begin_inset Formula $\triangleright$
+\end_inset
+
+ New from Template...
+ 
+\begin_inset Formula $\triangleright$
+\end_inset
+
+ .../examples/modernCV.lyx
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+From CTAN
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Quotation
+Comprehensive TeX Archive Network:
+\end_layout
+
+\begin_layout Quotation
+
+\emph on
+"Moderncv provides a document class for type setting modern curricula vitae,
+ both in a classic and in a casual style.
+ It is fairly customizable, allowing you to define your own style by changing
+ the colours, the fonts, etc."
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Scriviamo il nostro Curriculum
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Oggi ci concentriamo sul template 
+\series bold
+modernCV 
+\series default
+che è il più elegante e gettonato.
+\end_layout
+
+\begin_layout Quote
+
+\series bold
+File
+\series default
+ 
+\begin_inset Formula $\triangleright$
+\end_inset
+
+
+\series bold
+ New from Template...
+ 
+\begin_inset Formula $\triangleright$
+\end_inset
+
+ .../examples/modernCV.lyx
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Il template offerto segue lo standard americano, che è privo dei campi riguardan
+ti i dati anagrafici
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+inseribili comunque tramite il menu a tendina dei layout 
+\end_layout
+
+\end_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Standard
+Esistono altri template per creare il proprio CV:
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+EuropeCV
+\series default
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+SimpleCV
+\series default
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Example 1: Layout Item
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset VSpace vfill
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+visible<-1,2>{
+\end_layout
+
+\end_inset
+
+Il layout 
+\series bold
+Item
+\series default
+ consente di inserire testo su 
+\begin_inset Quotes fld
+\end_inset
+
+riga continua
+\begin_inset Quotes frd
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+aggiungendo un 
+\series bold
+Summary
+\series default
+ che riassume il contenuto
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset VSpace vfill
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+visible<1,2>{
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \qquad{}
+\end_inset
+
+In LyX
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename item_lyx.svg
+	scale 30
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace vfill
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+visible<2>{
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \qquad{}
+\end_inset
+
+In View
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename item_pdf.svg
+	scale 35
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Example 2: Layout Item with Comment
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset VSpace vfill
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+visible<-1,2,3>{
+\end_layout
+
+\end_inset
+
+Il layout 
+\series bold
+Item with comment
+\series default
+ consente di inserire 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+un 
+\series bold
+Summary
+\series default
+ che riassume il contenuto...
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+...del 
+\series bold
+Text
+\series default
+ che lo riguarda
+\end_layout
+
+\begin_layout Itemize
+e, volendo, del testo in più 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+visible<2,3>{
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \qquad{}
+\end_inset
+
+In LyX
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename item_with_comment_lyx.svg
+	scale 40
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+visible<3>{
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \qquad{}
+\end_inset
+
+In View
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename item_with_comment_view.svg
+	scale 40
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Example 3: Double Item
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset VSpace vfill
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+visible<-1,2>{
+\end_layout
+
+\end_inset
+
+Il layout 
+\series bold
+Double Item
+\series default
+ consente di inserire 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+un 
+\series bold
+Left Summary
+\series default
+ che riassume il contenuto a sinistra
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+un 
+\series bold
+Left Text
+\series default
+ che riguarda il contenuto 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+un 
+\series bold
+Right Summary
+\series default
+ che riassume il contenuto a destra
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+visible<1,2>{
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \qquad{}
+\end_inset
+
+In LyX
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename double_item_lyx.svg
+	scale 40
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+visible<2>{
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \qquad{}
+\end_inset
+
+In View
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename double_item_view.svg
+	scale 40
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Per cambiare stile...
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Quote
+
+\series bold
+CVStyle
+\series default
+ dal menu a tendina dei layout
+\end_layout
+
+\begin_layout Itemize
+I possibili stili
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+casual (default)
+\end_layout
+
+\begin_layout Itemize
+classic
+\end_layout
+
+\begin_layout Itemize
+oldstyle
+\end_layout
+
+\begin_layout Itemize
+banking
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+e perché no, colore...
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Quote
+
+\series bold
+CVColor 
+\series default
+dal menu a tendina dei layout
+\end_layout
+
+\begin_layout Itemize
+Tra i colori disponibili
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+blue (default)
+\end_layout
+
+\begin_layout Itemize
+orange
+\end_layout
+
+\begin_layout Itemize
+green
+\end_layout
+
+\begin_layout Itemize
+red
+\end_layout
+
+\begin_layout Itemize
+purple
+\end_layout
+
+\begin_layout Itemize
+gray
+\end_layout
+
+\begin_layout Itemize
+black
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Una feature carina
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+ModernCV permette di linkare i Social Network direttamente al file pdf 
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Per ora è possibile linkare solo 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+linkedin
+\end_layout
+
+\begin_layout Itemize
+github
+\end_layout
+
+\begin_layout Itemize
+twitter
+\end_layout
+
+\end_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Ad esempio, per linkare Github:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Dal menu a tendina selezionare 
+\series bold
+Social
+\end_layout
+
+\begin_layout Itemize
+Quindi 
+\series bold
+Insert
+\series default
+ 
+\begin_inset Formula $\triangleright$
+\end_inset
+
+ 
+\series bold
+Name
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Nella cella 
+\series bold
+Name 
+\series default
+inserire il nome del Social tra quelli linkabili
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Inserire il proprio 
+\series bold
+username
+\series default
+ di Github
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout AlertBlock
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Importante
+\end_layout
+
+\end_inset
+
+Per fare 
+\series bold
+\emph on
+bene
+\series default
+ 
+\emph default
+il link il nome del Social va inserito in 
+\series bold
+lowercase
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+And now is time for a...
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\series bold
+\size huge
+\color black
+Demo
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Section
+Presentazioni
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Prerequisiti
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Block
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Nulla di esilarante
+\end_layout
+
+\end_inset
+
+L'unico requisito è aver installato il pacchetto LaTeX contenente Beamer
+\emph on
+: 
+\series bold
+latex-beamer
+\series default
+ 
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+In ambienti GNU/Linux come Ubuntu, l'installazione di LyX include di default
+ anche il pacchetto richiesto
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Come si fanno le presentazioni in LyX?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+È sufficiente modificare la classe documento
+\end_layout
+
+\begin_layout Quote
+
+\series bold
+Document
+\series default
+ 
+\begin_inset Formula $\triangleright$
+\end_inset
+
+ 
+\series bold
+Settings
+\series default
+ 
+\begin_inset Formula $\triangleright$
+\end_inset
+
+ 
+\series bold
+Document Class 
+\begin_inset Formula $\triangleright$
+\end_inset
+
+ Beamer
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Scegliere il Template
+\end_layout
+
+\begin_layout Quote
+
+\series bold
+File
+\series default
+ 
+\begin_inset Formula $\triangleright$
+\end_inset
+
+
+\series bold
+ New from Template...
+ 
+\begin_inset Formula $\triangleright$
+\end_inset
+
+ beamer-conference-ornate-20min
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Compilare i campi in base alle proprie esigenze e seguendo le comode note
+ 
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Generare il pdf! (Ctrl-R)
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Gerarchia del documento
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Alcune note sull'importanza del gestire le gerarchie in modo corretto
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout ColumnsTopAligned
+
+\end_layout
+
+\begin_deeper
+\begin_layout Column
+
+\lang english
+5cm
+\end_layout
+
+\begin_layout Block
+
+\lang english
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+
+\lang english
+Per la Gerarchia
+\end_layout
+
+\end_inset
+
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+
+\lang english
+1-
+\end_layout
+
+\end_inset
+
+
+\lang italian
+tab/shift-tab
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Column
+
+\lang english
+5cm
+\end_layout
+
+\begin_layout Block
+
+\lang english
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+
+\lang english
+Per evitare 
+\begin_inset Quotes fld
+\end_inset
+
+conflitti
+\begin_inset Quotes frd
+\end_inset
+
+ tra Frame
+\end_layout
+
+\end_inset
+
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+
+\lang english
+2-
+\end_layout
+
+\end_inset
+
+
+\lang italian
+Inserire il 
+\series bold
+Separatore
+\series default
+ tra una diapositiva e l'altra
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout ExampleBlock
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Shortcut
+\end_layout
+
+\end_inset
+
+Alt-P Enter
+\end_layout
+
+\end_deeper
+\end_deeper
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Le transizioni (aka pause)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Il concetto di animazione in LyX si realizza tramite le transizioni (o pause)
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Block
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Definizione
+\end_layout
+
+\end_inset
+
+ La pausa è un elemento del contenuto che consente di separare ciò che la
+ precede da ciò che la segue.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+visible<2>{
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename pause.svg
+	scale 35
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+...ed ecco come funzionano
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Block
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+La pausa
+\end_layout
+
+\end_inset
+
+Mantiene il filo logico e permette di far apparire
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+un 
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+elemento 
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+alla 
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+volta
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+I tre tipi di blocchi
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+visible<-1>{
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout ExampleBlock
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Esempio
+\end_layout
+
+\end_inset
+
+Il blocco ha un titolo; il contenuto va inserito dopo il 
+\series bold
+Block Title 
+\series default
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+visible<2>{
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Block
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Informazione
+\end_layout
+
+\end_inset
+
+Questo è un blocco informazione.
+ È possibile inserire 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+un elenco 
+\end_layout
+
+\begin_layout Itemize
+puntato 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+all'interno del blocco
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+visible<3>{
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout AlertBlock
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Avviso
+\end_layout
+
+\end_inset
+
+I blocchi causano dipendenza: se ne utilizzate troppi potrebbe risultare
+ pesante per il lettore
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Se volessimo cambiare tema alla nostra presentazione?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Visitando 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://www.hartwork.org/beamer-theme-matrix/
+\end_layout
+
+\end_inset
+
+ trovate i vari temi disponibili già inclusi in LyX, senza la necessità
+ di scaricare nulla.
+ 
+\begin_inset Newline newline
+\end_inset
+
+Potete quindi scegliere quello su misura per voi!
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Ad ogni riga è stato assegnato il nome di una città che rappresenta il tema
+ della presentazione
+\end_layout
+
+\begin_layout Itemize
+Ogni colonna rappresenta il colore del tema
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Una volta scelto il tema, è sufficiente...
+\end_layout
+
+\begin_layout Quote
+
+\series bold
+Document
+\series default
+ 
+\begin_inset Formula $\triangleright$
+\end_inset
+
+ 
+\series bold
+Settings
+\series default
+ 
+\begin_inset Formula $\triangleright$
+\end_inset
+
+ 
+\series bold
+LaTeX
+\series default
+ 
+\series bold
+Preamble
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+...settare i parametri inserendoli nel preambolo
+\end_layout
+
+\begin_layout LyX-Code
+
+\backslash
+usetheme{Madrid}
+\end_layout
+
+\begin_layout LyX-Code
+
+\backslash
+usecolortheme{crane}
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Alcune feature dei footer
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Per ogni tema è possibile scegliere il titolo da visualizzare sul footer
+\end_layout
+
+\begin_layout Standard
+Come
+\begin_inset space ~
+\end_inset
+
+fare?
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Ad esempio, scegliendo dal menu a tendina dei layout 
+\series bold
+Title
+\end_layout
+
+\begin_layout Quote
+
+\series bold
+Insert
+\series default
+ 
+\begin_inset Formula $\triangleright$
+\end_inset
+
+ 
+\series bold
+Short Title
+\series default
+ 
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Per la Data scegliendo dal menu a tendina dei layout 
+\series bold
+Date
+\end_layout
+
+\begin_layout Quote
+
+\series bold
+Insert
+\series default
+ 
+\begin_inset Formula $\triangleright$
+\end_inset
+
+ 
+\series bold
+Short Date
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Block
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Nota
+\end_layout
+
+\end_inset
+
+Per il campo 
+\series bold
+Date
+\series default
+ LyX non si aspetta 
+\bar under
+necessariamente
+\bar default
+ una data
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Another...
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\series bold
+\size huge
+\color black
+Demo
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Una carta vincente: versione stampabile
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Per avere una versione stampabile della propria presentazione è sufficiente
+ modificare la classe documento.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Quote
+
+\series bold
+Document
+\series default
+ 
+\begin_inset Formula $\triangleright$
+\end_inset
+
+ 
+\series bold
+Settings
+\series default
+ 
+\begin_inset Formula $\triangleright$
+\end_inset
+
+ 
+\series bold
+Document Class 
+\series default
+
+\begin_inset Formula $\triangleright$
+\end_inset
+
+ 
+\series bold
+Beamer Article (standard class)
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+RTFM
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Quote
+
+\series bold
+Help
+\series default
+ 
+\begin_inset Formula $\triangleright$
+\end_inset
+
+ 
+\series bold
+Specific Manuals
+\series default
+ 
+\begin_inset Formula $\triangleright$
+\end_inset
+
+ 
+\series bold
+Beamer Presentations
+\end_layout
+
+\begin_layout Standard
+è disponibile una guida sufficientemente completa sull'integrazione tra
+ LyX e Beamer.
+\end_layout
+
+\end_deeper
+\begin_layout Section*
+Appendice
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Fonti
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://www.lyx.org/
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://ctan.mackichan.com/macros/latex/contrib/beamer/doc/beameruserguide.pdf
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://www.poul.org/wp-content/uploads/2014/05/LyX2014-presentazioni-cv.pdf
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://github.com/kodaline/Corso_Lyx_2015
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Section*
+Licenza
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Fine
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+
+\series bold
+\size largest
+Grazie per l'attenzione!
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename by-sa.svg
+	height 0.9cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\size footnotesize
+Queste slides sono licenziate Creative Commons Attribution-ShareAlike 4.0
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://www.poul.org
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_body
+\end_document
