@@ -1,5 +1,5 @@
-#LyX 2.0 created this file. For more info see http://www.lyx.org/
-\lyxformat 413
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
 \begin_document
 \begin_header
 \textclass beamer
@@ -19,20 +19,20 @@
 \end_preamble
 \use_default_options false
 \maintain_unincluded_children false
-\language italian
+\language english
 \language_package default
 \inputencoding auto
 \fontencoding global
 \font_roman times
 \font_sans default
 \font_typewriter default
+\font_math auto
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
 \font_sf_scale 100
 \font_tt_scale 100
-
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -43,15 +43,24 @@
 \use_hyperref false
 \papersize default
 \use_geometry true
-\use_amsmath 2
-\use_esint 0
-\use_mhchem 1
-\use_mathdots 1
+\use_package amsmath 2
+\use_package amssymb 2
+\use_package cancel 1
+\use_package esint 0
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
 \cite_engine basic
+\cite_engine_type default
+\biblio_style plain
 \use_bibtopic false
 \use_indices false
 \paperorientation portrait
 \suppress_date false
+\justification true
 \use_refstyle 0
 \index Index
 \shortcut idx
@@ -133,7 +142,7 @@ Command-line kung-fu
 
 \begin_layout Title
 Command line kung fu
-\begin_inset Argument
+\begin_inset Argument 1
 status open
 
 \begin_layout Plain Layout
@@ -160,7 +169,7 @@ Bash, filtri & co.
 \end_layout
 
 \begin_layout Author
-Emanuele Santoro
+Giulio De Pasquale
 \begin_inset Newline newline
 \end_inset
 
@@ -172,19 +181,19 @@ status open
 
 
 \backslash
-href{mailto:manu@santoro.tk}{
+href{mailto:giulio@depasquale.eu}{
 \backslash
-nolinkurl{manu@santoro.tk}}
+nolinkurl{giulio@depasquale.eu}}
 \end_layout
 
 \end_inset
 
 
-\begin_inset Argument
+\begin_inset Argument 1
 status open
 
 \begin_layout Plain Layout
-Emanuele Santoro
+Giulio De Pasquale
 \end_layout
 
 \end_inset
@@ -193,7 +202,7 @@ Emanuele Santoro
 \end_layout
 
 \begin_layout Date
-Corsi GNU/Linux Avanzati 2015
+Corsi GNU/Linux Avanzati 2016
 \begin_inset Note Note
 status collapsed
 
@@ -210,11 +219,11 @@ Not really informative to the audience, more for people (including yourself)
 \end_inset
 
 
-\begin_inset Argument
+\begin_inset Argument 1
 status open
 
 \begin_layout Plain Layout
-Corsi Linux Avanzati 2015
+Corsi Linux Avanzati 2016
 \begin_inset Note Note
 status collapsed
 
@@ -319,17 +328,27 @@ Bash 101
 I vantaggi del terminale
 \end_layout
 
-\begin_layout BeginFrame
-“Il terminale? Nel 2014?”
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+“Il terminale? Nel 2016?”
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
 \begin_layout FrameSubtitle
 \begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
 A title should summarize the slide in an understandable fashion for anyone
- how does not follow everything on the slide itself.
+ who does not follow everything on the slide itself.
  
 \end_layout
 
@@ -338,95 +357,83 @@ A title should summarize the slide in an understandable fashion for anyone
 
 \end_layout
 
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Universale: presente su ogni distribuzione GNU/Linux.
+ 
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+e anche su altri sistemi (anche sul mac)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Si può usare da remoto e/o su una macchina senza schermo.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Consente di automatizzare compiti ripetitivi
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Ad esempio, permette di operare in maniera precisa e veloce su molti files.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+“Struttura di un comando”
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
 \begin_layout Standard
-Anche nell'era delle gui graficose e colorate, usare un interprete di comandi
- testuale ha i suoi vantaggi
-\end_layout
-
-\begin_layout Pause
-
-\end_layout
-
-\begin_layout Itemize
-Funziona su qualsiasi distribuzione di GNU/Linux, e anche sulla maggior
- parte dei sistemi non-linux
-\end_layout
-
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Si può usare da remoto e/o su una macchina senza schermo
-\end_layout
-
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Molto semplice da programmare, ottima per automatizzare compiti ripetitivi
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Essendo un vero e proprio linguaggio di programmazione, è preciso ed affidabile.
- Se dovete operare in maniera precisa su molti files, è un modo veloce e
- preciso di operare.
-\end_layout
-
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Se nulla altro sembra andare, un terminale non si nega a nessuno
-\end_layout
-
-\begin_layout Subsection
-Man
-\end_layout
-
-\begin_layout BeginFrame
-I have no idea what i'm doing
-\end_layout
-
-\begin_layout Standard
-\align center
 
 \family typewriter
 \size larger
-man
+comando [opzioni] [argomenti]
 \end_layout
 
 \begin_layout Itemize
-Se incontrate un comando nuovo e/o volete saperne di più sulle funzioni
- di un comando usate 
-\family typewriter
-man
-\family default
- (manual)
+Tutto ciò che è tra parentesi quadre è facoltativo.
 \end_layout
 
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
 \begin_layout Itemize
-La sintassi del comando sarà del tipo 
-\family typewriter
-comando [opzioni] [argomenti] argomento
-\family default
-.
- Tutto ciò che è tra parentesi quadre è opzionale, le opzioni si passano
- con uno o due trattini (- o 
+Le opzioni si passano con uno o due trattini (- o 
 \begin_inset ERT
 status open
 
@@ -442,6 +449,55 @@ status open
 )
 \end_layout
 
+\begin_layout ExampleBlock
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Esempio
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $\text{\underbrace{cuocipizza}_{comando} \underbrace{-fornoalegna}_{opzione} \underbrace{margherita}_{argomento} \underbrace{capricciosa}_{argomento}}$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Subsection
+Man
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+I have no idea what i'm doing
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+
+\family typewriter
+\size larger
+man
+\end_layout
+
+\begin_layout Itemize
+Permette di leggere la documentazione (se presente) di un comando passato
+ come argomento.
+\end_layout
+
 \begin_deeper
 \begin_layout Pause
 
@@ -454,74 +510,69 @@ Per cercare all'interno della man page basta scrivere
 /terminecercato
 \family default
  e premere 
-\family typewriter
+\emph on
 Enter
-\family default
+\emph default
 .
- Premendo n si passa al prossimo match.
-\end_layout
-
-\begin_deeper
-\begin_layout Pause
-
+ Premendo 
+\emph on
+n
+\emph default
+ si passa al prossimo risultato.
 \end_layout
 
 \begin_layout Itemize
-La ricerca non fa il wrap-around, arrivati alla fine della manpage premete
- 
-\family typewriter
+Premendo 
+\emph on
 p
-\family default
- per tornare in cima
+\emph default
+ si torna in cima.
 \end_layout
 
-\begin_layout Itemize
-Nota: il comportamento preciso della ricerca dipende dal pager in uso (tipicamen
-te 
-\family typewriter
-less
-\family default
- o 
-\family typewriter
-more
-\family default
-)
-\end_layout
-
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
 \begin_layout Itemize
 Premendo 
 \family typewriter
 q
 \family default
- si esce dalla manpage
+ si esce dal manuale.
 \end_layout
 
-\begin_deeper
-\begin_layout Pause
+\begin_layout ExampleBlock
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+In caso di emergenza
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $\underbrace{man}_{comando}\,\underbrace{man}_{argomento}$
+\end_inset
+
 
 \end_layout
 
 \end_deeper
-\begin_layout Itemize
-
-\family typewriter
-Se avete dubbi...
- man man ;)
-\end_layout
-
 \begin_layout Subsection
 Comandi bash di base
 \end_layout
 
-\begin_layout BeginFrame
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
 Muovere i primi passi
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
 \begin_layout Itemize
 
 \family typewriter
@@ -534,9 +585,9 @@ ls
 \begin_layout Itemize
 
 \family typewriter
-ls nomecartella --
+ls nomecartella
 \family default
- elenca i file della cartella con quel nome
+ -- elenca i file della cartella con quel nome
 \end_layout
 
 \begin_layout Itemize
@@ -570,7 +621,18 @@ cd nomecartella
 \end_layout
 
 \begin_layout Itemize
-~ è la cartella home dell'utente corrente ~<utente> è la home di <utente>
+~ è la cartella home dell'utente corrente.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\family typewriter
+~<utente>
+\family default
+ è la home di 
+\family typewriter
+<utente>
 \end_layout
 
 \begin_layout Pause
@@ -583,13 +645,28 @@ cd nomecartella
 \family typewriter
 pwd
 \family default
- -- stampa la directory in cui ci si trova
+ -- stampa la directory corrente
 \end_layout
 
-\begin_layout BeginFrame
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
 Creiamo qualcosa
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
 \begin_layout Itemize
 
 \family typewriter
@@ -620,7 +697,15 @@ mkdir nomecartella
 \family typewriter
 mkdir a/b/c/
 \family default
- crea anche a e b se non esistono)
+ crea anche 
+\emph on
+a
+\emph default
+ e 
+\emph on
+b
+\emph default
+ se non esistono)
 \end_layout
 
 \begin_layout Pause
@@ -629,12 +714,11 @@ mkdir a/b/c/
 
 \end_deeper
 \begin_layout AlertBlock
-\begin_inset ERT
+\begin_inset Argument 2
 status open
 
 \begin_layout Plain Layout
-
-{Nota importante}
+Nota importante
 \end_layout
 
 \end_inset
@@ -674,10 +758,25 @@ neq$
  FOO
 \end_layout
 
-\begin_layout BeginFrame
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
 Io ti ho creato, io ti distruggo
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
 \begin_layout Standard
 \begin_inset Note Note
 status open
@@ -710,6 +809,10 @@ Filtri, pipe e cazzi.
 
 \begin_layout Plain Layout
 [optional: pre-intro sull'amministrazione di sistema.]
+\end_layout
+
+\begin_layout Plain Layout
+[optional: fetta di culo top kek]
 \end_layout
 
 \end_inset
@@ -785,12 +888,11 @@ shred nomefile
 
 \end_deeper
 \begin_layout AlertBlock
-\begin_inset ERT
+\begin_inset Argument 2
 status open
 
 \begin_layout Plain Layout
-
-{Attenzione}
+Attenzione
 \end_layout
 
 \end_inset
@@ -828,10 +930,25 @@ footnotetext{A meno di strani magheggi con software forense}
 
 \end_layout
 
-\begin_layout BeginFrame
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
 Modifiche di base ai file
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
 \begin_layout Itemize
 
 \family typewriter
@@ -898,10 +1015,25 @@ sorgente
 /path/al/collegamento
 \end_layout
 
-\begin_layout BeginFrame
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
 Historia magistra vitae
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
 \begin_layout Itemize
 
 \family typewriter
@@ -993,10 +1125,25 @@ history
  la vostra history dei comandi
 \end_layout
 
-\begin_layout BeginFrame
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
 Domande?
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
 \begin_layout Pause
 
 \end_layout
@@ -1008,18 +1155,29 @@ Domande?
 Demo!
 \end_layout
 
+\end_deeper
 \begin_layout Section
-Vi for dummies
+vi for dummies
 \end_layout
 
 \begin_layout Subsection
 Introduzione
 \end_layout
 
-\begin_layout BeginFrame
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
 Text-editor e le religioni
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
 \begin_layout Standard
 Nell'amministrazione di sistemi Unix e Unix-compatibili si tende a passare
  molto tempo usando editor di testo.
@@ -1061,14 +1219,25 @@ ione e decisamente poche funzionalità avanzate.
 vi e GNU Emacs sono due editor complessi ma molto potenti.
 \end_layout
 
+\end_deeper
 \begin_layout Subsection
 vi
 \end_layout
 
-\begin_layout BeginFrame
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
 vi for dummies
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
 \begin_layout Standard
 Perché imparare ad usare vi, anche se ci piace GNU Emacs, nano, o qualcos'altro?
 \end_layout
@@ -1095,14 +1264,25 @@ Single UNIX specification
 .
 \end_layout
 
-\begin_layout EndFrame
+\end_deeper
+\begin_layout Separator
 
 \end_layout
 
-\begin_layout BeginFrame
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
 editor modale
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
 \begin_layout Standard
 Vi è un editor 
 \begin_inset Quotes eld
@@ -1158,14 +1338,25 @@ La modalità predefinita è la modalità comandi.
 Premendo i, a oppure o si entra nella modalità inserimento.
 \end_layout
 
-\begin_layout EndFrame
+\end_deeper
+\begin_layout Separator
 
 \end_layout
 
-\begin_layout BeginFrame
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
 modalità comandi
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
 \begin_layout Standard
 Nella modalità comandi, tutti i tasti della vostra tastiera forniscono dei
  comandi all'editor.
@@ -1206,14 +1397,25 @@ u -- annulla l'ultima operazione (undo)
 : (due punti) -- comincia ad inserire un comando
 \end_layout
 
-\begin_layout EndFrame
+\end_deeper
+\begin_layout Separator
 
 \end_layout
 
-\begin_layout BeginFrame
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
 Vi for dummies - i comandi
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
 \begin_layout Itemize
 :w -- write, salva il file corrente
 \end_layout
@@ -1232,14 +1434,25 @@ o essere dalle decine alle centinaia di altri comandi, ma questi sono bene
  o male quelli che vi serviranno sempre.
 \end_layout
 
-\begin_layout EndFrame
+\end_deeper
+\begin_layout Separator
 
 \end_layout
 
-\begin_layout BeginFrame
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
 Vi for dummies - la modalità inserimento
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
 \begin_layout Standard
 Nella modalità inserimento si può effettivamente inserire/cancellare del
  testo.
@@ -1275,14 +1488,25 @@ Dopo ognuno di questi comandi si entra nella modalità inserimento.
  Per uscire dalla modalità inserimento si preme Esc.
 \end_layout
 
-\begin_layout EndFrame
+\end_deeper
+\begin_layout Separator
 
 \end_layout
 
-\begin_layout BeginFrame
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
 
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
 \begin_layout Pause
 
 \end_layout
@@ -1294,6 +1518,7 @@ Dopo ognuno di questi comandi si entra nella modalità inserimento.
 Demo!
 \end_layout
 
+\end_deeper
 \begin_layout Section
 Altri comandi bash e filtri
 \end_layout
@@ -1302,10 +1527,20 @@ Altri comandi bash e filtri
 Bash++
 \end_layout
 
-\begin_layout BeginFrame
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
 Bash++
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
 \begin_layout Itemize
 
 \family typewriter
@@ -1357,10 +1592,6 @@ locate
 \end_layout
 
 \begin_deeper
-\begin_layout Pause
-
-\end_layout
-
 \begin_layout Itemize
 Il database va aggiornato periodicamente con il comando 
 \family typewriter
@@ -1381,20 +1612,25 @@ find
  con dei parametri di ricerca
 \end_layout
 
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
 \end_deeper
 \begin_layout Subsection
 Redirezione e pipe
 \end_layout
 
-\begin_layout BeginFrame
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
 Standard streams
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
 \begin_layout Standard
 Ogni processo ha almeno 3 canali di comunicazione di default:
 \end_layout
@@ -1404,8 +1640,12 @@ Ogni processo ha almeno 3 canali di comunicazione di default:
 \end_layout
 
 \begin_layout Itemize
-stdin (0) -- il canale che di riceve l'input, di default riceve ciò che
- l'utente scrive sul terminale
+
+\emph on
+stdin (0)
+\emph default
+ -- il canale che riceve l'input, di default riceve ciò che l'utente scrive
+ sul terminale
 \end_layout
 
 \begin_deeper
@@ -1415,8 +1655,11 @@ stdin (0) -- il canale che di riceve l'input, di default riceve ciò che
 
 \end_deeper
 \begin_layout Itemize
-stdout (1) -- il canale che stampa l'output del programma, di default stampa
- su terminale
+
+\emph on
+stdout (1)
+\emph default
+ -- il canale che stampa l'output del programma, di default scrive su schermo
 \end_layout
 
 \begin_deeper
@@ -1426,9 +1669,12 @@ stdout (1) -- il canale che stampa l'output del programma, di default stampa
 
 \end_deeper
 \begin_layout Itemize
-stderr (2) -- un canale extra per segnalare errori senza mischiarli con
- l'output.
- di default scrive sul terminale
+
+\emph on
+stderr (2)
+\emph default
+ -- un canale per segnalare errori senza mischiarli con l'output, di default
+ scrive su schermo
 \end_layout
 
 \begin_layout Pause
@@ -1436,15 +1682,38 @@ stderr (2) -- un canale extra per segnalare errori senza mischiarli con
 \end_layout
 
 \begin_layout Standard
-Con pipe e redirezioni si possono connettere in vari modi questi canali,
- creando delle vere e proprie “catene di montaggio” di comandi bash che
- permettono di risolvere molti problemi unendo tanti blocchi semplici.
+Con 
+\emph on
+pipe
+\emph default
+ e 
+\emph on
+redirezioni
+\emph default
+ si possono connettere in vari modi questi canali, creando delle vere e
+ proprie catene di comandi bash che permettono di risolvere molti problemi
+ unendo tanti blocchi semplici.
 \end_layout
 
-\begin_layout BeginFrame
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
 Redirezione
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
 \begin_layout Itemize
 
 \family typewriter
@@ -1505,8 +1774,16 @@ comando
 
 \end_deeper
 \begin_layout Itemize
-Utilizzando >> al posto di > in uno degli ultimi 3 comandi si ottiene lo
- stesso risultato ma il risultato viene aggiunto al file se esistente
+Utilizzando 
+\family typewriter
+>>
+\family default
+ al posto di 
+\family typewriter
+>
+\family default
+ in uno degli ultimi 3 comandi si ottiene lo stesso risultato ma il risultato
+ viene aggiunto al file se esistente
 \end_layout
 
 \begin_deeper
@@ -1523,10 +1800,25 @@ comando1 | comando2
  -- lo stdout di comando1 diventa lo stdin di comando2
 \end_layout
 
-\begin_layout BeginFrame
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
 Esecuzione condizionale
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
 \begin_layout Itemize
 
 \family typewriter
@@ -1578,14 +1870,25 @@ neq$
  0)
 \end_layout
 
+\end_deeper
 \begin_layout Subsection
 Filtri
 \end_layout
 
-\begin_layout BeginFrame
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
 Cos'è un filtro ?
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
 \begin_layout Standard
 In Unix, un filtro è un programma che:
 \end_layout
@@ -1616,65 +1919,27 @@ in cascata
  tramite le pipe.
 \end_layout
 
-\begin_layout Standard
-Esempio: un programma scarica una pagina web e lo passa ad un altro programma
- che estrae degli URL e li passa ad un altro programma che scarica tali
- url.
- (hint: curl, grep, xargs+youtube-dl)
+\end_deeper
+\begin_layout Separator
+
 \end_layout
 
-\begin_layout BeginFrame
-Alcuni filtri
-\end_layout
+\begin_layout Frame
+\begin_inset Argument 4
+status open
 
-\begin_layout Itemize
+\begin_layout Plain Layout
 
 \family typewriter
 cut
 \end_layout
 
-\begin_layout Itemize
+\end_inset
 
-\family typewriter
-sort
+
 \end_layout
 
-\begin_layout Itemize
-
-\family typewriter
-uniq
-\end_layout
-
-\begin_layout Itemize
-
-\family typewriter
-wc
-\end_layout
-
-\begin_layout Itemize
-
-\family typewriter
-tee
-\end_layout
-
-\begin_layout Itemize
-
-\family typewriter
-head e tail
-\end_layout
-
-\begin_layout Itemize
-
-\family typewriter
-grep
-\end_layout
-
-\begin_layout BeginFrame
-
-\family typewriter
-cut
-\end_layout
-
+\begin_deeper
 \begin_layout Itemize
 Estrae colonne delimitate da un carattere speciale da ogni riga di un file
  
@@ -1696,12 +1961,27 @@ Estrae colonne delimitate da un carattere speciale da ogni riga di un file
  -- specifica quale colonna estrarre (one-based)
 \end_layout
 
-\begin_layout BeginFrame
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
 
 \family typewriter
 sort
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
 \begin_layout Itemize
 Ordina le righe di un file
 \end_layout
@@ -1722,12 +2002,27 @@ Ordina le righe di un file
  -- specifica il delimitatore tra le colonne (default whitespace)
 \end_layout
 
-\begin_layout BeginFrame
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
 
 \family typewriter
 uniq
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
 \begin_layout Itemize
 Stampa le righe uniche di un file 
 \bar under
@@ -1758,12 +2053,27 @@ già ordinato
  -- mostra solo i non duplicati
 \end_layout
 
-\begin_layout BeginFrame
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
 
 \family typewriter
 wc
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
 \begin_layout Itemize
 Conta righe, parole e caratteri
 \end_layout
@@ -1792,12 +2102,27 @@ Conta righe, parole e caratteri
  -- mostra solo il numero di caratteri
 \end_layout
 
-\begin_layout BeginFrame
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
 
 \family typewriter
 tee
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
 \begin_layout Itemize
 Connette il suo stdin allo stdin di due o più file
 \end_layout
@@ -1807,7 +2132,16 @@ Utile per mostrare l’output di un comando a schermo e darlo come input ad
  un altro comando
 \end_layout
 
-\begin_layout BeginFrame
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
 
 \family typewriter
 head 
@@ -1817,6 +2151,12 @@ e
  tail
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
 \begin_layout Itemize
 
 \family typewriter
@@ -1850,12 +2190,27 @@ tenere d'occhio” un file a cui vengono continuamente aggiunte righe in coda
  (ad esempio un log)
 \end_layout
 
-\begin_layout BeginFrame
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
 
 \family typewriter
 grep
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
 \begin_layout Standard
 grep è uno dei filtri più potenti ed importanti di un sistema Unix.
 \end_layout
@@ -1868,7 +2223,7 @@ status open
 
 \begin_layout Plain Layout
 \begin_inset Flex URL
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
@@ -1891,10 +2246,25 @@ e delle ricerche con opportuni parametri all'interno di ogni linea, e stampare
  il risultato.
 \end_layout
 
-\begin_layout BeginFrame
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
 grep (2)
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
 \begin_layout Itemize
 
 \family typewriter
@@ -1957,10 +2327,25 @@ non
  (utile per estrarre del testo)
 \end_layout
 
-\begin_layout BeginFrame
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
 sed
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
 \begin_layout Standard
 Sed è l'abbreviazione di 
 \series bold
@@ -1979,26 +2364,25 @@ Trasforma ogni linea che legge dallo stdin in base ad una serie di istruzioni
  date come argomenti al programma stesso, e stampa il risultato sullo stdout
 \end_layout
 
-\begin_layout Standard
-L'uso più comune è effettuare delle sostituzioni nel testo:
+\begin_layout ExampleBlock
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Sostituzione di testo
 \end_layout
 
-\begin_layout Itemize
-echo night | sed s/night/day/
+\end_inset
+
+echo night | sed s/night/day
 \end_layout
 
-\begin_deeper
-\begin_layout Itemize
-day
-\end_layout
-
-\end_deeper
 \begin_layout Standard
 Ma può fare molto di più.
 \end_layout
 
 \begin_layout Standard
-Per maggiori informazioni consultate 
+Per maggiori informazioni: 
 \begin_inset CommandInset href
 LatexCommand href
 name "http://www.grymoire.com/Unix/Sed.html"
@@ -2009,31 +2393,45 @@ target "http://www.grymoire.com/Unix/Sed.html"
 
 \end_layout
 
-\begin_layout BeginFrame
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
 awk
 \end_layout
 
-\begin_layout Standard
-Awk è un filtro che consente di estrapolare ed eventualmente aggregare dati
- provenienti da un file o da un flusso (connesso allo stdin).
+\end_inset
+
+
 \end_layout
 
+\begin_deeper
 \begin_layout Standard
 Nella versione più semplice, awk può dividere una serie di linee in formato
  tabulare ed effettuare delle operazioni su ogni elemento di ogni linea.
 \end_layout
 
-\begin_layout Standard
-Praticamente, un esempio: rilevare tutti i programmi che sta eseguendo un
- utente:
+\begin_layout ExampleBlock
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Elenco di tutti i programmi eseguiti da un utente
 \end_layout
 
-\begin_layout Itemize
+\end_inset
+
 ps aux | awk '$1 == 
 \begin_inset Quotes eld
 \end_inset
 
-manu
+pippo
 \begin_inset Quotes erd
 \end_inset
 
@@ -2048,10 +2446,25 @@ Quando awk legge una linea, la spezza ad ogni occorrenza di un delimitatore
  della linea, a $2 il secondo e così via.
 \end_layout
 
-\begin_layout BeginFrame
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
 Awk (links)
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
 \begin_layout Standard
 Effective AWK programming, il manuale della versione GNU di awk (quella
  distribuita con quasi tutte le distribuzioni di GNU/Linux):
@@ -2083,10 +2496,25 @@ target "http://www.grymoire.com/Unix/Awk.html"
 
 \end_layout
 
-\begin_layout BeginFrame
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
 Domande?
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
 \begin_layout Pause
 
 \end_layout
@@ -2098,6 +2526,7 @@ Domande?
 Demo!
 \end_layout
 
+\end_deeper
 \begin_layout Section*
 Appendice
 \end_layout
@@ -2106,10 +2535,20 @@ Appendice
 Fonti
 \end_layout
 
-\begin_layout BeginFrame
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
 Per approfondire
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
 \begin_layout Standard
 \align center
 \begin_inset Graphics
@@ -2125,10 +2564,25 @@ Per approfondire
 Google is your friend
 \end_layout
 
-\begin_layout BeginFrame
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
 Last call
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
 \begin_layout Standard
 \align center
 
@@ -2136,14 +2590,25 @@ Last call
 Domande?
 \end_layout
 
+\end_deeper
 \begin_layout Subsection*
 Licenza
 \end_layout
 
-\begin_layout BeginFrame
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
 Goodbye and thanks for all the fish
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
 \begin_layout Standard
 \align center
 
@@ -2190,9 +2655,6 @@ http://www.poul.org
 
 \end_layout
 
-\begin_layout EndFrame
-
-\end_layout
-
+\end_deeper
 \end_body
 \end_document
