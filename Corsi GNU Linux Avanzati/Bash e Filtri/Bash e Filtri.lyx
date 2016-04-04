@@ -202,7 +202,7 @@ Giulio De Pasquale
 \end_layout
 
 \begin_layout Date
-Corsi GNU/Linux Avanzati 2016
+Corsi Linux Avanzati 2016
 \begin_inset Note Note
 status collapsed
 
@@ -357,10 +357,6 @@ A title should summarize the slide in an understandable fashion for anyone
 
 \end_layout
 
-\begin_layout Pause
-
-\end_layout
-
 \begin_layout Itemize
 Universale: presente su ogni distribuzione GNU/Linux.
  
@@ -376,22 +372,10 @@ e anche su altri sistemi (anche sul mac)
 
 \end_layout
 
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
 \begin_layout Itemize
 Si può usare da remoto e/o su una macchina senza schermo.
 \end_layout
 
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
 \begin_layout Itemize
 Consente di automatizzare compiti ripetitivi
 \end_layout
@@ -467,6 +451,61 @@ Esempio
 \end_layout
 
 \end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Shortcut di base
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\family typewriter
+TAB
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Autocompletamento comandi
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\family typewriter
+CTRL+C
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Cerca di interrompere il processo in esecuzione
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\family typewriter
+SHIFT+CTRL+C / V
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Copia / Incolla
+\end_layout
+
+\end_deeper
+\end_deeper
 \begin_layout Subsection
 Man
 \end_layout
@@ -493,17 +532,11 @@ I have no idea what i'm doing
 man
 \end_layout
 
-\begin_layout Itemize
+\begin_layout Standard
 Permette di leggere la documentazione (se presente) di un comando passato
  come argomento.
 \end_layout
 
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
 \begin_layout Itemize
 Per cercare all'interno della man page basta scrivere 
 \family typewriter
@@ -600,10 +633,6 @@ ls nomecartella
  (-h)
 \end_layout
 
-\begin_layout Pause
-
-\end_layout
-
 \end_deeper
 \begin_layout Itemize
 
@@ -633,10 +662,6 @@ cd nomecartella
  è la home di 
 \family typewriter
 <utente>
-\end_layout
-
-\begin_layout Pause
-
 \end_layout
 
 \end_deeper
@@ -676,12 +701,6 @@ touch nomefile
  dell'ultimo accesso
 \end_layout
 
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
 \begin_layout Itemize
 
 \family typewriter
@@ -706,10 +725,6 @@ a
 b
 \emph default
  se non esistono)
-\end_layout
-
-\begin_layout Pause
-
 \end_layout
 
 \end_deeper
@@ -837,10 +852,6 @@ rm nomefile
  -- se il file è una cartella, cancella ricorsivamente il suo contenuto
 \end_layout
 
-\begin_layout Pause
-
-\end_layout
-
 \end_deeper
 \begin_layout Itemize
 
@@ -850,12 +861,6 @@ rmdir nomecartella
  -- cancella una cartella solo se vuota
 \end_layout
 
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
 \begin_layout Itemize
 Se siete paranoici: 
 \family typewriter
@@ -880,10 +885,6 @@ shred nomefile
 \begin_layout Itemize
 -z -- sovrascrive il file un'ultima volta con degli zeri, per nascondere
  la rimozione sicura
-\end_layout
-
-\begin_layout Pause
-
 \end_layout
 
 \end_deeper
@@ -972,10 +973,6 @@ destinazione
  -- Da usare per copiare una directory
 \end_layout
 
-\begin_layout Pause
-
-\end_layout
-
 \end_deeper
 \begin_layout Itemize
 
@@ -994,10 +991,6 @@ destinazione
  è nella stessa cartella di 
 \family typewriter
 sorgente
-\end_layout
-
-\begin_layout Pause
-
 \end_layout
 
 \end_deeper
@@ -1025,7 +1018,7 @@ sorgente
 status open
 
 \begin_layout Plain Layout
-Historia magistra vitae
+Gestione dei permessi
 \end_layout
 
 \end_inset
@@ -1033,99 +1026,34 @@ Historia magistra vitae
 
 \end_layout
 
-\begin_deeper
-\begin_layout Itemize
-
-\family typewriter
-Ctrl+p
-\family default
- o 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-$
-\backslash
-uparrow$
+\begin_layout Frame
+In Linux gli utenti appartengono a molteplici gruppi per scopi amministrativi.
+ 
 \end_layout
 
+\begin_layout Frame
+In ogni macchina l'utente amministratore è chiamato 
+\emph on
+root.
+\end_layout
+
+\begin_layout Frame
+Ogni file appartiene ad un utente e ad un gruppo i quali possono modificarne
+ i permessi:
+\end_layout
+
+\begin_layout Frame
+L'utente può 
+\begin_inset Formula $\underbrace{leggere}_{(r)ead}\,/\,\underbrace{scrivere}_{(w)rite}\:/\:\underbrace{eseguire}_{e(x)ecute}$
 \end_inset
 
- per andare indietro (comandi più vecchi) nella history dei comandi
+ i propri file e quelli dei gruppi a cui appartiene.
 \end_layout
 
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-
-\family typewriter
-Ctrl+n
-\family default
- o 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-$
-\backslash
-downarrow$
-\end_layout
-
-\end_inset
-
- per avanti (comandi più recenti) nella history dei comandi
-\end_layout
-
-\begin_deeper
-\begin_layout Pause
+\begin_layout Frame
 
 \end_layout
 
-\end_deeper
-\begin_layout Itemize
-
-\family typewriter
-Ctrl+r
-\family default
- per effetturare la ricerca di una stringa nei comandi della history
-\end_layout
-
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-La history è salvata nel file 
-\family typewriter
-.bash_history
-\family default
- nella home dell'utente
-\end_layout
-
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Il comando 
-\family typewriter
-history
-\family default
- vi mostra ...
- la vostra history dei comandi
-\end_layout
-
-\end_deeper
 \begin_layout Separator
 
 \end_layout
@@ -1135,7 +1063,7 @@ history
 status open
 
 \begin_layout Plain Layout
-Domande?
+Gestione dei permessi (2)
 \end_layout
 
 \end_inset
@@ -1144,24 +1072,145 @@ Domande?
 \end_layout
 
 \begin_deeper
-\begin_layout Pause
+\begin_layout Itemize
 
+\family typewriter
+chown utente[:gruppo] FILE
+\family default
+ -- modifica il proprietario di un file
 \end_layout
 
-\begin_layout Standard
-\align center
+\begin_deeper
+\begin_layout Itemize
+è possibile modificare solo il gruppo, passando come opzione 
+\family typewriter
+:gruppo
+\end_layout
 
-\size huge
-Demo!
+\begin_layout Itemize
+
+\emph on
+-R
+\emph default
+ -- modifica il proprietario ad un'intera cartella
 \end_layout
 
 \end_deeper
+\begin_layout Itemize
+
+\family typewriter
+chmod permesso FILE
+\family default
+ -- modifica i permessi di un file
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+il formato dell'opzione 
+\family typewriter
+permesso
+\family default
+ è scomposto in 3 parti:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\underbrace{u}_{user}/\underbrace{g}_{group}/\underbrace{o}_{other}$
+\end_inset
+
+, componibile
+\end_layout
+
+\begin_layout Itemize
+
+\family typewriter
++/-
+\family default
+/
+\family typewriter
+=
+\family default
+, mutualmente esclusivi
+\end_layout
+
+\begin_layout Itemize
+
+\family typewriter
+r/w/x
+\family default
+, componibile
+\end_layout
+
+\begin_layout ExampleBlock
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Esempio
+\end_layout
+
+\end_inset
+
+
+\family typewriter
+Rendiamo il file 
+\begin_inset Quotes eld
+\end_inset
+
+dog.jpg
+\begin_inset Quotes erd
+\end_inset
+
+ leggibile e scrivibile per l'utente, leggibile solo per il gruppo e rimuoviamo
+ tutti i permessi per gli altri.
+\begin_inset Newline newline
+\end_inset
+
+chmod ug=r
+\begin_inset Newline newline
+\end_inset
+
+chmod u+w
+\begin_inset Newline newline
+\end_inset
+
+chmod o-rwx
+\end_layout
+
+\end_deeper
+\end_deeper
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
 \begin_layout Section
 vi for dummies
 \end_layout
 
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+vi for dummies
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Separator
+
+\end_layout
+
 \begin_layout Subsection
 Introduzione
+\end_layout
+
+\begin_layout Frame
+
 \end_layout
 
 \begin_layout Frame
@@ -1210,6 +1259,10 @@ vi
 GNU Emacs
 \end_layout
 
+\begin_layout Pause
+
+\end_layout
+
 \begin_layout Standard
 Nano è un editor semplice da usare, che offre poche possibilità di personalizzaz
 ione e decisamente poche funzionalità avanzate.
@@ -1221,7 +1274,7 @@ vi e GNU Emacs sono due editor complessi ma molto potenti.
 
 \end_deeper
 \begin_layout Subsection
-vi
+vi for dummies
 \end_layout
 
 \begin_layout Frame
@@ -1229,7 +1282,7 @@ vi
 status open
 
 \begin_layout Plain Layout
-vi for dummies
+Learn the hard way
 \end_layout
 
 \end_inset
@@ -1274,7 +1327,7 @@ Single UNIX specification
 status open
 
 \begin_layout Plain Layout
-editor modale
+Editor modale
 \end_layout
 
 \end_inset
@@ -1335,7 +1388,19 @@ La modalità predefinita è la modalità comandi.
 \end_layout
 
 \begin_layout Standard
-Premendo i, a oppure o si entra nella modalità inserimento.
+Premendo 
+\emph on
+i
+\emph default
+, 
+\emph on
+a
+\emph default
+ oppure 
+\emph on
+o
+\emph default
+ si entra nella modalità inserimento.
 \end_layout
 
 \end_deeper
@@ -1348,7 +1413,7 @@ Premendo i, a oppure o si entra nella modalità inserimento.
 status open
 
 \begin_layout Plain Layout
-modalità comandi
+Modalità comandi
 \end_layout
 
 \end_inset
@@ -1364,37 +1429,81 @@ Nella modalità comandi, tutti i tasti della vostra tastiera forniscono dei
 \end_layout
 
 \begin_layout Itemize
-Spostarsi nel file: h (sinistra) j (sotto) k (sopra) l (destra)
+Spostarsi nel file: 
+\emph on
+h
+\emph default
+ (sinistra) 
+\emph on
+j
+\emph default
+ (sotto) 
+\emph on
+k
+\emph default
+ (sopra) 
+\emph on
+l
+\emph default
+ (destra)
 \end_layout
 
 \begin_layout Itemize
-i -- inserire del testo a partire dalla posizione corrente del cursore
+
+\emph on
+i
+\emph default
+ -- inserire del testo a partire dalla posizione corrente del cursore
 \end_layout
 
 \begin_layout Itemize
-a -- inserire del testo appartire dalla posizione immediatamente successiva
+
+\emph on
+a
+\emph default
+ -- inserire del testo appartire dalla posizione immediatamente successiva
  al cursore
 \end_layout
 
 \begin_layout Itemize
-/ -- inizia una ricerca di testo nel documento
+
+\emph on
+/
+\emph default
+ -- inizia una ricerca di testo nel documento
 \end_layout
 
 \begin_layout Itemize
-n -- trova la prossima occorrenza del testo cercato nella ricerca
+
+\emph on
+n
+\emph default
+ -- trova la prossima occorrenza del testo cercato nella ricerca
 \end_layout
 
 \begin_layout Itemize
-u -- annulla l'ultima operazione (undo)
+
+\emph on
+u
+\emph default
+ -- annulla l'ultima operazione (undo)
 \end_layout
 
 \begin_layout Itemize
+
+\emph on
 .
+
+\emph default
  -- ripete l'ultima operazione (eventualmente annulla l'annullamento)
 \end_layout
 
 \begin_layout Itemize
-: (due punti) -- comincia ad inserire un comando
+
+\emph on
+:
+\emph default
+ (due punti) -- comincia ad inserire un comando
 \end_layout
 
 \end_deeper
@@ -1407,7 +1516,7 @@ u -- annulla l'ultima operazione (undo)
 status open
 
 \begin_layout Plain Layout
-Vi for dummies - i comandi
+Comandi
 \end_layout
 
 \end_inset
@@ -1417,21 +1526,59 @@ Vi for dummies - i comandi
 
 \begin_deeper
 \begin_layout Itemize
-:w -- write, salva il file corrente
+
+\family typewriter
+:w
+\family default
+ -- write, salva il file corrente
 \end_layout
 
 \begin_layout Itemize
-:q -- quit (esci)
+
+\family typewriter
+:q
+\family default
+ -- quit, esci
 \end_layout
 
-\begin_layout Itemize
-I comandi possono essere concatenati: salva + esci = :wq
+\begin_layout Pause
+
 \end_layout
 
 \begin_layout Standard
-A seconda del tipo di vi che state usando (vim, nvi, elvis o altro) ci potrebber
-o essere dalle decine alle centinaia di altri comandi, ma questi sono bene
- o male quelli che vi serviranno sempre.
+A seconda del tipo di vi che state usando (
+\emph on
+vim
+\emph default
+, 
+\emph on
+nvi
+\emph default
+, 
+\emph on
+elvis
+\emph default
+ o altro) ci potrebbero essere dalle decine alle centinaia di altri comandi,
+ ma questi sono bene o male quelli che vi serviranno sempre.
+\end_layout
+
+\begin_layout AlertBlock
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Concatenazione comandi
+\end_layout
+
+\end_inset
+
+I comandi possono essere concatenati!
+\begin_inset Newline newline
+\end_inset
+
+Salva + Esci = 
+\family typewriter
+:wq
 \end_layout
 
 \end_deeper
@@ -1444,7 +1591,7 @@ o essere dalle decine alle centinaia di altri comandi, ma questi sono bene
 status open
 
 \begin_layout Plain Layout
-Vi for dummies - la modalità inserimento
+Modalità inserimento
 \end_layout
 
 \end_inset
@@ -1463,11 +1610,19 @@ Per entrare in modalità inserimento si preme:
 \end_layout
 
 \begin_layout Itemize
-i -- per inserire del testo nella posizione corrente del cursore (insert)
+
+\emph on
+i
+\emph default
+ -- per inserire del testo nella posizione corrente del cursore (insert)
 \end_layout
 
 \begin_layout Itemize
-a -- per 
+
+\emph on
+a
+\emph default
+ -- per 
 \begin_inset Quotes eld
 \end_inset
 
@@ -1480,7 +1635,15 @@ appendere
 \end_layout
 
 \begin_layout Itemize
-o -- per inserire del testo nella linea successiva a quella corrente
+
+\emph on
+o
+\emph default
+ -- per inserire del testo nella linea successiva a quella corrente
+\end_layout
+
+\begin_layout Pause
+
 \end_layout
 
 \begin_layout Standard
@@ -1493,12 +1656,16 @@ Dopo ognuno di questi comandi si entra nella modalità inserimento.
 
 \end_layout
 
+\begin_layout Section
+Altri comandi bash e filtri
+\end_layout
+
 \begin_layout Frame
 \begin_inset Argument 4
 status open
 
 \begin_layout Plain Layout
-
+Altri comandi bash e filtri
 \end_layout
 
 \end_inset
@@ -1506,21 +1673,8 @@ status open
 
 \end_layout
 
-\begin_deeper
-\begin_layout Pause
+\begin_layout Separator
 
-\end_layout
-
-\begin_layout Standard
-\align center
-
-\size larger
-Demo!
-\end_layout
-
-\end_deeper
-\begin_layout Section
-Altri comandi bash e filtri
 \end_layout
 
 \begin_layout Subsection
@@ -1549,12 +1703,6 @@ cat
  -- concatena e stampa file su schermo
 \end_layout
 
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
 \begin_layout Itemize
 
 \family typewriter
@@ -1563,12 +1711,6 @@ less
  -- stampa file su schermo con una finestra scorrevole, come la manpage
 \end_layout
 
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
 \begin_layout Itemize
 
 \family typewriter
@@ -1577,12 +1719,6 @@ echo
  -- stampa il valore di un'espressione
 \end_layout
 
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
 \begin_layout Itemize
 
 \family typewriter
@@ -1596,10 +1732,6 @@ locate
 Il database va aggiornato periodicamente con il comando 
 \family typewriter
 updatedb
-\end_layout
-
-\begin_layout Pause
-
 \end_layout
 
 \end_deeper
@@ -1635,10 +1767,6 @@ Standard streams
 Ogni processo ha almeno 3 canali di comunicazione di default:
 \end_layout
 
-\begin_layout Pause
-
-\end_layout
-
 \begin_layout Itemize
 
 \emph on
@@ -1648,12 +1776,6 @@ stdin (0)
  sul terminale
 \end_layout
 
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
 \begin_layout Itemize
 
 \emph on
@@ -1662,12 +1784,6 @@ stdout (1)
  -- il canale che stampa l'output del programma, di default scrive su schermo
 \end_layout
 
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
 \begin_layout Itemize
 
 \emph on
@@ -1719,60 +1835,56 @@ Redirezione
 \family typewriter
 comando < file
 \family default
- -- connette stdin di un processo ad un file
+ -- connette 
+\emph on
+stdin
+\emph default
+ di un processo ad un file
 \end_layout
 
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
 \begin_layout Itemize
 
 \family typewriter
 comando > file
 \family default
- -- connette stdout di un processo ad un file.
+ -- connette 
+\emph on
+stdout
+\emph default
+ di un processo ad un file.
  Se il file esiste viene cancellato e sovrascritto
 \end_layout
 
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
 \begin_layout Itemize
 
 \family typewriter
 comando 2> file
 \family default
- -- connette stderr di un processo ad un file.
+ -- connette 
+\emph on
+stderr
+\emph default
+ di un processo ad un file.
  Se il file esiste viene cancellato e sovrascritto
 \end_layout
 
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
 \begin_layout Itemize
 comando 
 \family typewriter
 &> file 
 \family default
--- connette stdout e stderr di un processo ad un file.
+-- connette 
+\emph on
+stdout
+\emph default
+ e 
+\emph on
+stderr
+\emph default
+ di un processo ad un file.
  Se il file esiste viene cancellato e sovrascritto
 \end_layout
 
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
 \begin_layout Itemize
 Utilizzando 
 \family typewriter
@@ -1786,18 +1898,20 @@ Utilizzando
  viene aggiunto al file se esistente
 \end_layout
 
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
 \begin_layout Itemize
 
 \family typewriter
 comando1 | comando2
 \family default
- -- lo stdout di comando1 diventa lo stdin di comando2
+ -- lo 
+\emph on
+stdout
+\emph default
+ di comando1 diventa lo 
+\emph on
+stdin
+\emph default
+ di comando2
 \end_layout
 
 \end_deeper
@@ -1835,12 +1949,6 @@ comando1
  ha successo (codice di ritorno = 0)
 \end_layout
 
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
 \begin_layout Itemize
 
 \family typewriter
@@ -1906,6 +2014,10 @@ produce dell'output su stdout.
  l'ouput può essere una versione trasformata dell'input oppure altro.
 \end_layout
 
+\begin_layout Pause
+
+\end_layout
+
 \begin_layout Standard
 In Unix i filtri sono importanti perché data la loro natura (leggere su
  stdin e scrivere su stdout) si prestano molto bene ad essere usati 
@@ -1940,7 +2052,7 @@ cut
 \end_layout
 
 \begin_deeper
-\begin_layout Itemize
+\begin_layout Standard
 Estrae colonne delimitate da un carattere speciale da ogni riga di un file
  
 \end_layout
@@ -1950,7 +2062,11 @@ Estrae colonne delimitate da un carattere speciale da ogni riga di un file
 \family typewriter
 -d
 \family default
- -- specifica il delimitatore (default Tab)
+ -- specifica il delimitatore (default 
+\emph on
+Tab
+\emph default
+)
 \end_layout
 
 \begin_layout Itemize
@@ -1982,7 +2098,7 @@ sort
 \end_layout
 
 \begin_deeper
-\begin_layout Itemize
+\begin_layout Standard
 Ordina le righe di un file
 \end_layout
 
@@ -2023,7 +2139,7 @@ uniq
 \end_layout
 
 \begin_deeper
-\begin_layout Itemize
+\begin_layout Standard
 Stampa le righe uniche di un file 
 \bar under
 già ordinato
@@ -2074,7 +2190,7 @@ wc
 \end_layout
 
 \begin_deeper
-\begin_layout Itemize
+\begin_layout Standard
 Conta righe, parole e caratteri
 \end_layout
 
@@ -2123,8 +2239,16 @@ tee
 \end_layout
 
 \begin_deeper
-\begin_layout Itemize
-Connette il suo stdin allo stdin di due o più file
+\begin_layout Standard
+Connette il suo 
+\emph on
+stdin
+\emph default
+ allo 
+\emph on
+stdin
+\emph default
+ di due o più file
 \end_layout
 
 \begin_layout Itemize
@@ -2157,15 +2281,19 @@ e
 \end_layout
 
 \begin_deeper
-\begin_layout Itemize
+\begin_layout Standard
 
 \family typewriter
+\emph on
 head
 \family default
+\emph default
  mostra le prime 10 righe di un file, 
 \family typewriter
+\emph on
 tail
 \family default
+\emph default
  le ultime 10
 \end_layout
 
@@ -2212,7 +2340,13 @@ grep
 
 \begin_deeper
 \begin_layout Standard
-grep è uno dei filtri più potenti ed importanti di un sistema Unix.
+
+\family typewriter
+\emph on
+grep
+\family default
+\emph default
+ è uno dei filtri più potenti ed importanti di un sistema Unix.
 \end_layout
 
 \begin_layout Standard
@@ -2318,12 +2452,20 @@ non
 \end_layout
 
 \begin_layout Itemize
--P -- usa PCRE, la sintassi per le espressioni regolari in stile Perl, presenti
+
+\family typewriter
+-P
+\family default
+ -- usa PCRE, la sintassi per le espressioni regolari in stile Perl, presenti
  nella maggior parte dei linguaggi di programmazione
 \end_layout
 
 \begin_layout Itemize
--o -- mostra solo la parte di testo che matcha la regexp, non tutta la linea
+
+\family typewriter
+-o
+\family default
+ -- mostra solo la parte di testo che matcha la regexp, non tutta la linea
  (utile per estrarre del testo)
 \end_layout
 
@@ -2347,7 +2489,13 @@ sed
 
 \begin_deeper
 \begin_layout Standard
-Sed è l'abbreviazione di 
+
+\family typewriter
+\emph on
+Sed
+\family default
+\emph default
+ è l'abbreviazione di 
 \series bold
 s
 \series default
@@ -2360,8 +2508,14 @@ itor.
 \end_layout
 
 \begin_layout Standard
-Trasforma ogni linea che legge dallo stdin in base ad una serie di istruzioni
- date come argomenti al programma stesso, e stampa il risultato sullo stdout
+Trasforma ogni linea che legge dallo 
+\emph on
+stdin
+\emph default
+ in base ad una serie di istruzioni date come argomenti al programma stesso,
+ e stampa il risultato sullo 
+\emph on
+stdout
 \end_layout
 
 \begin_layout ExampleBlock
@@ -2413,8 +2567,12 @@ awk
 
 \begin_deeper
 \begin_layout Standard
-Nella versione più semplice, awk può dividere una serie di linee in formato
- tabulare ed effettuare delle operazioni su ogni elemento di ogni linea.
+Nella versione più semplice, 
+\emph on
+awk
+\emph default
+ può dividere una serie di linee in formato tabulare ed effettuare delle
+ operazioni su ogni elemento di ogni linea.
 \end_layout
 
 \begin_layout ExampleBlock
@@ -2439,11 +2597,30 @@ pippo
 \end_layout
 
 \begin_layout Standard
-Quando awk legge una linea, la spezza ad ogni occorrenza di un delimitatore
- (lo spazio è il delimitatore predefinito, altrimenti è possibile specificare
- un delimitatore personalizzato con l'opzione -F).
- Alla variabile $0 viene assegnata l'intera linea, a $1 il primo elemento
- della linea, a $2 il secondo e così via.
+Quando 
+\emph on
+awk
+\emph default
+ legge una linea, la spezza ad ogni occorrenza di un delimitatore (lo spazio
+ è il delimitatore predefinito, altrimenti è possibile specificare un delimitato
+re personalizzato con l'opzione 
+\emph on
+-F
+\emph default
+).
+ Alla variabile 
+\emph on
+$0
+\emph default
+ viene assegnata l'intera linea, a 
+\emph on
+$1
+\emph default
+ il primo elemento della linea, a 
+\emph on
+$2
+\emph default
+ il secondo e così via.
 \end_layout
 
 \end_deeper
@@ -2501,32 +2678,6 @@ target "http://www.grymoire.com/Unix/Awk.html"
 
 \end_layout
 
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-Domande?
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\begin_layout Standard
-\align center
-
-\size huge
-Demo!
-\end_layout
-
-\end_deeper
 \begin_layout Section*
 Appendice
 \end_layout
@@ -2569,28 +2720,6 @@ Google is your friend
 
 \end_layout
 
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-Last call
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Standard
-\align center
-
-\size largest
-Domande?
-\end_layout
-
-\end_deeper
 \begin_layout Subsection*
 Licenza
 \end_layout
@@ -2614,10 +2743,6 @@ Goodbye and thanks for all the fish
 
 \size largest
 Grazie per l'attenzione!
-\begin_inset Newline newline
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -2636,6 +2761,18 @@ Grazie per l'attenzione!
 \size footnotesize
 Queste slides sono licenziate Creative Commons Attribution-ShareAlike 3.0
  Unported
+\begin_inset Newline newline
+\end_inset
+
+© 2014 - Riccardo Binetti
+\begin_inset Newline newline
+\end_inset
+
+© 2015 - Emanuele Santoro
+\begin_inset Newline newline
+\end_inset
+
+© 2016 - Giulio De Pasquale
 \end_layout
 
 \begin_layout Standard
@@ -2647,7 +2784,7 @@ status open
 
 \begin_layout Plain Layout
 
-http://www.poul.org
+https://www.poul.org
 \end_layout
 
 \end_inset
