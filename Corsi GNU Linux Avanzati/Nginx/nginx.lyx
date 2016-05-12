@@ -1,0 +1,3892 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass beamer
+\begin_preamble
+\usepackage{tikz} % Tikz loads graphicx and xcolor (needed for first slide logo)
+
+\usetheme[pageofpages=of,% String used between the current page and the
+                         		% total page count.
+                     titleline=true,% Show a line below the frame title.
+                     alternativetitlepage=true,% Use the fancy title page.
+                     titlepagelogo=images/blank,% Logo for the first page.
+                      ]{Torino}
+
+\author{\texorpdfstring{Tommaso Sardelli\newline\tiny\url{sardelli.tommaso [at] gmail.com}}{Author}}
+\title{NGINX Web Server}
+\institute{Corsi GNU/Linux Avanzati 2016\newline Politecnico Open unix Lab}
+\date{11$^{th}$ May 2016}
+\titlegraphic{\vspace{-1.50cm}}
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
+\pdf_quoted_options "linkcolor=blue, urlcolor=blue, citecolor=blue"
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{frame}[t,plain]
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+tikz [remember picture,overlay]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node at
+\end_layout
+
+\begin_layout Plain Layout
+
+		([yshift=2.8cm,xshift=-2.5cm]current page.south)
+\end_layout
+
+\begin_layout Plain Layout
+
+		{
+\backslash
+includegraphics[width=.5
+\backslash
+textwidth]{images/poul_logo}};
+\end_layout
+
+\begin_layout Plain Layout
+
+		%or: (current page.center)         
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+titlepage
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{frame}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang italian
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+AtBeginSubsection[]{
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+frame<beamer>{ 
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\backslash
+frametitle{Outline}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+hypersetup{linkcolor=black}
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\backslash
+tableofcontents[currentsection,currentsubsection] 
+\end_layout
+
+\begin_layout Plain Layout
+
+  }
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\lang italian
+Today's topic
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+What is a web server?
+\end_layout
+
+\begin_layout Itemize
+How do I configure one?
+\end_layout
+
+\begin_layout Itemize
+Security? (It's dangerous to go alone!)
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\lang italian
+Whoops
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Graphics
+	filename images/iis_logo.svg
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\lang italian
+That's better!
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Graphics
+	filename images/nginx_logo.svg
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\lang italian
+Even better!
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Graphics
+	filename images/all_logos.svg
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\lang italian
+Disclaimer
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename images/ludicrous_speed.jpg
+	display false
+	height 80theight%
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\lang italian
+Table of Contents
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Section
+Introduction
+\end_layout
+
+\begin_layout Subsection
+HTTP 101
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\lang italian
+What is a Web Server?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+A web server is a software that processes requests via 
+\series bold
+HTTP
+\series default
+.
+\end_layout
+
+\begin_layout Itemize
+The primary function of a web server is to store, process and deliver web
+ pages to 
+\strikeout on
+browsers
+\strikeout default
+ clients.
+\end_layout
+
+\begin_layout Itemize
+Many generic web servers also support server-side scripting using 
+\series bold
+PHP
+\series default
+ or 
+\series bold
+other scripting languages
+\series default
+.
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\lang italian
+First things first: HTTP
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+HTTP is the foundation of data communication for the (guess what..) 
+\series bold
+World Wide Web
+\series default
+ (yay!).
+\end_layout
+
+\begin_layout Itemize
+HTTP functions as a 
+\series bold
+request–response protocol.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The client submits an HTTP 
+\series bold
+request message
+\series default
+ to the server.
+\end_layout
+
+\begin_layout Itemize
+The server performs some functions and returns a 
+\series bold
+response message
+\series default
+ such as HTML files or other content.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+The response contains completion 
+\series bold
+status information
+\series default
+ about the request and may also contain requested content in its 
+\series bold
+message body
+\series default
+.
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+HTTP Request Message
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+An HTTP request message is composed of 
+\series bold
+three
+\series default
+ parts:
+\end_layout
+
+\begin_layout Itemize
+An HTTP
+\series bold
+ Method
+\series default
+ and a 
+\series bold
+request URI
+\series default
+:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+(GET | POST | PUT | DELETE | PATCH | ...
+ |) /index.html HTTP/1.1
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Zero o more 
+\series bold
+Headers
+\series default
+:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Host, Connection, Cookie, Cache-Control, User-Agent, X-Forwarded-Host, many
+ more.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Optionally, a message 
+\series bold
+Body
+\series default
+:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Useful if you are uploading something or submitting data to an html form.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+HTTP Response Message
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Nothing fancy, just like a request message but instead of the HTTP method
+ you have:
+\end_layout
+
+\begin_layout Itemize
+The 
+\series bold
+Status
+\series default
+ code (
+\begin_inset Flex Emphasize
+status open
+
+\begin_layout Plain Layout
+404 not found anyone?
+\end_layout
+
+\end_inset
+
+)
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+1xx: Informational
+\series default
+ - Request received, continuing process (good)
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+2xx: Success
+\series default
+ - The action was successfully received, understood, and accepted (good)
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+3xx: Redirection
+\series default
+ - Further action must be taken in order to complete the request (good)
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+4xx: Client Error
+\series default
+ - The request contains bad syntax or cannot be fulfilled (bad)
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+5xx: Server Error
+\series default
+ - The server failed to fulfill an apparently valid request (badder D:)
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Standard
+
+\lang italian
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{frame}[fragile]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+frametitle{Enough talk, lemme see!}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang italian
+\begin_inset listings
+lstparams "basicstyle={\small\ttfamily}"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+telnet www.poul.org 80
+\end_layout
+
+\begin_layout Plain Layout
+
+Trying 176.31.102.216...
+\end_layout
+
+\begin_layout Plain Layout
+
+Connected to www.poul.org.
+\end_layout
+
+\begin_layout Plain Layout
+
+Escape character is '^]'.
+\end_layout
+
+\begin_layout Plain Layout
+
+GET / HTTP/1.1
+\end_layout
+
+\begin_layout Plain Layout
+
+Host: www.poul.org
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+####################################
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+curl -i "https://www.poul.org" 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+####################################
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+http https://www.poul.org
+\end_layout
+
+\begin_layout Plain Layout
+
+(requires the httpie package)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang italian
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{frame}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Standard
+
+\lang italian
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{frame}[fragile]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+frametitle{Enough talk, lemme see!}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang italian
+\begin_inset listings
+lstparams "basicstyle={\small\ttfamily}"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+HTTP/1.1 200 OK
+\end_layout
+
+\begin_layout Plain Layout
+
+Cache-Control: max-age=3, must-revalidate
+\end_layout
+
+\begin_layout Plain Layout
+
+Connection: keep-alive
+\end_layout
+
+\begin_layout Plain Layout
+
+Content-Encoding: gzip
+\end_layout
+
+\begin_layout Plain Layout
+
+Content-Length: 7421
+\end_layout
+
+\begin_layout Plain Layout
+
+Content-Type: text/html; charset=UTF-8
+\end_layout
+
+\begin_layout Plain Layout
+
+Date: Sun, 08 May 2016 19:21:32 GMT
+\end_layout
+
+\begin_layout Plain Layout
+
+Strict-Transport-Security: max-age=15768000
+\end_layout
+
+\begin_layout Plain Layout
+
+WP-Super-Cache: Served supercache file from PHP
+\end_layout
+
+\begin_layout Plain Layout
+
+X-Answer: 42
+\end_layout
+
+\begin_layout Plain Layout
+
+X-Fact: systemd is bloated
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+<html lang="it-IT">
+\end_layout
+
+\begin_layout Plain Layout
+
+<head [...] />
+\end_layout
+
+\begin_layout Plain Layout
+
+  <title>POuL Politecnico Open unix Labs</title> 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang italian
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{frame}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Subsection
+NGINX Architecture
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+What does 'He' have that I don't?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Lightweight
+\end_layout
+
+\begin_layout Itemize
+Fast
+\end_layout
+
+\begin_layout Itemize
+A pleasure to configure (shame on you Apache)
+\end_layout
+
+\begin_layout Itemize
+Versatile (reverse proxy, load balancer)
+\end_layout
+
+\begin_layout Itemize
+(Modular)
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+NGINX Architecture
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+There are two different kinds of process:
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Master process
+\series default
+: It's the main process, it runs as root and fulfills two main tasks
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Read the configuration files.
+\end_layout
+
+\begin_layout Itemize
+Open the socket used to communicate with the worker processes.
+\end_layout
+
+\begin_layout Itemize
+(Slack off for the rest of the time).
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+Worker processes
+\series default
+: one or more processes run as unprivileged user (www-data on Debian)
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+They do the real hard work managing all the HTTP requests coming from thousands
+ of clients.
+\end_layout
+
+\begin_layout Itemize
+
+\strikeout on
+(They work out in their free time)
+\strikeout default
+ They don't have free time.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+NGINX Architecture
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Graphics
+	filename images/nginx_architecture.pdf
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Subsection
+Can I try this at home?
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Can I try this at home?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename images/try_this_at_home.svg
+	display false
+	height 70theight%
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+NAT!
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename images/try_this_at_home_nat.pdf
+	display false
+	height 70theight%
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+DDNS
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename images/try_this_at_home_nat_ddns.pdf
+	display false
+	height 70theight%
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+One image to rule them all
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename images/nat101.pdf
+	display false
+	height 80theight%
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+To sum up
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+NAT (port forwading/virtual server)
+\end_layout
+
+\begin_layout Itemize
+DDNS (Duck DNS, Afraid, no-ip)
+\end_layout
+
+\begin_layout Itemize
+\begin_inset CommandInset href
+LatexCommand href
+name "Happy Googling :D"
+target "https://www.youtube.com/watch?v=N9rJJSiUy0I"
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Section
+Installation and Configuration
+\end_layout
+
+\begin_layout Subsection
+Installing on Debian
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+apt-get install
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
+\series bold
+Debian Stable
+\series default
+ (Jessie at the time of writing) provides 
+\series bold
+three different flavours
+\series default
+ of nginx (it's modular, remember?)
+\end_layout
+
+\begin_layout Itemize
+nginx-light: just a small subset of core modules
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+nginx
+\series default
+ (nginx-full): he is your man!
+\end_layout
+
+\begin_layout Itemize
+nginx-extras: bloated edition
+\end_layout
+
+\begin_layout Standard
+If you want to see the 
+\begin_inset CommandInset href
+LatexCommand href
+name "full comparison"
+target "https://wiki.debian.org/Nginx#Recap_of_the_different_modules_in_every_package_.28starting_Squeeze-Backports.29"
+
+\end_inset
+
+...
+\end_layout
+
+\begin_layout Standard
+If you want the (almost) latest version, install it from the
+\series bold
+ Backports
+\series default
+! 
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{frame}[fragile]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+frametitle{Installation Complete}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Check the 
+\series bold
+installed version:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "basicstyle={\small\ttfamily}"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+sudo nginx -v
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Get the full list of the 
+\series bold
+enabled modules:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "basicstyle={\small\ttfamily}"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+sudo nginx -V
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Look for a 
+\series bold
+specific module
+\series default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "basicstyle={\small\ttfamily}"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+sudo nginx -V 2>&1 | grep --color module_name
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{frame}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Subsection
+Configuration
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+nginx.conf
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The good ol' days of httpd.conf and .htaccess have ended
+\end_layout
+
+\begin_layout Itemize
+nginx.conf kicks in
+\end_layout
+
+\begin_layout Itemize
+And your days get even better
+\end_layout
+
+\begin_layout Itemize
+(Maybe) ^^'
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Contexts
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+nginx.conf is divided into 
+\strikeout on
+five
+\strikeout default
+ 
+\series bold
+four 
+\series default
+\strikeout on
+contexts
+\strikeout default
+ 
+\series bold
+blocks
+\series default
+: (main), events(1), http(1), server(n) and location(n).
+\end_layout
+
+\begin_layout Itemize
+There is a 
+\series bold
+hierarchy
+\series default
+: the 
+\series bold
+events
+\series default
+ block is standalone, 
+\series bold
+http
+\series default
+ contains 
+\series bold
+server
+\series default
+ blocks, a server block contains 
+\series bold
+location
+\series default
+ blocks.
+\end_layout
+
+\begin_layout Itemize
+Directives defined in an higher block (like http) affect all the underlying
+ blocks (server and location).
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Pro Tip
+\series default
+: apply directives in the highest context available.
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{frame}[fragile]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+frametitle{nginx.conf stripped-down}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "basicstyle={\scriptsize\ttfamily},breaklines=true,showstringspaces=false,tabsize=4"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+user www-data;
+\end_layout
+
+\begin_layout Plain Layout
+
+worker_processes 1;
+\end_layout
+
+\begin_layout Plain Layout
+
+pid /run/nginx.pid;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+events {
+\end_layout
+
+\begin_layout Plain Layout
+
+	worker_connections 128;
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+http {
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    server {
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+     	location {
+\end_layout
+
+\begin_layout Plain Layout
+
+         }
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+}    
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{frame}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{frame}[fragile]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+frametitle{Every time you do this, a kitten dies}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "basicstyle={\scriptsize\ttfamily},breaklines=true,showstringspaces=false,tabsize=4"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+http {
+\end_layout
+
+\begin_layout Plain Layout
+
+	.
+ .
+ .
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	server {
+\end_layout
+
+\begin_layout Plain Layout
+
+		.
+ .
+ .
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+		location / {
+\end_layout
+
+\begin_layout Plain Layout
+
+			root /var/www/html;
+\end_layout
+
+\begin_layout Plain Layout
+
+            .
+ .
+ .
+\end_layout
+
+\begin_layout Plain Layout
+
+        }
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+        location /another {
+\end_layout
+
+\begin_layout Plain Layout
+
+			root /var/www/html;
+\end_layout
+
+\begin_layout Plain Layout
+
+            .
+ .
+ .
+\end_layout
+
+\begin_layout Plain Layout
+
+        }
+\end_layout
+
+\begin_layout Plain Layout
+
+    } 
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{frame}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{frame}[fragile]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+frametitle{VirtualHosts :P}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "basicstyle={\scriptsize\ttfamily},tabsize=4"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+http{
+\end_layout
+
+\begin_layout Plain Layout
+
+    server {
+\end_layout
+
+\begin_layout Plain Layout
+
+        listen 80;
+\end_layout
+
+\begin_layout Plain Layout
+
+        server_name example.org www.example.org;
+\end_layout
+
+\begin_layout Plain Layout
+
+        ...
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    server {
+\end_layout
+
+\begin_layout Plain Layout
+
+        listen 80;
+\end_layout
+
+\begin_layout Plain Layout
+
+        server_name poul.org www.poul.org;
+\end_layout
+
+\begin_layout Plain Layout
+
+        ...
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    server {
+\end_layout
+
+\begin_layout Plain Layout
+
+        listen 80;
+\end_layout
+
+\begin_layout Plain Layout
+
+        server_name fluffykittens.it www.fluffykittens.it;
+\end_layout
+
+\begin_layout Plain Layout
+
+        ...
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{frame}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{frame}[fragile]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+frametitle{location blocks}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+When we are in a location context we are usually dealing with files and
+ folders.
+\end_layout
+
+\begin_layout Itemize
+Location diectives allow us to tell NGINX what to do when a 
+\series bold
+specific resource
+\series default
+ is requested.
+\end_layout
+
+\begin_layout Itemize
+Such resource can be targeted using an 
+\series bold
+exact path
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+In this case we will prefix the uri with 
+\series bold
+
+\begin_inset Quotes eld
+\end_inset
+
+=
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Alternatively we can rely on 
+\series bold
+regex
+\series default
+ 
+\series bold
+matching
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+"~" 
+\series default
+prefix for 
+\series bold
+case sensitive
+\series default
+ matching
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+"~*"
+\series default
+ prefix for 
+\series bold
+case insensitive
+\series default
+ matching
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset listings
+lstparams "basicstyle={\scriptsize}"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+Syntax: location [ = | ~ | ~* | ^~ ] uri { ...
+ }
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{frame}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{frame}[fragile]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+frametitle{Examples or GTFO!}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+When I visit http://example.org/downloads I want a list of all the files
+ in that folder
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "basicstyle={\scriptsize}"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+location  ~ /download { 
+\end_layout
+
+\begin_layout Plain Layout
+
+      autoindex on;
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+We don't want our users to execute scripts from write accessbile folders,
+ RIGHT?
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "basicstyle={\scriptsize}"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+location ~* /(images|cache|media|logs|tmp)/.*.(php|pl|py)$ {
+\end_layout
+
+\begin_layout Plain Layout
+
+    return 403;
+\end_layout
+
+\begin_layout Plain Layout
+
+    error_page 403 /403_error.html;
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{frame}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Make yourself comfortable
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename images/modules_reference_is_coming.jpg
+	display false
+	height 80theight%
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Just Kidding
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+
+\size huge
+Demo
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Subsection
+PHP-FPM
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+PHP-FPM Architecture
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Graphics
+	filename images/php-fpm_architecture.pdf
+	display false
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+php-fpm.conf
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+sudo apt-get install 
+\series bold
+php5-fpm
+\end_layout
+
+\begin_layout Itemize
+sudo vim/emacs/atom/(flame?) 
+\series bold
+/etc/php5/fpm/pool.d/www.conf
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+listen = /var/run/php5-fpm.sock
+\end_layout
+
+\begin_layout Itemize
+sudo service php5-fpm restart
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+No way! I want PHP 7
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+sudo apt-get install 
+\series bold
+php7.0-fpm 
+\series default
+(https://packages.sury.org/php/)
+\end_layout
+
+\begin_layout Itemize
+sudo vim (we have a winner) 
+\series bold
+/etc/php/7.0/fpm/pool.d/www.conf
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+listen = /run/php/php7.0-fpm.sock
+\end_layout
+
+\begin_layout Itemize
+sudo service php7.0-fpm restart
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Demo
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+
+\size huge
+Demo
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Subsection
+Reverse Proxy
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+\begin_inset Quotes eld
+\end_inset
+
+To infinity… and beyond!
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Ruby: Rails/Sinatra/Puma
+\end_layout
+
+\begin_layout Itemize
+Python: Flask/Tornado/Django (
+\begin_inset CommandInset href
+LatexCommand href
+name "the D is silent"
+target "https://www.youtube.com/watch?v=R2VgPdS7UOM"
+
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Itemize
+JavaScript: Node.js/Ghost
+\end_layout
+
+\begin_layout Itemize
+Anything: Transmission/Syncthing/ympd/...
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Always the same pattern
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+A service running behind some port (8000, 8080, 8384, 9091, etc.)
+\end_layout
+
+\begin_layout Itemize
+You want to access it without opening all those ports in your firewall
+\end_layout
+
+\begin_layout Itemize
+You want advanced settings:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Authentication
+\end_layout
+
+\begin_layout Itemize
+SSL/TLS
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Demo
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+
+\size huge
+Demo
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Section
+Security
+\end_layout
+
+\begin_layout Subsection
+SSL/TLS and HTTPS
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+It's a conspiracy!
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Quotation
+\align center
+
+\lang italian
+\begin_inset Graphics
+	filename images/tinfoil_hat.jpg
+	display false
+	height 60theight%
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+HTTPS? Oh yes, the green lock! :|
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
+\series bold
+SSL/TLS
+\series default
+ in a nutshell:
+\end_layout
+
+\begin_layout Itemize
+Choose a fast symmetric cipher (like AES).
+ This is called, well, the 
+\series bold
+cipher
+\series default
+.
+\end_layout
+
+\begin_layout Itemize
+Choose a 
+\series bold
+random key
+\series default
+ for that cipher.
+ This is called the session key.
+\end_layout
+
+\begin_layout Itemize
+Encrypt that key using 
+\series bold
+RSA
+\series default
+ (public key crypto) and send it to the person you're communicating with.
+\end_layout
+
+\begin_layout Itemize
+Then you both have the same AES key, and can 
+\series bold
+encrypt all your communications back and forth after that
+\series default
+.
+\end_layout
+
+\begin_layout Itemize
+The NSA is sad :(
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Alice is suspicious
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Everything is encrypted, awesome, but is Bob...
+ well, Bob?
+\end_layout
+
+\begin_layout Itemize
+A 
+\series bold
+digital certificate
+\series default
+ is an electronic document used to 
+\series bold
+prove ownership of a public key
+\series default
+.
+\end_layout
+
+\begin_layout Itemize
+The certificate includes information about the 
+\series bold
+key
+\series default
+, its 
+\series bold
+owner's identity
+\series default
+, and the 
+\series bold
+digital signature of a Certification Authority.
+\end_layout
+
+\begin_layout Itemize
+A Certification Authority(CA) is an entity that 
+\series bold
+issues digital certificates
+\series default
+ and verifies that the certificate's content is correct.
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Arya
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Quotation
+\align center
+
+\lang italian
+\begin_inset Graphics
+	filename images/self_signed_certificates.jpg
+	display false
+	height 60theight%
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Subsection
+Let's Encrypt
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Let's Encrypt will be released any second now...
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Quotation
+
+\lang italian
+\begin_inset Graphics
+	filename images/le_1.png
+	display false
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+...any second now...
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Quotation
+
+\lang italian
+\begin_inset Graphics
+	filename images/le_2.png
+	display false
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+...aaaaany second now...
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Quotation
+
+\lang italian
+\begin_inset Graphics
+	filename images/le_3.png
+	display false
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+...now...
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Quotation
+
+\lang italian
+\begin_inset Graphics
+	filename images/le_4.png
+	display false
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+...
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Quotation
+
+\lang italian
+\begin_inset Graphics
+	filename images/le_5.png
+	display false
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+...
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Quotation
+
+\lang italian
+\begin_inset Graphics
+	filename images/le_6.png
+	display false
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Thank you...
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Quotation
+
+\lang italian
+\begin_inset Graphics
+	filename images/le_7.png
+	display false
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+So, we were saying, Let's Encrypt
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Quotation
+\align center
+
+\lang italian
+\begin_inset Graphics
+	filename images/le_logo_standard.svg
+	display false
+	height 70theight%
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Features - sounds good!
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Free
+\end_layout
+
+\begin_layout Itemize
+Automatic
+\end_layout
+
+\begin_layout Itemize
+Secure
+\end_layout
+
+\begin_layout Itemize
+Transparent
+\end_layout
+
+\begin_layout Itemize
+Open
+\end_layout
+
+\begin_layout Itemize
+Cooperative
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Under the hood
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+When you run the letsencrypt client a few tasks are performed
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://letsencrypt.org/how-it-works/
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Domain Validation (DNS or HTTP).
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Provisioning a DNS record under example.com
+\end_layout
+
+\begin_layout Itemize
+Provisioning an HTTP resource under a well-known URI on https://example.com/
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Certificate Issuance.
+\end_layout
+
+\begin_layout Itemize
+Repeat every 2/3 months (yes, a script would be helpful)
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Plugins
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://letsencrypt.readthedocs.io/en/latest/using.html
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+apache
+\series default
+: Automates obtaining and installing a cert with Apache 2.4 on Debian-based
+ distributions.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+webroot
+\series default
+: Obtains a cert by writing to the webroot directory of an already running
+ webserver.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+standalone
+\series default
+: Uses a “standalone” webserver to obtain a cert.
+ Requires port 80 or 443 to be available.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+manual
+\series default
+: Helps you obtain a cert by giving you instructions to perform domain validatio
+n yourself.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+nginx
+\series default
+: Very experimental and not included in letsencrypt-auto.
+ 
+\series bold
+D:
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Demo
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+
+\size huge
+Demo
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Subsection
+HTTPS Hardening
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Meet your new best friend (SSL Test)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
+\lang italian
+\begin_inset Graphics
+	filename images/ssl_test.png
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang italian
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://www.ssllabs.com/ssltest/index.html
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+HTTP Strict Transport Security (HSTS)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+It is an 
+\series bold
+HTTP
+\series default
+ 
+\series bold
+header 
+\series default
+sent from the server to the client.
+\end_layout
+
+\begin_layout Itemize
+Such header informs the client that HTTPS is availbale for the requested
+ website.
+\end_layout
+
+\begin_layout Itemize
+The 
+\begin_inset Quotes eld
+\end_inset
+
+
+\series bold
+max-age
+\series default
+
+\begin_inset Quotes erd
+\end_inset
+
+ parameters sets the validity of this information (in seconds).
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{frame}[fragile]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+frametitle{Enable HSTS in NGINX}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Enabling HSTS is as simple as adding a common HTTP header:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "basicstyle={\scriptsize\ttfamily}"
+inline false
+status open
+
+\begin_layout Plain Layout
+server {
+\end_layout
+
+\begin_layout Plain Layout
+    listen   443 ssl;
+\end_layout
+
+\begin_layout Plain Layout
+    ...
+\end_layout
+
+\begin_layout Plain Layout
+    ...
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+    # Force HSTS
+\end_layout
+
+\begin_layout Plain Layout
+    add_header Strict-Transport-Security max-age=15768000; 
+\end_layout
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{frame}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Perfect Forward Secrecy (PFS)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Let's say someone 
+\series bold
+intercepts and stores
+\series default
+ all our encrypted communications.
+ I know, who would 
+\begin_inset Flex Emphasize
+status open
+
+\begin_layout Plain Layout
+ever
+\end_layout
+
+\end_inset
+
+ do that? (*cough*)
+\end_layout
+
+\begin_layout Itemize
+If the private key is compromised/deciphered all the previous communications
+ could be unencrypted and read.
+\end_layout
+
+\begin_layout Itemize
+Solution:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Use a 
+\series bold
+new key for each session
+\series default
+!
+\end_layout
+
+\begin_layout Itemize
+Call that key 
+\series bold
+
+\begin_inset Quotes eld
+\end_inset
+
+ephimeral
+\begin_inset Quotes erd
+\end_inset
+
+
+\series default
+.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Standard
+
+\lang italian
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{frame}[fragile]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+frametitle{PFS? Pretty please...
+ with sugar on top.}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Just use the right cipher
+\end_layout
+
+\begin_layout Standard
+
+\lang italian
+\begin_inset listings
+lstparams "basicstyle={\scriptsize\ttfamily}"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+server {
+\end_layout
+
+\begin_layout Plain Layout
+
+    listen   443 ssl;
+\end_layout
+
+\begin_layout Plain Layout
+
+    ...
+\end_layout
+
+\begin_layout Plain Layout
+
+    ...
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    ssl_prefer_server_ciphers on;
+\end_layout
+
+\begin_layout Plain Layout
+
+    ssl_ciphers 'ECDHE-RSA-AES128-GCM-SHA256:...'
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang italian
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{frame}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Links
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+NGINX Links
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+Getting Started
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset href
+LatexCommand href
+name "NGINX Pitfalls"
+target "https://www.nginx.com/resources/wiki/start/topics/tutorials/config_pitfalls"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset href
+LatexCommand href
+name "NGINX Admin Guide"
+target "http://nginx.com/admin-guide/web-server"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset href
+LatexCommand href
+name "NGINX Primer"
+target "http://blog.martinfjordvald.com/2010/07/nginx-primer/"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset href
+LatexCommand href
+name "NGINXTIPS"
+target "http://www.nginxtips.com/"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset href
+LatexCommand href
+name "NGINX Doc and Modules Reference"
+target "http://nginx.org/en/docs/"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset href
+LatexCommand href
+name "Understanding Nginx Server and Location Block Selection Algorithms"
+target "https://www.digitalocean.com/community/tutorials/understanding-nginx-server-and-location-block-selection-algorithms"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset href
+LatexCommand href
+name "Understanding the Nginx Configuration File Structure and Configuration Contexts"
+target "https://www.digitalocean.com/community/tutorials/understanding-the-nginx-configuration-file-structure-and-configuration-contexts"
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+HTTPS Links
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+HTTPS
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset href
+LatexCommand href
+name "BetterCrypto"
+target "https://bettercrypto.org/"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset href
+LatexCommand href
+name "Mozilla Config Generator"
+target "https://wiki.mozilla.org/Security/Server_Side_TLS"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset href
+LatexCommand href
+name "Cipherli.st"
+target "https://cipherli.st/"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset href
+LatexCommand href
+name "Why You Should Always Use HTTPS"
+target "http://mashable.com/2011/05/31/https-web-security/"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset href
+LatexCommand href
+name "Hardening NGINX SSL/TSL Configuration"
+target "http://www.nginxtips.com/hardening-nginx-ssl-tsl-configuration/"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset href
+LatexCommand href
+name "Strong SSL Security on nginx"
+target "https://raymii.org/s/tutorials/Strong_SSL_Security_On_nginx.html"
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+License
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
+\lang italian
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centerline{
+\end_layout
+
+\end_inset
+
+
+\lang english
+
+\begin_inset Graphics
+	filename /media/Dati/Syncthing/slide_nginx/2015/images/cc-by-sa_icon.png
+	width 100text%
+	height 10theight%
+	keepAspectRatio
+	BoundingBox 0bp 0bp 1000bp 352bp
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\size scriptsize
+Quest’opera è rilasciata sotto la licenza Creative Commons Attribution-Share
+ Alike 4.0 International License.
+ Per visualizzare una copia di questa licenza, visitare http://creativecommons.or
+g/licenses/by-sa/4.0/ o inviare una lettera a Creative Commons, 444 Castro
+ Street, Suite 900, Mountain View, California, 94041, USA
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\begin_inset space \hspace{}
+\length 35text%
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \hspace{}
+\length 35text%
+\end_inset
+
+
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://www.poul.org/
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_body
+\end_document
