@@ -1,0 +1,6 @@
+# Corsi Linux Avanzati 2016 - Docker
+
+If you want to view the slides go to https://slides.poul.org or run a webserver on ./Slides
+
+In ./Repos you'll find (some) of the code/files used in the presentation
+In ./Notebooks you'll find an ipython notebook that i've using during the talk to demo some cool stuff.

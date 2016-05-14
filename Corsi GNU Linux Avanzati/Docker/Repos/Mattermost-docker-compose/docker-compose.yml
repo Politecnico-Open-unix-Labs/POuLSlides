@@ -1,0 +1,32 @@
+version: '2'
+
+services:
+  postgres:
+    restart: always
+    image: postgres
+    environment:
+      - POSTGRES_USER=mattermost
+      - POSTGRES_PASSWORD=password
+    volumes:
+      - /tmp/postgres-compose:/var/lib/postgresql
+
+  mattermost:
+    restart: always
+    image: jasl8r/mattermost:2.2.0
+    links:
+      - postgres:postgres
+    depends_on:
+      - postgres
+    ports:
+      - "8080:80"
+    environment:
+      - DB_ADAPTER=postgres
+      - DB_HOST=postgres
+      - DB_USER=mattermost
+      - DB_PASS=password
+      - MATTERMOST_SECRET_KEY=long-and-random-alphanumeric-string
+      - MATTERMOST_LINK_SALT=long-and-random-alphanumeric-string
+      - MATTERMOST_RESET_SALT=long-and-random-alphanumeric-string
+      - MATTERMOST_INVITE_SALT=long-and-random-alphanumeric-string
+    volumes:
+      - /tmp/mattermost:/opt/mattermost/data

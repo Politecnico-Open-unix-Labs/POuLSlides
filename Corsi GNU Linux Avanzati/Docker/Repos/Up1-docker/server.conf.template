@@ -1,0 +1,29 @@
+{
+  "api_key": "{{API_KEY}}",
+  "delete_key": "{{DELETE_KEY}}",
+  "maximum_file_size": {{MAX_FILE_SIZE}},
+
+  "path": {
+    "i": "../i",
+    "client": "../client"
+  },
+
+  "http": {
+    "enabled": {{HTTP}},
+    "listen": "{{HTTP_LISTEN}}"
+  },
+
+  "https": {
+    "enabled": {{HTTPS}},
+    "listen": "{{HTTPS_LISTEN}}",
+    "cert": "./cert.pem",
+    "key": "./key.pem"
+  },
+
+  "cloudflare-cache-invalidate": {
+    "enabled": false,
+    "token": "Cloudflare API token here",
+    "email": "Cloudflare login email here",
+    "domain": "Domain to invalidate cache on"
+  }
+}
